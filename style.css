@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #626772;
+}
+#chatbot {
+  width: 500px;
+  height: 400px;
+}
+#form {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#input {
+  flex-grow: 1;
+  background-color: #37393e;
+  outline: none;
+  border: none;
+  padding: 5px;
+  width: 260px;
+  height: 22px;
+  margin: auto;
+  border-radius: 0.3em;
+}
+
+#submit{
+  margin: 20px;
+  outline: none;
+  border: none;
+  padding: 7px 20px;
+  background: #1e86fd;
+  color: white;
+  border-radius: 0.3em;
+}
+
+#chatbot-messages{
+  padding-left: 19px;
+}
