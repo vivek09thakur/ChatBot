@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , user-scalable=no">
+    <meta property="og:image" content="https://blog.quickwork.co/content/images/size/w1000/2021/05/Chatbot-conversation-management.jpg">
     <link rel="stylesheet" href="style.css">
-  </head>
+    <link rel="shortcut icon" href="x-icon.png" type="image/x-icon">
+ </head>
   <body>
-    <div id="chatbot">
-      <div id="chatbot-messages"></div>
-      <form id="form">
-        <input type="text" id="input" placeholder="Enter your message..." />
-        <button type="submit" id="submit">Send</button>
-      </form>
-      <script src="engine.js"></script>
-    </div> 
+     <div id="chatbot">      
+        <div class="main">
+              <form id="form">
+                    <input type="text" id="input" placeholder="Enter your message..." />
+                    <button type="submit" id="submit">Send</button>
+              </form>                 
+        </div>
+        <div id="chatbot-messages"></div>
+        <script src="engine.js"></script>         
+     </div> 
   </body>
 </html>
