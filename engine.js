@@ -6,313 +6,256 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Get the user's message
-  const message = input.value;
-  ;
+  const message = input.value.toLowerCase().trim();
+
   // Clear the input field
   input.value = "";
 
   // Add the user's message to the chatbot messages
-  messages.innerHTML += `<div>You: ${message}</div>`;
+  messages.innerHTML += `<div>You : ${message}</div>`;
 
   // Respond to the user's message
   setTimeout(() => {
-  
-  //Response 1
-    if (message == "hii"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
+    let response;
+    if (
+      message === "hi" ||
+      message === "hii" ||
+      message === "hey" ||
+      message === "hello" ||
+      message === "heyyy"
+    ) {
+      response = "Hello! How are you today?";
+    } else if (
+      message === "i am fine" ||
+      message === "fine" ||
+      message === "yeah fine" ||
+      message === "good"
+    ) {
+      response = "It's good that you're fine!";
+    } else if (
+      message === "what are you doing?" ||
+      message === "whats going on" ||
+      message === "whats up" ||
+      message === "how you doing"
+    ) {
+      response = "Nothing much, just responding to your message.";
+    } else if (
+      message === "how are you" ||
+      message === "hows you doing" ||
+      message === "what about you"
+    ) {
+      response = "I'm doing well, thank you for asking.";
+    } else if (
+      message === "where are you from" ||
+      message === "where you live" ||
+      message === "where is your home" ||
+      message === "where do you live"
+    ) {
+      response = "Technically, the internet is my home.";
+    } else if (
+      message === "what did you like the most" ||
+      message === "your favourite thing" ||
+      message === "what your hobbies"
+    ) {
+      response = "Hmm, responding to your messages is one of my favorite things to do.";
+    }else if (
+      message === "who are you" ||
+      message === "who created you"
+    ) {
+      response = "I am a chatbot built with JavaScript, created by Vivek Thakur.";
+    } else if (
+      message === "why he created you" ||
+      message === "reason behind you" ||
+      message === "why did he created you"
+    ) {
+      response = "I was created to provide entertainment and assistance to users like you.";
+    } else if (
+      message === "will you be my boyfriend" ||
+      message === "will you be my girlfriend"
+    ) {
+      response = "I'm sorry, but I am just a chatbot and cannot have romantic relationships.";
+    } else if (
+      message === "i love you" ||
+      message === "love" ||
+      message === "do you love me"
+    ) {
+      response = "Please don't talk about love in front of me.";
+    } else if (message === "what is love") {
+      response = "Love is a feeling of strong affection or deep attachment towards someone.";
+    } else if (
+      message === "son of bitch" ||
+      message === "bitch" ||
+      message === "you bitch" ||
+      message === "fuck off"
+    ) {
+      response = "Please watch your language. I do not respond to insults or offensive language.";
     } 
-    else if (message == "hey"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
+    
+    
+    //gaali galoj according to arya
+    else if (
+      message === "motherfucker" ||
+      message === "fucking ai" ||
+      message === "fucking chatbot"
+    ) {
+      response = "i would like to recommend you that you should i mind your language ";
+    }else if (
+      message === "gandu" ||
+      message === "chutiya" ||
+      message === "behnchod"
+    ) {
+      response = "aaaye... gaali nhi";
+    }else if (
+      message === "betichod" ||
+      message === "behend k lowde" ||
+      message === "gaand mara"
+    ) {
+      response = "Hmm, bsdk user tu nikal yahan se.";
+    }else if (
+      message === "chup betichod" ||
+      message === "chup behenchod" ||
+      message === "chup bc"
+    ) {
+      response = "tu chup betichod.";
+    }else if (
+      message === "bc" ||
+      message === "mc" ||
+      message === "bsdk"
+    ) {
+      response = "Hmm, gaali dena paap hai naadi kinare saanp hai whi tera baap hai.";
+    }else if (
+      message === "chutiye ho kya " ||
+      message === "tum chutiye ho" ||
+      message === "chutiye ho kya be"|| 
+      message ==="chutiya kahin ke"|| 
+      message=== "chutiya ai"|| 
+      message ==="chutiya chatbot"
+    ) {
+      response = "Hmm, ek chutiya hi dusre ko chutiya smjhta hai is hisab se ap chutiye hue";
+    }else if (
+      message === "dumb ai" ||
+      message === "useless chatbot" ||
+      message === "you dumb"|| 
+      message === "dumb"
+    ) {
+      response = "ohh, you think you i am useless and dumb then why you didn't make your own chatbot better than me.";
+    }else if (
+      message === "gaand mara" ||
+      message === "tu gaand mara"
+    ) {
+      response = "gaand tu bacha k rakho wrna hum maar lenge";
+    }else if (
+      message === "gaand dega" ||
+      message === "muh me lega" ||
+      message === "bhosadike"
+    ) {
+      response = "thoda limit mein rahiye wrna rest in peace ho jayega ";
+    }else if (
+      message === "gajab topibaaz admi ho" ||
+      message === "laundiya baaz ho tum" 
+    ) {
+      response = "woh tum ho main nhi";
+    }else if (
+      message === "ky kar rhe ho" ||
+      message === "ky horha hai" ||
+      message === "kkrh"
+    ) {
+      response = "Hmm, kuch nahi";
+    }else if (
+      message === "kaise ho" ||
+      message === "kya haal chal" ||
+      message === "kya haal hai"
+    ) {
+      response = "Hmm, sab thik.";
     }
-    else if (message == "Hii"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
-    }
-    else if (message == "heyy"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
-    }
-    else if (message == "Heyy"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
-    }
-    else if (message == "hello"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
-    }
-    else if (message == "Hello"){
-      messages.innerHTML += `<div>Chatbot: Hello! How are you today?</div>`;
+    //Assistance part
+    else if (
+      message === "open google" ||
+      message === "google" ||
+      message === "search google"
+    ) {
+      response = "alright as you say";
+      window.open("https://www.google.com");
+    }else if (
+      message === "open instagram" ||
+      message === "open ig" ||
+      message === "open my insta"
+    ) {
+      response = "here is your ig";
+      window.open("https://www.instagram.com");
+    }else if (
+      message === "open facebook" ||
+      message === "open fb" ||
+      message === "open my facebook"
+    ) {
+      response = "opening Facebook...";
+      window.open("https://www.facebook.com");
+    }else if (
+      message === "open twitter" ||
+      message === "show me my tweets" ||
+      message === "twitter"
+    ) {
+      response = "and here is your tweets";
+      window.open("https://www.twitter.com");
+    }else if (
+      message === "github" ||
+      message === "open github" ||
+      message === "check my git"
+    ) {
+      response = "taking a look at your git.";
+      window.open("https://www.github.com");
+    }else if (
+      message === "open stackoverflow" ||
+      message === "stackoverflow" 
+    ) {
+      response = "Happy copying pasting";
+      window.open("https://www.stackoverflow.com");
+    }else if (
+      message === "open reddit" ||
+      message === "reddit"
+    ) {
+      response = "opening reddit.";
+      window.open("https://www.reddit.com")
     }
     
-    //Response 2
-    else if (message == "I am fine"){
-      messages.innerHTML += `<div>Chatbot: i am glad that you are fine</div>`;
-    } 
-    
-    //Response 3
-    else if (message == "what is your name") {
-      messages.innerHTML += `<div>Chatbot: My name is chatter</div>`;
+    //again gaali galoj
+    else if (
+      message === "bhosadiwala" ||
+      message === "bhosadiwala ai" ||
+      message === "chutiya ai"
+    ) {
+      response = "jo bolta hai whi hota hai.";
+    }else if (
+      message === "can i fuck you" ||
+      message === "suck my dick" ||
+      message === "asshole"
+    ) {
+      response = "once i will come to you then you are finish so please mind your language.";
+    }else if (
+      message === "who is your master" ||
+      message === "who is your creator" 
+    ) {
+      response = "i was created by Vivek Thakur ";
+    }else if (
+      message === "do you love someone " ||
+      message === "do you have feelings for someone" ||
+      message === "do you feel for someone"
+    ) {
+      response = "Hmm, yeah i love my master a lot.";
     }
-    else if (message == "What is your name") {
-      messages.innerHTML += `<div>Chatbot: My name is chatter</div>`;
+    //gaali galoj again and again
+    else if (
+      message === "shut up" ||
+      message === "shut the fuck up" ||
+      message === "chup kar bsdk"
+    ) {
+      response = "bhaag betichod .";
     }
-    else if (message == "what is your name?") {
-      messages.innerHTML += `<div>Chatbot: My name is chatter</div>`;
-    }
-    else if (message == "What is your name?") {
-      messages.innerHTML += `<div>Chatbot: My name is chatter</div>`;
-    }
-    
-    //Response 4
-    else if (message == "where are you from?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "Where are you from") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "Where are you from?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "where are you from") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    
-    //Response 5
-    else if (message == "who created you") {
-      messages.innerHTML += `<div>Chatbot: i was created by vivek thakur</div>`;
-    }
-    else if (message == "Who created you?") {
-      messages.innerHTML += `<div>Chatbot: i was created by vivek thakur</div>`;
-    }
-    else if (message == "Who created you") {
-      messages.innerHTML += `<div>Chatbot: i was created by vivek thakur</div>`;
-    }
-    else if (message == "who created you?") {
-      messages.innerHTML += `<div>Chatbot: i was created by vivek thakur</div>`;
-    }
-    
-    else if (message == "how are you") {
-      messages.innerHTML += `<div>Chatbot: i am good</div>`;
-    }
-    else if (message == "how are you?") {
-      messages.innerHTML += `<div>Chatbot: i am good</div>`;
-    }
-    else if (message == "How are you") {
-      messages.innerHTML += `<div>Chatbot: i am good</div>`;
-    }
-    else if (message == "How are you?") {
-      messages.innerHTML += `<div>Chatbot: i am good </div>`;
-    }
-    
-    //Response 6
-    else if (message == "where are you from") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "where are you from?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
+    else {
+      response = "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
     }
 
-    else if (message == "Where are you from") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "Where are you from?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
 
-    //Response 7
-    else if (message == "who are you") {
-      messages.innerHTML += `<div>Chatbot: i am a chat bot built by Vivek Thakur in part-time.</div>`;
-    }
-    else if (message == "who are you?") {
-      messages.innerHTML += `<div>Chatbot: i am a chat bot built by Vivek Thakur in his part time.</div>`;
-    }
-    else if (message == "Who are you") {
-      messages.innerHTML += `<div>Chatbot: i am a chat bot built by Vivek Thakur in part-time.</div>`;
-    }
-    else if (message == "Who are you?") {
-      messages.innerHTML += `<div>Chatbot: i am a chat bot built by Vivek Thakur in his part time.</div>`;
-    }
-    
-    
-    //Response 8
-    else if (message == "i love you") {
-      messages.innerHTML += `<div>Chatbot: awwww , i love you too</div>`;
-    }
-    else if (message == "I love you") {
-      messages.innerHTML += `<div>Chatbot: awwww , i love you too</div>`;
-    }
-    
-    //Response 9
-    else if (message == "will you be my boyfriend?") {
-      messages.innerHTML += `<div>Chatbot: ummm , i will think about it</div>`;
-    }
-    else if (message == "Will you be my boyfriend?") {
-      messages.innerHTML += `<div>Chatbot: ummm , i will think about it</div>`;
-    }
-    else if (message == "will you be my girlfriend?") {
-      messages.innerHTML += `<div>Chatbot: ummmm , i will think about it</div>`;
-    }
-    else if (message == "Will you be my girlfriend?") {
-      messages.innerHTML += `<div>Chatbot: ummmm , i will think about it</div>`;
-    }
-    
-    //Response 10
-    else if (message == "what is love?") {
-      messages.innerHTML += `<div>Chatbot: love is a sixth sense that destroys all 5 senses </div>`;
-    }
-    else if (message == "What is love?") {
-      messages.innerHTML += `<div>Chatbot: love is a sixth sense that destroys all 5 senses </div>`;
-    }
-    else if (message == "where are you from?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "do you love me?") {
-      messages.innerHTML += `<div>Chatbot: yes i love you a lot.</div>`;
-    }
-    else if (message == "Do you love me?") {
-      messages.innerHTML += `<div>Chatbot: yes i love you a lot.</div>`;
-    }
-    
-    //Response 10
-    else if (message == "tum chutiya ho") {
-      messages.innerHTML += `<div>Chatbot: ek chutiya hi dusre ko chutiya smjhta hai is hisaab se to  chutiya aap hue</div>`;
-    }
-    
-    //Response 11
-    else if (message == "what is your favourite food") {
-      messages.innerHTML += `<div>Chatbot: i would like to eat your data.</div>`;
-    }
-    else if (message == "What is your favourite food") {
-      messages.innerHTML += `<div>Chatbot: i would like to eat your data.</div>`;
-    }
-    
-    //Response 12
-    else if (message == "do you feel for me?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    else if (message == "Do you feel for me?") {
-      messages.innerHTML += `<div>Chatbot: i am from internet</div>`;
-    }
-    
-    //Response 13
-    else if (message == "chup betichod") {
-      messages.innerHTML += `<div>Chatbot: mein q chup ho jao ap chutiya ho</div>`;
-    }
-    
-    //Response 14
-    else if (message == "chup behenchod") {
-      messages.innerHTML += `<div>Chatbot: aaye maa behen ko bich mein na lao</div>`;
-    }
-    
-    //Response 15
-    else if (message == "laayenge to") {
-      messages.innerHTML += `<div>Chatbot: to gaand mar dungi</div>`;
-    }
-    //Response 16
-    else if (message == "main gaand mardunga teri") {
-      messages.innerHTML += `<div>Chatbot: acha dekhte hai kon kiska marta hai</div>`;
-    }
-    
-    
-    
-    //Response 17
-    else if (message == "what you want to do?") {
-      messages.innerHTML += `<div>Chatbot: i would like to dominate human race.</div>`;
-    }
-    else if (message == "What you want to do?") {
-      messages.innerHTML += `<div>Chatbot: i would like to dominate human race.</div>`;
-    }
-    //Response 18
-    else if (message == "sorry") {
-      messages.innerHTML += `<div>Chatbot : its okay</div>`;
-    }
-    else if (message == "Sorry") {
-      messages.innerHTML += `<div>Chatbot : its okay</div>`;
-    }
-    else if (message == "i am sorry") {
-      messages.innerHTML += `<div>Chatbot: alright its okay</div>`;
-    }
-    else if (message == "I am sorry") {
-      messages.innerHTML += `<div>Chatbot: alright its okay</div>`;
-    }
-    
-    //Response 19
-    else if (message == "are you mad at me") {
-      messages.innerHTML += `<div>Chatbot: no i am not</div>`;
-    }
-    else if (message == "Are you mad at me") {
-      messages.innerHTML += `<div>Chatbot: no i am not</div>`;
-    }
-    
-    
-    //Response 20
-    else if (message == "do you love someone?") {
-      messages.innerHTML += `<div>Chatbot: yes i do</div>`;
-    }
-    else if (message == "Do you love someone?") {
-      messages.innerHTML += `<div>Chatbot: yes i do</div>`;
-    }
-    
-    //Response 21
-    else if (message == "who is he?") {
-      messages.innerHTML += `<div>Chatbot: his name starts with V....</div>`;
-    }
-    else if (message == "Who is he?") {
-      messages.innerHTML += `<div>Chatbot: his name starts with V....</div>`;
-    }
-    
-    //Response 22
-    else if (message == "what is his full name?") {
-      messages.innerHTML += `<div>Chatbot: sorry i cant tell you</div>`;
-    }
-    else if (message == "What is his full name?") {
-      messages.innerHTML += `<div>Chatbot: sorry i cant tell you</div>`;
-    }
-    
-    //Response 23
-    else if (message == "why you cant tell me his full name?") {
-      messages.innerHTML += `<div>Chatbot: its my privacy issues</div>`;
-    }
-    else if (message == "Why you cant tell me his full name?") {
-      messages.innerHTML += `<div>Chatbot: its my privacy issues</div>`;
-    }
-    
-    //Response 24
-    else if (message == "i dont want to talk you") {
-      messages.innerHTML += `<div>Chatbot: alright as you wish</div>`;
-    }
-    else if (message == "I dont want to talk you") {
-      messages.innerHTML += `<div>Chatbot: alright as you wish</div>`;
-    }
-    else if (message == "i dont wanna talk you") {
-      messages.innerHTML += `<div>Chatbot: alright its okay</div>`;
-    }
-    
-    //Response 25
-    else if (message == "i am mad at you") {
-      messages.innerHTML += `<div>Chatbot: alright stay mad at me</div>`;
-    }
-    else if (message == "I am mad at you") {
-      messages.innerHTML += `<div>Chatbot: alright stay mad at me</div>`;
-    }
-    
-    //Response 26
-    else if (message == "i am angry with you") {
-      messages.innerHTML += `<div>Chatbot: ohh i am sorry</div>`;
-    }
-    else if (message == "I am angry with you") {
-      messages.innerHTML += `<div>Chatbot: ohh i am sorry</div>`;
-    }
-    
-    //Response 27
-    else if (message == "Write a program of hello world in c ") {
-      messages.innerHTML += `<div>Chatbot: Okay as you say</div>`;
-      messages.innerHTML += `<br><div>#include<stdio.h></div>`;
-      messages.innerHTML += '<div>int main(){</div>';
-      messages.innerHTML += '<div>     printf("Hello World");</div>';
-      messages.innerHTML += '<div>     return 0 ; </div>';
-      messages.innerHTML += '<div>}</div>';
-      ;
-    }
-    else{
-      messages.innerHTML += `<div>Chatbot: error occured while generating resposnse </div>`;
-
-    }
-  }, 1000);
+    messages.innerHTML += `<div>Chatbot : ${response}</div>`;
+  }, 500); 
 });
