@@ -290,6 +290,6 @@ form.addEventListener("submit", (event) => {
       response = "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
     }
 
-    messages.innerHTML += `<div>Chatbot : ${response}</div>`;
+    messages.innerHTML += `<div id="response">Chatbot : ${response}</div>`;
   }, 500); 
 });

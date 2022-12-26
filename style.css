@@ -3,12 +3,14 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #181d30;
+  overflow-x: hidden;
 }
 #chatbot {
   width: 500px;
@@ -24,7 +26,7 @@ body {
   background-color: #6183c2;
   outline: none;
   border: none;
-  padding: 8px;
+  padding: 7px;
   width: 250px;
   height: 30px;
   margin: auto;  
@@ -33,7 +35,8 @@ body {
   opacity: 0.7;
   border-radius: 2.5em;
   box-shadow: 2px 2px 5px #12152466;
-  backface-visibility: 0.6;
+  backface-visibility: 0.4;
+  background-blend-mode: darken;
 }
 #input::placeholder{
     color: black;
@@ -44,7 +47,7 @@ body {
   margin: 15px 10px 15px 5px;
   outline: none;
   border: none;
-  padding: 15px 25px;
+  padding: 13px 23px;
   background: #00ff96;
   color: #436586;
   border-radius: 2.5em;
@@ -65,4 +68,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#response{
+    display: inline-block;
+    width: 70%;
+    word-break: break-word;
+    line-break: strict;
+    padding-top: 1.5%;
 }
