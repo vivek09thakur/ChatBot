@@ -251,10 +251,23 @@ form.addEventListener("submit", (event) => {
     ) {
       response = "bhaag betichod .";
     }
+    //apologizing 
+    else if (
+      message === "i am sorry" ||
+      message === "sorry" ||
+      message === "sorry for my bad words"
+    ) {
+      response = "fine...its okay.";
+    }
+    else if (
+      message === "can you give me a favour" ||
+      message === "is anyone there"
+    ) {
+      response = "fine...yess i am in";
+    }
     else {
       response = "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
     }
-
 
     messages.innerHTML += `<div>Chatbot : ${response}</div>`;
   }, 500); 
