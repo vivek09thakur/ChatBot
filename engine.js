@@ -33,6 +33,7 @@ form.addEventListener("submit", (event) => {
     ) {
       response = "It's good that you're fine!";
     } else if (
+      message === "what are you doing"|| 
       message === "what are you doing?" ||
       message === "whats going on" ||
       message === "whats up" ||
