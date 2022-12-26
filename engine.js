@@ -6,7 +6,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Get the user's message
-  const message = input.value.toLowerCase().trim();
+  const message = input.value.toLowerCase().replace("?","").replace("'","").replace("!","").replace("?","");
 
   // Clear the input field
   input.value = "";
