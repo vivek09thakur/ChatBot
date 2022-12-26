@@ -25,8 +25,8 @@ body {
   outline: none;
   border: none;
   padding: 8px;
-  width: 220px;
-  height: 22px;
+  width: 250px;
+  height: 30px;
   margin: auto;  
   border-radius: 0.3em;
   color: black;
@@ -44,7 +44,7 @@ body {
   margin: 15px 10px 15px 5px;
   outline: none;
   border: none;
-  padding: 12px 20px;
+  padding: 15px 25px;
   background: #00ff96;
   color: #436586;
   border-radius: 2.5em;
