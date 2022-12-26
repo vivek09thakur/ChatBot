@@ -26,13 +26,33 @@ form.addEventListener("submit", (event) => {
     ) {
       response = "Hello! How are you today?";
     } else if (
+      message === "good morning" 
+    ) {
+      response = "a warm good morning to you";
+    }else if (
+      message === "good afternoon" || 
+      message === "good noon"
+    ) {
+      response = "good afternoon";
+    }else if (
+      message === "good evening" 
+    ) {
+      response = "a peaceful good evening to you";
+    }
+    else if (
+      message === "good night" || 
+      message === "sweat dreams"
+    ) {
+      response = "good night...sweet dreams ";
+    }else if (
       message === "i am fine" ||
       message === "fine" ||
       message === "yeah fine" ||
       message === "good"
     ) {
       response = "It's good that you're fine!";
-    } else if (
+    }
+     else if (
       message === "what are you doing"|| 
       message === "what are you doing?" ||
       message === "whats going on" ||
