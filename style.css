@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #181d30;
+  background-color: #0e1229;
   overflow-x: hidden;
 }
 #chatbot {
@@ -29,7 +29,7 @@ body {
   padding: 7px;
   width: 250px;
   height: 30px;
-  margin: auto;  
+1  margin: auto;  
   border-radius: 0.3em;
   color: black;
   opacity: 0.7;
