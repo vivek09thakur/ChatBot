@@ -286,6 +286,27 @@ form.addEventListener("submit", (event) => {
     ) {
       response = "fine...yess i am in";
     }
+    else if (
+      message === "hit some music" ||
+      message === "play some music" ||
+      message === "play some songs" ||
+      message === "play songs"
+    ) {
+ /*      const new_message = message.toLowerCase().replace("search", "").replace("play", "");
+      response = "yeah sure";
+ */      
+     response = ' i hope so you gonna like my music taste'
+     window.open("https://youtube.com/playlist?list=RDCLAK5uy_nlOMew8qv8HGXb9HbshuU1OgH3aL_JMKA&playnext=1");
+    }
+    else if (
+      message === "whats the news" ||
+      message === "news" ||
+      message === "show me the news" ||
+      message === "whats going on in this world"
+    ) {
+        response = 'wait a minute let me check';
+        window.open("https://www.bbc.com/news/world/asia/india");
+    }
     else {
       response = "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
     }

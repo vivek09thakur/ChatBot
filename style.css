@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Montserrat&family=Nanum+Gothic&family=Rubik+Storm&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,8 @@ body {
   align-items: center;
   background-color: #0e1229;
   overflow-x: hidden;
+  letter-spacing: 1px;
+  
 }
 #chatbot {
   width: 500px;
@@ -26,33 +29,40 @@ body {
   background-color: #6183c2;
   outline: none;
   border: none;
-  padding: 7px;
+  padding: 5px;
   width: 250px;
   height: 30px;
-1  margin: auto;  
-  border-radius: 0.3em;
+  margin: auto;  
   color: black;
   opacity: 0.7;
-  border-radius: 2.5em;
+  border-radius: 2.3em;
   box-shadow: 2px 2px 5px #12152466;
   backface-visibility: 0.4;
   background-blend-mode: darken;
+  text-align: center;
 }
 #input::placeholder{
     color: black;
-    font-weight: 700;
+    font-weight: 600;
     opacity: 0.5;
+    text-align: center;
+    font-size: 12px;
 }
 #submit{
   margin: 15px 10px 15px 5px;
   outline: none;
   border: none;
-  padding: 13px 23px;
+  height: 37px;
+  font-size: 10px;
+  width: 80px;
   background: #00ff96;
-  color: #436586;
-  border-radius: 2.5em;
+  color:#587896;
+  border-radius: 2.3em;
   box-shadow: 2px 2px 5px #12152466;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
+
 
 #chatbot-messages{
   position: relative;
