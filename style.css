@@ -4,17 +4,19 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  
+  outline: none;
+  border: none;
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0e1229;
+  background-color:  #2d374d;
   overflow-x: hidden;
   letter-spacing: 1px;
-  
+  font-size: 15px;  
 }
+
 #chatbot {
   width: 500px;
   height: 400px;
@@ -26,9 +28,7 @@ body {
 }
 #input {
   flex-grow: 1;
-  background-color: #6183c2;
-  outline: none;
-  border: none;
+  background-color:#4e6086 ;
   padding: 5px;
   width: 250px;
   height: 30px;
@@ -36,29 +36,22 @@ body {
   color: black;
   opacity: 0.7;
   border-radius: 2.3em;
-  box-shadow: 2px 2px 5px #12152466;
-  backface-visibility: 0.4;
-  background-blend-mode: darken;
   text-align: center;
 }
 #input::placeholder{
-    color: black;
+    color: #95b7ff;
     font-weight: 600;
-    opacity: 0.5;
+    opacity: 0.9;
     text-align: center;
     font-size: 12px;
 }
 #submit{
   margin: 15px 10px 15px 5px;
-  outline: none;
-  border: none;
   height: 37px;
   font-size: 10px;
   width: 80px;
-  background: #00ff96;
-  color:#587896;
+  background: #80acff;
   border-radius: 2.3em;
-  box-shadow: 2px 2px 5px #12152466;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -68,7 +61,7 @@ body {
   position: relative;
   left : 11%;
   top: 5%; 
-  font-weight: 570;
+  font-weight: 595;
   color: #d5dfff;
 }
 
@@ -78,12 +71,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 
 #response{
     display: inline-block;
     width: 70%;
     word-break: break-word;
     line-break: strict;
-    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+
 }

@@ -51,6 +51,13 @@ form.addEventListener("submit", (event) => {
       message === "good"
     ) {
       response = "It's good that you're fine!";
+    }else if (
+      message === "i am not fine" ||
+      message === "not fine" ||
+      message === "yeah not fine" ||
+      message === "not good"
+    ) {
+      response = "don't worry everything will get fine just have faith in god!";
     }
      else if (
       message === "what are you doing"|| 
