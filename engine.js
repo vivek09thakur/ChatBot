@@ -676,9 +676,18 @@ form.addEventListener("submit", (event) => {
         ) {
             response = "its just the year that has been changed..not your life" +
             "so try to work harder" + "by the way... happy new year!!";
+        }else if (
+           message.includes("is time")||
+           message.includes("what time is it")||
+           message.includes("time is it")||
+           message.includes("whats the current time")||
+           message.includes("current time")
+        ) {
+            const currentTime = new Date();
+            const hours = currentTime.getHours();
+            const minutes = currentTime.getMinutes();
+            response = "currently it's : " + hours + ":" + minutes;
         }/*else if () {
-            
-        }else if () {
             
         }else if () {
             
