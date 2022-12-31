@@ -14,7 +14,6 @@
 body {
     background-color: #2d374d;
     overflow-x: hidden;
-    letter-spacing: 1px;
     font-size: 12px;
     display: grid;
     justify-content: center;
@@ -57,7 +56,6 @@ body {
     background: #80eaff;
     border-radius: 0.3em;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
 #chatbot-messages {
@@ -124,3 +122,10 @@ body {
     color: white;
     font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
+
+a{
+    text-decoration: none;
+    color:#0081ff ;
+    font-size: 12px;
+}
+h3{font-weight: 400;}

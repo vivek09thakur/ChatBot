@@ -1,10 +1,26 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const messages = document.querySelector("#chatbot-messages");
+const apiKey = 'AIzaSyCCy-luvd9XYWFiR81-7yc9VbsW_K13ous';
+const searchEngineId = 'e85dc32c37a9483b1';
+const endpoint = 'https://www.googleapis.com/customsearch/v1';
+const query = document.querySelector("#input")
 
-form.addEventListener("submit", (event) => {
+
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
-
+    
+      const query = input.value.toLowerCase();
+            // Create a search string from the query parameters
+      const searchParams = new URLSearchParams();
+            searchParams.set('key', apiKey);
+            searchParams.set('cx', searchEngineId);
+            searchParams.set('q', query);
+      const requestURL = `${endpoint}?${searchParams.toString()}`;
+      const response = await fetch(requestURL, {
+            method: 'GET' });
+      const data = await response.json();
+      const items = data.items;       
     // Get the user's message
     const message = input.value
         .toLowerCase()
@@ -146,6 +162,7 @@ form.addEventListener("submit", (event) => {
     // Respond to the user's message
     setTimeout(() => {
         let response;
+        
         if (
             message === "hi" ||
             message === "hii" ||
@@ -686,46 +703,18 @@ form.addEventListener("submit", (event) => {
             const hours = currentTime.getHours();
             const minutes = currentTime.getMinutes();
             response = "currently it's : " + hours + ":" + minutes;
-        }/*else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }else if () {
-            
-        }*/
+        }
         else {
-            response =
-                "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
+            
+              let resultsHTML = '';     
+                for (let i = 0; i < 3; i++) {
+                const item = items[i];
+                resultsHTML += `<h3><a href="${item.link}">${item.title}</a></h3>`;
+                resultsHTML += `<p>${item.snippet}</p>`;
+               }                 
+              response =  "According to Web<br><br>" + resultsHTML + "<br><br>               " +
+               "<br><br>Sorry , I didn't understand your message. So I some information from web"
+              +". Could you please rephrase it or try a different message?"                   
         }
         messages.innerHTML += `<div id="response">Chatbot : ${response}</div>`;
     }, 500);
