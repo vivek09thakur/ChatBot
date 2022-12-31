@@ -678,7 +678,6 @@ form.addEventListener("submit", (event) => {
             "so try to work harder" + "by the way... happy new year!!";
         }else if (
            message.includes("is time")||
-           message.includes("what time is it")||
            message.includes("time is it")||
            message.includes("whats the current time")||
            message.includes("current time")
