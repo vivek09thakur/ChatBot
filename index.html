@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , user-scalable=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
- <body>
-    <div id="chatbot">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , user-scalable=0"/>
+        <link rel="stylesheet" href="style.css" />
+        <title>ChatVSS</title>
+    </head>
+    <body>
+        <div class="banner" id="banner">
+            <span class="material-symbols-rounded">smart_toy</span>
+            <h3>Hello! I am tadashi :)</h3>
+            <p>
+                I am here to help you out.Dont hesitate if you have a question.
+                I will try my best to give you exact answer.
+            </p>
+        </div>
+        <div class="banner" id="banner1">
+            <span class="material-symbols-rounded"> fact_check </span>
+            <h2>Can do</h2>
+            <li>Can reply to your text with my response set.</li>
+            <li>Can open web links and social media sites.</li>
+            <li>Can evaluate some small mathematical expression.</li>
+            <li>Can answers to some questions.</li>
+        </div>
+        <div class="banner" id="banner2">
+            <span class="material-symbols-rounded"> warning </span>
+            <h3>Limitations</h3>
+            <p>
+                As I am only a chat bot not a complete AI. Therefore i have some
+                limitations also i cannot do physical works and i have a
+                response set to reply your texts therefore sometimes i'm not
+                able to reply your messages.
+            </p>
+        </div>
+        <div id="chatbot">
+            <div id="chatbot-messages"></div>
+        </div>
         <div class="main">
             <form id="form">
-                <input type="text" name="" id="input" placeholder="Enter your message...">
-               <button id="submit">send</button>
+                <input
+                    type="text"
+                    id="input"
+                    placeholder="Enter your message..."
+                />
+                <button id="submit">
+                    <span class="material-symbols-rounded" id="send">
+                        send
+                    </span>
+                </button>
             </form>
-         </div>
-        <div id="chatbot-messages"></div>        
-    </div>
-    <script src="engine.js"></script>
-  </body>
+        </div>
+        <script src="engine.js"></script>
+    </body>
 </html>

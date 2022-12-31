@@ -11,13 +11,137 @@ form.addEventListener("submit", (event) => {
         .replace("?", "")
         .replace("'", "")
         .replace("!", "")
-        .replace("?", "");
+        .replace("?", "")
+        .replace("hmmm","")
+        .replace("mmmm","")
+        .replace("ummm","")
+        .replace(",","")
+        .replace("_","")
+        .replace("hm","")
+        .replace("um","")
+        .replace("...","")
+        .replace(".", "")
+        .replace("!","")
+        .replace("iiiii","")
+        .replace("👍","")
+        .replace("✌️","")
+        .replace("🖕","")
+        .replace("❤️","")
+        .replace("🌚","")
+        .replace("💩","")
+        .replace("😎", "") //Removing the emojis to avoid crashing of bot
+        .replace("🤡", "")
+        .replace("🙂", "")
+        .replace("😱", "")
+        .replace("😀", "")
+        .replace("🤨", "")
+        .replace("😃", "")
+        .replace("🧐", "")
+        .replace("😄", "")
+        .replace("😒", "")
+        .replace("😁", "")
+        .replace("🙄", "")
+        .replace("😆", "")
+        .replace("😤", "")
+        .replace("😅", "")
+        .replace("😠", "")
+        .replace("😂", "")
+        .replace("😡", "")
+        .replace("🤣", "")
+        .replace("🤬", "")
+        .replace("😭", "")
+        .replace("😞", "")
+        .replace("😉", "")
+        .replace("😓", "")
+        .replace("😗", "")
+        .replace("😟", "")
+        .replace("😙", "")
+        .replace("😥", "")
+        .replace("😚", "")
+        .replace("😢", "")
+        .replace("😘", "")
+        .replace("☹️", "")
+        .replace("🥰", "")
+        .replace("🙁", "")
+        .replace("😍", "")
+        .replace("😕", "")
+        .replace("🤩", "")
+        .replace("😰", "")
+        .replace("🥳", "")
+        .replace("😨", "")
+        .replace("🙃", "")
+        .replace("😧", "")
+        .replace("😊", "")
+        .replace("😮", "")
+        .replace("☺️", "")
+        .replace("😯", "")
+        .replace("😌", "")
+        .replace("😲", "")
+        .replace("😏", "")
+        .replace("😳", "")
+        .replace("😴", "")
+        .replace("🤯", "")
+        .replace("😪", "")
+        .replace("😖", "")
+        .replace("🤤", "")
+        .replace("😣", "")
+        .replace("😋", "")
+        .replace("😩", "")
+        .replace("😛", "")
+        .replace("😫", "")
+        .replace("😝", "")
+        .replace("😵", "")
+        .replace("😜", "")
+        .replace("🥶", "")
+        .replace("🤪", "")
+        .replace("🥵", "")
+        .replace("🥴", "")
+        .replace("🤢", "")
+        .replace("😔", "")
+        .replace("🤮", "")
+        .replace("🥺", "")
+        .replace("🤧", "")
+        .replace("😬", "")
+        .replace("🤒", "")
+        .replace("😑", "")
+        .replace("🤕", "")
+        .replace("😐", "")
+        .replace("😷", "")
+        .replace("😶", "")
+        .replace("🤥", "")
+        .replace("🤐", "")
+        .replace("😇", "")
+        .replace("🤔", "")
+        .replace("🤠", "")
+        .replace("🤫", "")
+        .replace("🤠", "")
+        .replace("🤭", "")
+        .replace("🤑", "")
+        .replace("🤗", "")
+        .replace("🤓", "")
+        .trim();
 
     // Clear the input field
     input.value = "";
+    if ((input.value = "")) {
+        document.getElementById("banner").style.display = "block";
+    } else {
+        document.getElementById("banner").style.display = "none";
+    }
+
+    if ((input.value = "")) {
+        document.getElementById("banner1").style.display = "block";
+    } else {
+        document.getElementById("banner1").style.display = "none";
+    }
+    if ((input.value = "")) {
+        document.getElementById("banner2").style.display = "block";
+    } else {
+        document.getElementById("banner2").style.display = "none";
+    }
 
     // Add the user's message to the chatbot messages
-    messages.innerHTML += `<div>You : ${message}</div>`;
+    messages.innerHTML += `<div id="user-msg">You : ${message}</div>`;
 
     // Respond to the user's message
     setTimeout(() => {
@@ -303,11 +427,298 @@ form.addEventListener("submit", (event) => {
         ) {
             response = "wait a minute let me check";
             window.open("https://www.bbc.com/news/world/asia/india");
-        } else {
+        } else if (
+            message === "open spotify" ||
+            message === "open my spotify playlist" ||
+            message === "play some lofi songs" ||
+            message === "hit some rock music" ||
+            message === "play some rock music" ||
+            message === "check my playlist"
+        ) {
+            response = "okay here we go to spotify";
+            window.open("https://wwww.spotify.com");
+        } else if (
+            message === "open reddit" ||
+            message === "reddit" ||
+            message === "whats going on reddit"
+        ) {
+            /* const ans = document.querySelector("chatbot-messages");
+            if ( ans == "yes") {
+              */ response = "okay openning reddit";
+            window.open("https://www.reddit.com");
+            /*  }else{
+                response = "here is the link for reddit if you want to open it https://www.reddit.com"
+            } */
+        }
+
+        //for more commands
+        else if (
+            message === "what is your name" ||
+            message === "whats your name" ||
+            message === "your name"
+        ) {
+            response =
+                "i am tadashi , i am a chatbot built by vivek thakur." +
+                "I am here to help you out.Dont hesitate if you have a question." +
+                "I will try my best to give you exact answer.";
+        } else if (
+            message === "what can you do" ||
+            message === "what things you can do" ||
+            message === "tell me the things you can do" ||
+            message === "tell me your features" ||
+            message === "tell me about your features" ||
+            message === "list your features" ||
+            message === "tell me a list of your features" ||
+            message === "explain me your features" ||
+            message === "explain your features" ||
+            message === "what are your features" ||
+            message === "what things you are able to do" ||
+            message === "you are able to do" ||
+            message === "things you are able to do" ||
+            message === "things you can do"
+        ) {
+            response =
+                "As I am a chatbot." +
+                "<br>" +
+                "<li> I can response to your texts from my response set.</li>" +
+                "<li> I have acces to some social sites such a instagram, facebook, reddit etc. </li>" +
+                "<li>I can open it if you want , i can perform some mathematical calculations and can give you info about something by fetching the data from internet.</li>";
+        } 
+            
+        else if (
+            message === "i have a challenge for you"|| 
+            message === "i have a question for you"|| 
+            message === "i want to give a challenge to you"
+        ) {
+            response = "okay i will try my best";
+        }else if (
+            message.includes("evaluate") || 
+            message.includes("evaluate this")|| 
+            message.includes("evaluate this number")|| 
+            message.includes("evaluate this equation")|| 
+            message.includes("can you evaluate this equation")|| 
+            message.includes("can you solve this equation")|| 
+            message.includes("solve this")|| 
+            message.includes("solve")
+        ) {           
+           const expression = message.replace("evaluate","")
+           .replace("this","")
+           .replace("number","")
+           .replace("equation","")
+           .replace("can","")
+           .replace("you","")
+           .replace("solve","")
+           .trim();
+           const result = eval(expression)
+           response  = "Here is the solved answer : " + result;            
+        }else if (
+            message.includes("calculate")||
+            message.includes("calculate this")|| 
+            message.includes("calculate this number")|| 
+            message.includes("calculate this equation")|| 
+            message.includes("can you calculate this equation")|| 
+            message.includes("can you solve this equation")|| 
+            message.includes("solve this")|| 
+            message.includes("solve")
+        ) {
+           const expression = message.replace("calculate","")
+           .replace("this","")
+           .replace("number","")
+           .replace("equation","")
+           .replace("can","")
+           .replace("you","")
+           .replace("solve","")
+           .trim();           
+           const result = eval(expression)
+           response  = "Here is the solved answer : " + result;                  
+        }else if (
+            message.includes("vivek thakur")
+        ) {
+            response = "hmmm.. he is my creator"
+        }else if (
+            message.includes("hey i am")|| 
+            message.includes("i am")|| 
+            message.includes("hello i am")||
+            message.includes("hlw i am")||
+            message.includes("hlo i am")||
+            message.includes("hii i am")||
+            message.includes("myself")||
+            message.includes("heyyy i am")|| 
+            message.includes("hiii i am")|| 
+            message.includes("my name is")
+        ) {
+            const p_name = message
+            .replace("hii","")
+            .replace("hiii","")
+            .replace("hi","")
+            .replace("hey","")
+            .replace("heyy","")
+            .replace("heyyy","")
+            .replace("hello","")
+            .replace("i am","")
+            .replace("am","")
+            .replace("myself","")
+            .replace("name","")
+            .replace("my","")
+            .replace("hlw","")
+            .replace("hlo","")
+            .replace("hi","")
+            .replace("is","")
+            .trim();
+          
+            response = "nice to meet you " + p_name + ", how can i help you?";
+            
+        }else if (
+            message.includes("hlw tadashi")|| 
+            message.includes("hello tadashi")||
+            message.includes("hi tadashi")||
+            message.includes("hey tadashi")|| 
+            message.includes("heyyy tadashi")||
+            message.includes("hiii tadashi")|| 
+            message.includes("hlw chatbot")|| 
+            message.includes("hello chatbot")||
+            message.includes("hi chatbot")||
+            message.includes("hey chatbot")|| 
+            message.includes("heyyy chatbot")||
+            message.includes("hiii chatbot")
+        ) {
+            response ="ohh hello...how can i help you?";
+        }
+        else if (
+            message.includes("sneha")||
+            message.includes("swati")||
+            message.includes("sakshi")||
+            message.includes("muskan")||
+            message.includes("palak")||
+            message.includes("anshu")||
+            message.includes("nausheen")||
+            message.includes("vandana")||
+            message.includes("nandani")||
+            message.includes("nandini")||
+            message.includes("sweety")||
+            message.includes("shamma")||
+            message.includes("siya")||
+            message.includes("lakhmi")||
+            message.includes("kajal")|| 
+            message.includes("Kumar")
+        ) {
+            response = "Hello Ma'am.... how can I help you?";
+        }else if (
+            message.includes("amit")||
+            message.includes("aditya")||
+            message.includes("dainwi")||
+            message.includes("ayush")||
+            message.includes("sadab")||
+            message.includes("arya")||
+            message.includes("harsh")||
+            message.includes("aman")||
+            message.includes("ashish")||
+            message.includes("satyam")||
+            message.includes("vikash")||
+            message.includes("anurag")||
+            message.includes("rahul")||
+            message.includes("raj")|| 
+            message.includes("rishu")|| 
+            message.includes("Kumar")
+        ) {
+            response = "Hello Sir.... how can I help you";
+        }else if (
+            message.includes("jai shree ram")||
+            message.includes("jay shree ram")||
+            message.includes("jai shree krishna")||
+            message.includes("jay shri  krishna")||
+            message.includes("jai shree hanuman")||
+            message.includes("jai shri  hanuman")||
+            message.includes("jai mata di")||
+            message.includes("jay mata di")||
+            message.includes("har har mahadev")||
+            message.includes("bam bam bhole")||
+            message.includes("bholenath ki jay")||
+            message.includes("bholenath ki jai")
+        ) {
+            response = message + ", sanatam dharam amar rahe";
+        }else if (
+            message.includes("your features")|| 
+            message.includes("you can do")||
+            message.includes("things you can do")||
+            message.includes("things you are able to do")
+        ) {
+            response =
+                "As I am a chatbot." +
+                "<br>" +
+                "<li> I can response to your texts from my response set.</li>" +
+                "<li> I have acces to some social sites such a instagram, facebook, reddit etc. </li>" +
+                "<li>I can open it if you want , i can perform some mathematical calculations and can give you info about something by fetching the data from internet.</li>";  
+        }else if (
+            message.includes("your name")|| 
+            message.includes("your introduction")||
+            message.includes("introduce yourself")||
+            message.includes("your intro")
+        ) {
+            response =
+                "I am tadashi , i am a chatbot built by vivek thakur." +
+                "I am here to help you out.Dont hesitate if you have a question." +
+                "I will try my best to give you exact answer.";
+
+        }else if (
+            message.includes("what you can do for me")|| 
+            message.includes("how can you help me")||
+            message.includes("in what way you can help me")||
+            message.includes("things you can do for me")
+        ) {
+                 response =
+                "<li> I can response to your texts from my response set.</li>" +
+                "<li> I have acces to some social sites such a instagram, facebook, reddit etc. </li>" +
+                "<li>I can open it if you want , i can perform some mathematical calculations and can give you info about something by fetching the data from internet.</li>";  
+
+        }else if (
+            message.includes("happy new year")
+        ) {
+            response = "its just the year that has been changed..not your life" +
+            "so try to work harder" + "by the way... happy new year!!";
+        }/*else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }else if () {
+            
+        }*/
+        else {
             response =
                 "I'm sorry, I didn't understand your message. Could you please rephrase it or try a different message?";
         }
-
         messages.innerHTML += `<div id="response">Chatbot : ${response}</div>`;
     }, 500);
 });
