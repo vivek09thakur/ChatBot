@@ -708,20 +708,21 @@ form.addEventListener("submit", async (event) => {
         }
         else {
                let resultsHTML = ''; 
-              if (items && items.length > 0){
+             /*  if (items && items.length > 0){ */
                 for(let i = 0; i < 3; i++) {
                 const item = items[i];
                 resultsHTML += `<h3><a href="${item.link}">${item.title}</a></h3>`;
                 resultsHTML += `<p>${item.snippet}</p>`;
-               }                 
+                }
+          /*      }         */         
               
                response =  "According to Web<br><br>" + resultsHTML + "<br><br>               " +
                "<br><br>Sorry , I didn't understand your message. So I some information from web"
               +". Could you please rephrase it or try a different message?" ;
-             }
+           /*   }
              else{
                  response = "sorry i didn't understand your message can you please rephrase it or try a different message "
-             }             
+             }     */         
         }
         messages.innerHTML += `<div id="response">Chatbot : ${response}</div>`;
     }, 500);
