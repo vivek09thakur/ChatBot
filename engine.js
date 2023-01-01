@@ -704,7 +704,6 @@ form.addEventListener("submit", async (event) => {
             response = "currently it's : " + hours + ":" + minutes;
         }
         else {
-            
               let resultsHTML = '';     
                 for (let i = 0; i < 3; i++) {
                 const item = items[i];
