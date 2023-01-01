@@ -34,7 +34,6 @@ form.addEventListener("submit", async (event) => {
         .replace(",","")
         .replace("_","")
         .replace("hm","")
-        .replace("um","")
         .replace("...","")
         .replace(".", "")
         .replace("!","")
