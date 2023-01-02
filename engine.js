@@ -705,8 +705,21 @@ form.addEventListener("submit", async (event) => {
             const hours = currentTime.getHours();
             const minutes = currentTime.getMinutes();
             response = "currently it's : " + hours + ":" + minutes;
-        }
-        else {
+        }else if (
+             message.includes("whats todays date") ||
+             message.includes("todays date") ||
+             message.includes("what date is it today") ||
+             message.includes("whats the date today") ||
+             message.includes("tell me todays date")|| 
+             message.includes("what is todays date")
+        ) {
+            const currentDate = new Date();
+            const month = currentDate.getMonth();
+            const date = currentDate.getDate();
+            const year = currentDate.getFullYear();
+            response = "Today's date is: " + month + "/" + date + "/" + year;
+            
+        }else {
                let resultsHTML ; 
              /*  if (items && items.length > 0){ */
                 for(let i = 0; i < 3; i++) {
