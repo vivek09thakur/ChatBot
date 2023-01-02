@@ -1,8 +1,8 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const messages = document.querySelector("#chatbot-messages");
-const apiKey = 'AIzaSyBflQ7uAQhvDB5sS0juw8f0HOvltzXsPYo';
-const searchEngineId = 'e85dc32c37a9483b1';
+const apiKey = 'AIzaSyBn7bXUkc14vdtA1u2mMmT6iurt1oHhTDA';
+const searchEngineId = 'cf8d8f20041c64af7';
 const endpoint = 'https://www.googleapis.com/customsearch/v1';
 const query = document.querySelector("#input")
 
@@ -707,7 +707,7 @@ form.addEventListener("submit", async (event) => {
             response = "currently it's : " + hours + ":" + minutes;
         }
         else {
-               let resultsHTML = ''; 
+               let resultsHTML ; 
              /*  if (items && items.length > 0){ */
                 for(let i = 0; i < 3; i++) {
                 const item = items[i];
