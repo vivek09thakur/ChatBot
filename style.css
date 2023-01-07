@@ -53,7 +53,7 @@ body {
     height: 36px;
     font-size: 10px;
     width: 62px;
-    background: #80eaff;
+    background:#669df7 ;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -131,15 +131,16 @@ a{
 h3{font-weight: 400;}
 
 
-@media(min-width:768px){
-    .banner{width: 525px;}
+@media(min-width:740px){
+    .banner{width: 525px;
+    overflow: hidden;}
     #input{width: 450px;}
     #chatbot-messages{
         width: 100%;
        margin-left: 0%;
     }
     .material-symbols-rounded{
-        margin-top: 0%;
+        margin-top: 2%;
     }
-    #chatbot{padding-top: 0%;}
+    #chatbot{padding-top: 2%;}
 }
