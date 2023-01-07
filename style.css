@@ -138,4 +138,8 @@ h3{font-weight: 400;}
         width: 100%;
        margin-left: 0%;
     }
+    .material-symbols-rounded{
+        margin-top: 0%;
+    }
+    #chatbot{padding-top: 0%;}
 }
