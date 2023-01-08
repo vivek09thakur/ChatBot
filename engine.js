@@ -1,8 +1,8 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const messages = document.querySelector("#chatbot-messages");
-const apiKey = 'AIzaSyBn7bXUkc14vdtA1u2mMmT6iurt1oHhTDA';
-const searchEngineId = 'cf8d8f20041c64af7';
+const apiKey = 'AIzaSyCCy-luvd9XYWFiR81-7yc9VbsW_K13ous';
+const searchEngineId = 'e85dc32c37a9483b1';
 const endpoint = 'https://www.googleapis.com/customsearch/v1';
 const query = document.querySelector("#input")
 
@@ -20,11 +20,8 @@ form.addEventListener("submit", async (event) => {
       const response = await fetch(requestURL, {
             method: 'GET' });
       const data = await response.json();
-      let items = data.items;
-      
-       /* let resultsHTML = '';                
-                let items = data.items;
- */    // Get the user's message
+      const items = data.items;       
+    // Get the user's message
     const message = input.value
         .toLowerCase()
         .replace("?", "")
@@ -289,12 +286,12 @@ form.addEventListener("submit", async (event) => {
             response =
                 "Hmm, gaali dena paap hai naadi kinare saanp hai whi tera baap hai.";
         } else if (
-            message.includes("chutiye ho kya")||
-            message.includes("tum chutiye ho")||
-            message.includes("chutiye ho kya be") ||
-            message.includes("chutiya kahin ke")||
-            message.includes("chutiya ai") ||
-            message.includes("chutiya chatbot")
+            message === "chutiye ho kya " ||
+            message === "tum chutiye ho" ||
+            message === "chutiye ho kya be" ||
+            message === "chutiya kahin ke" ||
+            message === "chutiya ai" ||
+            message === "chutiya chatbot"
         ) {
             response =
                 "Hmm, ek chutiya hi dusre ko chutiya smjhta hai is hisab se ap chutiye hue";
@@ -705,37 +702,17 @@ form.addEventListener("submit", async (event) => {
             const hours = currentTime.getHours();
             const minutes = currentTime.getMinutes();
             response = "currently it's : " + hours + ":" + minutes;
-        }else if (
-             message.includes("whats todays date") ||
-             message.includes("todays date") ||
-             message.includes("what date is it today") ||
-             message.includes("whats the date today") ||
-             message.includes("tell me todays date")|| 
-             message.includes("what is todays date")
-        ) {
-            const currentDate = new Date();
-            const month = currentDate.getMonth();
-            const date = currentDate.getDate();
-            const year = currentDate.getFullYear();
-            response = "Today's date is: " + month + "/" + date + "/" + year;
-            
-        }else {
-               let resultsHTML ; 
-             /*  if (items && items.length > 0){ */
-                for(let i = 0; i < 3; i++) {
+        }
+        else {
+              let resultsHTML = '';     
+                for (let i = 0; i < 3; i++) {
                 const item = items[i];
                 resultsHTML += `<h3><a href="${item.link}">${item.title}</a></h3>`;
                 resultsHTML += `<p>${item.snippet}</p>`;
-                }
-          /*      }         */         
-              
-               response =  "According to Web<br><br>" + resultsHTML + "<br><br>               " +
+               }                 
+              response =  "According to Web<br><br>" + resultsHTML + "<br><br>               " +
                "<br><br>Sorry , I didn't understand your message. So I some information from web"
-              +". Could you please rephrase it or try a different message?" ;
-           /*   }
-             else{
-                 response = "sorry i didn't understand your message can you please rephrase it or try a different message "
-             }     */         
+              +". Could you please rephrase it or try a different message?"                   
         }
         messages.innerHTML += `<div id="response">Chatbot : ${response}</div>`;
     }, 500);
