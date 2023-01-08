@@ -102,8 +102,9 @@ body {
     word-break: break-word;
     line-break: strict;
     margin: 2%;
-    font-size: 13px;
+    font-size: 8px;
     padding-top: 2%;
+    overflow: hidden;
 }
 .banner li {
     font-size: 8px;
