@@ -145,3 +145,8 @@ h3{font-weight: 400;}
     }
     #chatbot{padding-top: 2%;}
 }
+@media(min-width:420px){
+    .material-symbols-rounded{
+        font-size: 1.5rem;
+    }
+}
