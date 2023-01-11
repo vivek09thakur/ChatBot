@@ -53,7 +53,7 @@ body {
     height: 36px;
     font-size: 10px;
     width: 62px;
-    background:#669df7 ;
+    background:/*  #669df7  */ #2b58ff;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -133,9 +133,9 @@ h3{font-weight: 400;}
 
 
 @media(min-width:740px){
-    .banner{width: 525px;
+    .banner{width: 500px;
     overflow: hidden;}
-    #input{width: 450px;}
+    #input{width: 410px;}
     #chatbot-messages{
         width: 100%;
        margin-left: 0%;
