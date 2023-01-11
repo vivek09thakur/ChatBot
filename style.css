@@ -27,7 +27,6 @@ body {
 #form {
     display: flex;
     flex-direction: row;
-    /* margin-top: 3%; */
 }
 #input {
     flex-grow: 1;
@@ -53,7 +52,7 @@ body {
     height: 36px;
     font-size: 10px;
     width: 62px;
-    background:/*  #669df7  */ #2b58ff;
+    background: #2b58ff;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -86,14 +85,14 @@ body {
 .banner {
     text-align: center;
     width: 320px;
-    height: 170px;
+    height: 159px;
     margin: auto;
     border: 5px solid #5a6478;
     border-radius: 1.5em;
     opacity: 0.7;
     position: relative;
     top: 15%;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     color: #5a6478;
 }
 .banner p {
@@ -115,7 +114,7 @@ body {
     overflow: hidden;
     font-size: 3rem;
     margin-top: 5%;
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 #send {
@@ -135,7 +134,7 @@ h3{font-weight: 400;}
 @media(min-width:740px){
     .banner{width: 500px;
     overflow: hidden;}
-    #input{width: 410px;}
+    #input{width: 425px;}
     #chatbot-messages{
         width: 100%;
        margin-left: 0%;
@@ -144,6 +143,12 @@ h3{font-weight: 400;}
         margin-top: 2%;
     }
     #chatbot{padding-top: 2%;}
+    .banner p{
+        font-size: 12px;
+    }
+    #form{
+        margin-top: -2%;
+    }
 }
 @media(min-width:420px){
     .material-symbols-rounded{
