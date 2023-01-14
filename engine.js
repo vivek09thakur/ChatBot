@@ -702,6 +702,10 @@ form.addEventListener("submit", async (event) => {
             const hours = currentTime.getHours();
             const minutes = currentTime.getMinutes();
             response = "currently it's : " + hours + ":" + minutes;
+        }else if (
+        message.includes("thanks")|| 
+        message.includes("thanks a lot")) {
+            response = "your're welcome " ;
         }
         else {
               let resultsHTML = '';     
