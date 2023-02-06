@@ -1,8 +1,8 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const messages = document.querySelector("#chatbot-messages");
-const apiKey = 'AIzaSyCCy-luvd9XYWFiR81-7yc9VbsW_K13ous';
-const searchEngineId = 'e85dc32c37a9483b1';
+const apiKey = 'AIzaSyDoWM-eGzlVI_WXZapPGa6if8_czPpQ0Hc';
+const searchEngineId = '646d2aa7f1919bea0';
 const endpoint = 'https://www.googleapis.com/customsearch/v1';
 const query = document.querySelector("#input")
 
@@ -258,40 +258,40 @@ form.addEventListener("submit", async (event) => {
 
         //gaali galoj according to arya
         else if (
-            message === "motherfucker" ||
-            message === "fucking ai" ||
-            message === "fucking chatbot"
+            message.includes("motherfucker") ||
+            message.includes("fucking ai") ||
+            message.includes("fucking chatbot")
         ) {
             response =
                 "i would like to recommend you that you should i mind your language ";
         } else if (
-            message === "gandu" ||
-            message === "chutiya" ||
-            message === "behnchod"
+            message.includes("gandu") ||
+            message.includes("chutiya")||
+            message.includes("behnchod")
         ) {
             response = "aaaye... gaali nhi";
         } else if (
-            message === "betichod" ||
-            message === "behend k lowde" ||
-            message === "gaand mara"
+            message.includes("betichod") ||
+            message.includes("behend k lowde") ||
+            message.includes("gaand mara")
         ) {
             response = "Hmm, bsdk user tu nikal yahan se.";
         } else if (
-            message === "chup betichod" ||
-            message === "chup behenchod" ||
-            message === "chup bc"
+            message.includes("chup betichod") ||
+            message.includes("chup behenchod") ||
+            message.includes("chup bc")
         ) {
             response = "tu chup betichod.";
         } else if (message === "bc" || message === "mc" || message === "bsdk") {
             response =
                 "Hmm, gaali dena paap hai naadi kinare saanp hai whi tera baap hai.";
         } else if (
-            message === "chutiye ho kya " ||
-            message === "tum chutiye ho" ||
-            message === "chutiye ho kya be" ||
-            message === "chutiya kahin ke" ||
-            message === "chutiya ai" ||
-            message === "chutiya chatbot"
+            message.includes("chutiye ho kya") ||
+            message.includes("tum chutiye ho") ||
+            message.includes("chutiye ho kya be") ||
+            message.includes("chutiya kahin ke") ||
+            message.includes("chutiya ai") ||
+            message.includes("chutiya chatbot")
         ) {
             response =
                 "Hmm, ek chutiya hi dusre ko chutiya smjhta hai is hisab se ap chutiye hue";

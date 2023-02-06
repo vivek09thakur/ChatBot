@@ -30,13 +30,12 @@ body {
 }
 #input {
     flex-grow: 1;
-    background-color: #5a6478;
-    padding: 5px;
-    width: 250px;
+    background : #5a6478;
+    padding: 5px 0px 5px 5px;
+    width: 270px;
     height: 27px;
     margin: auto;
     color: black;
-    opacity: 0.7;
     border-radius: 0.3em;
     text-align: center;
 }
@@ -48,11 +47,11 @@ body {
     font-size: 12px;
 }
 #submit {
-    margin: 15px 5px 15px 5px;
-    height: 36px;
+    margin: 15px 0px 15px -5px;
+    height: 37px;
     font-size: 10px;
     width: 62px;
-    background: #2b58ff;
+    background: #5a6478;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -85,7 +84,7 @@ body {
 .banner {
     text-align: center;
     width: 320px;
-    height: 159px;
+    height: 190px;
     margin: auto;
     border: 5px solid #5a6478;
     border-radius: 1.5em;
@@ -100,13 +99,13 @@ body {
     width: 80%;
     word-break: break-word;
     line-break: strict;
-    margin: 2%;
-    font-size: 8px;
+    margin: auto;
+    font-size: 0.8 rem;
     padding-top: 2%;
     overflow: hidden;
 }
 .banner li {
-    font-size: 8px;
+    font-size: 0.8 rem;
     padding-top: 1%;
 }
 
@@ -114,47 +113,54 @@ body {
     overflow: hidden;
     font-size: 3rem;
     margin-top: 5%;
-    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 #send {
     font-size: 30px;
-    color: white;
+    color: #cdfe0c;
     font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-a{
+a {
     text-decoration: none;
-    color:#0081ff ;
+    color: #0081ff;
     font-size: 12px;
 }
-h3{font-weight: 400;}
+h3 {
+    font-weight: 400;
+}
 
-
-@media(min-width:740px){
-    .banner{width: 500px;
-    overflow: hidden;}
-    #input{width: 425px;}
-    #chatbot-messages{
-        width: 100%;
-       margin-left: 0%;
+@media (min-width: 740px) {
+    .banner {
+        width: 500px;
+        overflow: hidden;
     }
-    .material-symbols-rounded{
+    #input {
+        width: 425px;
+    }
+    #chatbot-messages {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .material-symbols-rounded {
         margin-top: 2%;
     }
-    #chatbot{padding-top: 2%;}
-    .banner p{
+    #chatbot {
+        padding-top: 2%;
+    }
+    .banner p {
         font-size: 12px;
     }
-    .banner li{
+    .banner li {
         font-size: 12px;
     }
-    #form{
+    #form {
         margin-top: -2%;
     }
 }
-@media(min-width:420px){
-    .material-symbols-rounded{
+@media (min-width: 420px) {
+    .material-symbols-rounded {
         font-size: 2.5rem;
     }
 }
