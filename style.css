@@ -135,9 +135,10 @@ h3 {
     .banner {
         width: 500px;
         overflow: hidden;
+        height: 160px;
     }
     #input {
-        width: 425px;
+        width: 445px;
     }
     #chatbot-messages {
         width: 100%;
