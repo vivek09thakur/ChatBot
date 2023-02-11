@@ -85,7 +85,7 @@ body {
     width: 360px;
     margin: auto;
     text-align: center;
-    border-radius: 0.3em;
+    border-radius: 0.6em;
     color: #9BA0A6;
 }
 .banner p {
@@ -95,7 +95,7 @@ body {
     margin-top: 20px;
     background: #9BA0A6;
     font-size: 10px;
-    border-radius: 0.3em;
+    border-radius: 1em;
     color: #1e2a34;
 }
 
