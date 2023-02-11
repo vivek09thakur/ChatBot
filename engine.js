@@ -182,14 +182,14 @@ form.addEventListener("submit", async (event) => {
             message.includes("i am fine") ||
             message.includes("fine") ||
             message.includes("yeah fine") ||
-            message.includes("good")
+            message.includes("it was good")            
         ) {
             response = "It's good that you're fine!";
         } else if (
             message.includes("i am not fine") ||
             message.includes("not fine") ||
             message.includes("yeah not fine") ||
-            message.includes("not good")
+            message.includes("good") &&message.includes("not")
         ) {
             response =
                 "don't worry everything will get fine just have faith in god!";
@@ -296,28 +296,28 @@ form.addEventListener("submit", async (event) => {
             response =
                 "Hmm, ek chutiya hi dusre ko chutiya smjhta hai is hisab se ap chutiye hue";
         } else if (
-            message === "dumb ai" ||
-            message === "useless chatbot" ||
-            message === "you dumb" ||
-            message === "dumb"
+            message.includes("dumb ai") ||
+            message.includes("useless chatbot") ||
+            message.includes("you dumb") ||
+            message.includes("dumb")
         ) {
             response =
                 "ohh, you think you i am useless and dumb then why you didn't make your own chatbot better than me.";
         } else if (message === "gaand mara" || message === "tu gaand mara") {
             response = "gaand tu bacha k rakho wrna hum maar lenge";
         } else if (
-            message === "gaand dega" ||
-            message === "muh me lega" ||
-            message === "bhosadike"
+            message.includes("gaand dega") ||
+            message.includes("muh me lega") ||
+            message.includes("bhosadike")
         ) {
             response = "thoda limit mein rahiye wrna rest in peace ho jayega ";
         } else if (
-            message === "gajab topibaaz admi ho" ||
-            message === "laundiya baaz ho tum"
+            message.includes("gajab topibaaz admi ho") ||
+            message.includes("laundiya baaz ho tum")
         ) {
             response = "woh tum ho main nhi";
         } else if (
-            message === "ky kar rhe ho" ||
+           (message.includes("ky") ||  message.includes("kya")) && (message.includes("kar")|| message.includes("kr")) && (message.includes("rahe")||message.includes("rhe")) || 
             message === "ky horha hai" ||
             message === "kkrh"
         ) {
