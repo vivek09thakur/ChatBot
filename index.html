@@ -9,50 +9,45 @@
         <title>ChatVSS</title>
     </head>
     <body>
-        <div class="banner" id="banner">
-            <span class="material-symbols-rounded">robot</span>
-            <h3>Hello! I am tabahi :)</h3>
-            <p>
-                I am here to help you out.Dont hesitate if you have a question.
-                I will try my best to give you exact answer.
-            </p>
-        </div>
-        <div class="banner" id="banner1">
-            <span class="material-symbols-rounded">electric_bolt</span>
-            <h2>Can do</h2>
-            <li>Can reply to your text with my response set.</li>
-            <li>Can open web links and social media sites.</li>
-            <li>Can evaluate some small mathematical expression.</li>
-            <li>Can answers to some questions.</li>
-        </div>
-        <div class="banner" id="banner2">
-            <span class="material-symbols-rounded"> warning </span>
-            <h3>Limitations</h3>
-            <p>
-                As I am only a chat bot not a complete AI. Therefore i have some
+        
+        <!-- banners -->
+        <div style="padding-top:7%">
+            <div class="banner" id="banner">
+                <span class="material-symbols-rounded">robot</span>
+                <h3>Hello! I am tadashi :)</h3>
+                <p> I am here to help you out. Don't hesitate if you have a question. I will try my best to give you exact answer. : )</p>
+            </div>
+            <div class="banner" id="banner1">
+                <span class="material-symbols-rounded">electric_bolt</span>
+                <h2>Can do</h2>
+                <p>Can reply to your text with my response set.
+                   <br/>Can open web links and social media sites.
+                   <br/>Can evaluate some small mathematical expression.
+                   <br/>Can answers to some questions.</p>
+            </div>
+            <div class="banner" id="banner2">
+                <span class="material-symbols-rounded"> warning </span>
+                <h3>Limitations</h3>
+                <p> As I am only a chat bot not a complete AI. Therefore i have some
                 limitations also i cannot do physical works and i have a
                 response set to reply your texts therefore sometimes i'm not
-                able to reply your messages.
-            </p>
+                able to reply your messages.</p>
+            </div>
         </div>
+        
+        <!-- chatbot -->
         <div id="chatbot">
             <div id="chatbot-messages"></div>
             <div id="results"></div>
         </div>
+        
         <div class="main">
             <form id="form">
-                <input
-                    type="text"
-                    id="input"
-                    placeholder="Enter your message..."
-                />
-                <button id="submit">
-                    <span class="material-symbols-rounded" id="send">
-                        send
-                    </span>
-                </button>
+                <input type="text" id="input" placeholder="Enter your message..." />
+                <button id="submit"><span class="material-symbols-rounded" id="send">  send </span></button>
             </form>
         </div>
+        
         <script src="engine.js"></script>
     </body>
 </html>
