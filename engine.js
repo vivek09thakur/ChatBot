@@ -163,94 +163,94 @@ form.addEventListener("submit", async (event) => {
         let response;
         
         if (
-            message === "hi" ||
-            message === "hii" ||
-            message === "hey" ||
-            message === "hello" ||
-            message === "heyyy"
+            message.includes("hi") ||
+            message.includes("hii") ||
+            message.includes("hey") ||
+            message.includes("hello") ||
+            message.includes("heyyy")
         ) {
             response = "Hello! How are you today?";
-        } else if (message === "good morning") {
+        } else if (message.includes("good morning")) {
             response = "a warm good morning to you";
-        } else if (message === "good afternoon" || message === "good noon") {
+        } else if (message.includes("good afternoon") || message.includes("good noon")) {
             response = "good afternoon";
-        } else if (message === "good evening") {
+        } else if (message.includes("good evening")) {
             response = "a peaceful good evening to you";
-        } else if (message === "good night" || message === "sweat dreams") {
+        } else if (message.includes("good night") || message.includes("sweat dreams") ){
             response = "good night...sweet dreams ";
         } else if (
-            message === "i am fine" ||
-            message === "fine" ||
-            message === "yeah fine" ||
-            message === "good"
+            message.includes("i am fine") ||
+            message.includes("fine") ||
+            message.includes("yeah fine") ||
+            message.includes("good")
         ) {
             response = "It's good that you're fine!";
         } else if (
-            message === "i am not fine" ||
-            message === "not fine" ||
-            message === "yeah not fine" ||
-            message === "not good"
+            message.includes("i am not fine") ||
+            message.includes("not fine") ||
+            message.includes("yeah not fine") ||
+            message.includes("not good")
         ) {
             response =
                 "don't worry everything will get fine just have faith in god!";
         } else if (
-            message === "what are you doing" ||
-            message === "what are you doing?" ||
-            message === "whats going on" ||
-            message === "whats up" ||
-            message === "how you doing"
+            message.includes("what are you doing") ||
+            message.includes("what are you doing?") ||
+            message.includes("whats going on") ||
+            message.includes("whats up") ||
+            message.includes("how you doing")
         ) {
             response = "Nothing much, just responding to your message.";
         } else if (
-            message === "how are you" ||
-            message === "hows you doing" ||
-            message === "what about you"
+            message.includes("how are you") ||
+            message.includes("hows you doing") ||
+            message.includes("what about you")
         ) {
             response = "I'm doing well, thank you for asking.";
         } else if (
-            message === "where are you from" ||
-            message === "where you live" ||
-            message === "where is your home" ||
-            message === "where do you live"
+            message.includes("where are you from") ||
+            message.includes("where you live") ||
+            message.includes("where is your home") ||
+            message.includes("where do you live")
         ) {
             response = "Technically, the internet is my home.";
         } else if (
-            message === "what did you like the most" ||
-            message === "your favourite thing" ||
-            message === "what your hobbies"
+            message.includes("what did you like the most")||
+            message.includes("your favourite thing")||
+            message.includes("what your hobbies")
         ) {
             response =
                 "Hmm, responding to your messages is one of my favorite things to do.";
-        } else if (message === "who are you" || message === "who created you") {
+        } else if (message.includes("who are you") || message.includes("who created you")) {
             response =
                 "I am a chatbot built with JavaScript, created by Vivek Thakur.";
         } else if (
-            message === "why he created you" ||
-            message === "reason behind you" ||
-            message === "why did he created you"
+            message.includes("why he created you")||
+            message.includes("reason behind you") ||
+            message.includes("why did he created you")
         ) {
             response =
                 "I was created to provide entertainment and assistance to users like you.";
         } else if (
-            message === "will you be my boyfriend" ||
-            message === "will you be my girlfriend"
+            message.includes("will you be my boyfriend") ||
+            message.includes("will you be my girlfriend")
         ) {
             response =
                 "I'm sorry, but I am just a chatbot and cannot have romantic relationships.";
         } else if (
-            message === "i love you" ||
-            message === "love" ||
-            message === "do you love me"
+            message.includes("i love you") ||
+            message.includes("love")||
+            message.includes("do you love me")
         ) {
             response = "Please don't talk about love in front of me.";
         } else if (message === "what is love") {
             response =
                 "Love is a feeling of strong affection or deep attachment towards someone.";
         } else if (
-            message === "son of bitch" ||
-            message === "bitch" ||
-            message === "you bitch" ||
-            message === "fuck off"
+            message.includes("son of bitch")||
+            message.includes("bitch") ||
+            message.includes("you bitch") ||
+            message.includes("fuck off")
         ) {
             response =
                 "Please watch your language. I do not respond to insults or offensive language.";
