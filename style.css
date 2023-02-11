@@ -12,7 +12,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 body {
-    background-color: #1e2a34;
+    background-color: #202124;
     overflow-x: hidden;
     font-size: 12px;
     display: grid;
@@ -30,7 +30,7 @@ body {
 }
 #input {
     flex-grow: 1;
-    background : #40576d;
+    background : #363B3F;
     padding: 5px 0px 5px 5px;
     width: 270px;
     height: 27px;
@@ -40,7 +40,7 @@ body {
     text-align: center;
 }
 #input::placeholder {
-    color: #8c9cbb;
+    color:#9BA0A6 ;
     font-weight: 600;
     opacity: 0.9;
     text-align: center;
@@ -51,7 +51,7 @@ body {
     height: 37px;
     font-size: 10px;
     width: 62px;
-    background: #40576d;
+    background:#363B3F ;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -60,7 +60,7 @@ body {
     display: inline-block;
     width: 80%;
     font-weight: 500;
-    color: #d5dfff;
+    color: #9BA0A6;
     margin-left: 17%;
 }
 
@@ -86,14 +86,14 @@ body {
     margin: auto;
     text-align: center;
     border-radius: 0.3em;
-    color: #40576d;
+    color: #9BA0A6;
 }
 .banner p {
     display: inline-block;
     width: 80%;
     padding: 20px;
     margin-top: 20px;
-    background: #40576d;
+    background: #9BA0A6;
     font-size: 10px;
     border-radius: 0.3em;
     color: #1e2a34;
@@ -108,7 +108,7 @@ body {
 
 #send {
     font-size: 30px;
-    color: #9180ff;
+    color: #89B4F7;
     font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
