@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Montserrat&family=Nanum+Gothic&family=Rubik+Storm&display=swap");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 * {
@@ -12,7 +12,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 body {
-    background-color: #202124;
+    background-color: #24292D;
     overflow-x: hidden;
     font-size: 12px;
     display: grid;
@@ -30,7 +30,7 @@ body {
 }
 #input {
     flex-grow: 1;
-    background : #363B3F;
+    background : #2F363E;
     padding: 5px 0px 5px 5px;
     width: 270px;
     height: 27px;
@@ -51,7 +51,7 @@ body {
     height: 37px;
     font-size: 10px;
     width: 62px;
-    background:#363B3F;
+    background:#2F363E;
     border-radius: 0.3em;
     font-weight: 600;
 }
@@ -87,6 +87,7 @@ body {
     text-align: center;
     border-radius: 0.6em;
     color: #9BA0A6;
+    opacity: 0.7;
 }
 .banner p {
     display: inline-block;
@@ -108,7 +109,7 @@ body {
 
 #send {
     font-size: 30px;
-    color: #89B4F7;
+    color: #A9A9FF;
     font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
