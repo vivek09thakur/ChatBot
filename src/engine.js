@@ -88,6 +88,23 @@ const regexes = [
     pattern: /ohh|hmm|umm|amm|okay|ok/i,
     response: "Hmmm...",
   },
+  {
+      pattern:/i love you|love you|do you love me|do you love me?/i,
+      response:"please don't talk about love here",
+  },
+  {
+      pattern:/what is love?|what is love|what do you think about love/i,
+      response:"ammm...a complicated topic but i think love is a sixth sense that destroys all the five sense",
+  },
+  {
+      pattern:/will you be my boyfriend|will you be my girlfriend/i,
+      response:"amm...i will think about it",
+  },
+  {
+      pattern:/are you a boy or a girl|are you a girl|are you boy/i,
+      response:"as i am chatbot so my gender depends upon whom i talking right now" + 
+      "if you are a boy then I am also a boy"+ "if you are a girl then hello ladies .. I am here >.< ",
+  },
   
   
   // negative words
@@ -100,6 +117,18 @@ const regexes = [
     response:
       "inappropriate words detected i would recommend you to watch your words : |",
   },
+  {
+      pattern:/chutiya|chutiya ho kya|chutiya ho kya be|chutiya ai/i,
+      response:"Ek chutiya hi dusre ko chutiya samjhta h...ap mujhe chutiya samjhte ho... to is hisaab se to ap chutiya hue",
+  },
+  {
+      pattern:/gandu|gaandu/i,
+      response:"kripya mujhe apni g*nd na de",
+  },
+  {
+      pattern:/bsdk|bhosdaike/i,
+      response:"sir i would recommend you to please watch your tone",
+  },
   
   
   // greetings
@@ -109,8 +138,24 @@ const regexes = [
   },
   {
       pattern:/good afternoon|good noon/i,
-      response:""
+      response:"good afternoon ^_^",
+  },
+  {
+      pattern:/good night|sweet dreams/i,
+      response:"good night boss",
   }
+  
+  
+  // Credits to me
+  {
+      pattern:/who is your creator|who created you|by whom you were created|your creator/i,
+      response:"I was created by Vivek Thakur as his part time project",
+  },
+  {
+      pattern:/who is vivek thakur/i,
+      response:"i don't know whom you talking about but my creator name is also Vivek Thakur",
+  },
+  
 ];
 
 /* ---------------------------------------------------------------------------- */
