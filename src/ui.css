@@ -30,6 +30,7 @@ body {
   color: white;
   overflow-y: scroll !important;
   border-radius: 0.5em;
+  font-size: 13px;
 }
 #chat-form {
   width: 100%;
@@ -39,7 +40,7 @@ body {
 }
 
 #chat-input {
-  height: 40px;
+  height: 35px;
   width: 280px;
   padding-left: 20px;
   background: #6177a6;
@@ -53,7 +54,7 @@ body {
 }
 button {
   width: 50px;
-  height: 40px;
+  height: 35px;
   margin-left: -10px;
   background: #6177a6;
   border-radius: 0.3em;
@@ -65,7 +66,7 @@ button {
 
 .material-symbols-rounded {
   color: #00d5ff;
-  font-size: 40px;
+  font-size: 30px;
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 @media (min-width: 700px) {
