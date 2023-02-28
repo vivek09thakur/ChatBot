@@ -8,25 +8,25 @@
   font-family: "Poppins", sans-serif;
   overflow-y: hidden;
 }
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
           width: 6px;
 }
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
           background: linear-gradient(transparent,  rgb(136,  0,  255));
           border-radius: 6px;
 }
-::webkit-scrollbar-thumb:hover {
+*::webkit-scrollbar-thumb:hover {
           background: linear-gradient(transparent,  rgb(0,  255,  102));
 }
 body {
-  background: #202b41;
+  background: #21262B;
 }
 
 #chatbot-window {
   margin: 70px auto;
   padding: 20px;
   width: 330px;
-  height: 460px;
+  height: 500px;
   color: white;
   overflow-y: scroll !important;
   border-radius: 0.5em;
@@ -43,12 +43,12 @@ body {
   height: 35px;
   width: 280px;
   padding-left: 20px;
-  background: #6177a6;
+  background:#3e4452 ;
   color: black;
   border-radius: 0.3em;
 }
 #chat-input::placeholder {
-  color: black;
+  color: white;
   opacity: 0.7;
   text-transform: uppercase;
 }
@@ -56,7 +56,7 @@ button {
   width: 50px;
   height: 35px;
   margin-left: -10px;
-  background: #6177a6;
+  background: #3e4452  ;
   border-radius: 0.3em;
   overflow-y: hidden !important;
 }
@@ -65,9 +65,9 @@ button {
 }
 
 .material-symbols-rounded {
-  color: #00d5ff;
+  color: #006cff;
   font-size: 30px;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 @media (min-width: 700px) {
   #chatbot-window {
@@ -75,7 +75,7 @@ button {
     height: 350px;
   }
   #chat-input {
-    width: 500px;
+    width: 520px;
   }
   #chat-form {
     margin-top: -20px;
