@@ -88,6 +88,8 @@ const regexes = [
     pattern: /ohh|hmm|umm|amm|okay|ok/i,
     response: "Hmmm...",
   },
+  
+  
   // negative words
   {
     pattern: /who the hell are you|who the fuck are you/i,
@@ -98,6 +100,17 @@ const regexes = [
     response:
       "inappropriate words detected i would recommend you to watch your words : |",
   },
+  
+  
+  // greetings
+  {
+    pattern: /good morning|a warm good morning/i,
+    response: "a warm good morning to you sir",
+  },
+  {
+      pattern:/good afternoon|good noon/i,
+      response:""
+  }
 ];
 
 /* ---------------------------------------------------------------------------- */
