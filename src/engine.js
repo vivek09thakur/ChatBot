@@ -11,6 +11,10 @@ const regexes = [
   {
     pattern: /how are you|how's it going/i,
     response: "I'm doing well, thank you for asking. How are you?",
+  }, 
+  {
+    pattern: /i am fine|fine|i am good|i'm good/i,
+    response: "I'm glad that you are fine ^⁠_⁠^",
   },
   {
     pattern: /what (time|is it)/i,
