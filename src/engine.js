@@ -101,7 +101,7 @@ const regexes = [
       response:"amm...i will think about it",
   },
   {
-      pattern:/are you a boy or a girl|are you a girl|are you boy/i,
+      pattern:/are you a boy or a girl|are you a girl|are you a boy/i,
       response:"as i am chatbot so my gender depends upon whom i talking right now" + 
       "if you are a boy then I am also a boy"+ "if you are a girl then hello ladies .. I am here >.< ",
   },
