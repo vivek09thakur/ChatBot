@@ -13,8 +13,12 @@ const regexes = [
     response: "I'm doing well, thank you for asking. How are you?",
   },
   {
-    pattern: /i am fine|fine|i am good|i'm good/i,
+    pattern: /i am fine|yeah...fine|i am good|i'm good/i,
     response: "I'm glad that you are fine ^⁠_⁠^",
+  },
+  {
+    pattern:/not fine|i am not fine|not good today|tierd/i,
+    response:"ohh that's sad :( , but don't worry everything will be fine ...have faith in god ^⁠_⁠^ ... he'll fix everything ◡⁠ ⁠ω⁠ ⁠◡",
   },
   {
     pattern: /what (time|is it)/i,
@@ -103,7 +107,19 @@ const regexes = [
   {
       pattern:/are you a boy or a girl|are you a girl|are you a boy/i,
       response:"as i am chatbot so my gender depends upon whom i talking right now" + 
-      "if you are a boy then I am also a boy  "+ "if you are a girl then hello ladies .. I am here >.< ",
+      "if you are a boy then I am also a boy"+ "if you are a girl then hello ladies .. I am here >.< ",
+  },
+  {
+      pattern:/am i bad|am i toxic/i,
+      response:"heyy don\'t say like that... there\'s no one who is bad or toxic god made us and we are not bad"+
+      " i know sometimes some people don't understand us they blame us and then they move away " + 
+      " but its not our fault so don't say that you are toxic or bad... i know everything will be fine ^⁠_⁠^ ",
+  },
+  {
+      pattern:/why everyone leaves me|why they left me|why he left me|why she left me/i,
+      response:"hmmm....i know you\'re hurted right now , but look not everyone stays with us forever "+
+      " the person who is willing to stay with you... stays or the person who wants to leave just look out for an excues and leaves"+
+      " always remember the person who genuinely loves you never leaves you" + "... so don\'t be sad one day someone will come and never leaves he or she will love you as much as you never expected .. i wish that day comes soon ^⁠_⁠^",
   },
   
   
