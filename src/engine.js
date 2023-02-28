@@ -143,7 +143,7 @@ const regexes = [
   {
       pattern:/good night|sweet dreams/i,
       response:"good night boss",
-  }
+  },
   
   
   // Credits to me
