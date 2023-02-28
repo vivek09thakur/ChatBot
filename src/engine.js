@@ -11,7 +11,7 @@ const regexes = [
   {
     pattern: /how are you|how's it going/i,
     response: "I'm doing well, thank you for asking. How are you?",
-  }, 
+  },
   {
     pattern: /i am fine|fine|i am good|i'm good/i,
     response: "I'm glad that you are fine ^⁠_⁠^",
@@ -85,24 +85,26 @@ const regexes = [
       "That's a great philosophical question! The meaning of life can mean different things to different people. What does it mean to you?",
   },
   {
-    pattern:/ohh|hmm|umm|amm|okay|ok/i,
-    response:"Hmmm...",
+    pattern: /ohh|hmm|umm|amm|okay|ok/i,
+    response: "Hmmm...",
+  },
+  // negative words
+  {
+    pattern: /who the hell are you|who the fuck are you/i,
+    response: "I would recommend you to talk in an appropriate manner : |",
+  },
+  {
+    pattern: /fuck|fuck off|fuck you|fuck you bitch|bitch|asswhole/i,
+    response:
+      "inappropriate words detected i would recommend you to watch your words : |",
   },
 ];
 
 /* ---------------------------------------------------------------------------- */
 
-
-
-
-
-
-
 const chatbotWindow = document.getElementById("chatbot-window");
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
-
-
 
 // ---------------- Simulate typing effect ------------------
 
@@ -113,7 +115,6 @@ async function typeMessage(message) {
     await new Promise((resolve) => setTimeout(resolve, delay));
   }
 }
-
 
 // --------------- Generate response to user input ----------
 function generateResponse(input) {
@@ -127,8 +128,6 @@ function generateResponse(input) {
   return response;
 }
 
-
-
 // ------------ Handle user input and generate response -------
 async function handleSubmit(event) {
   event.preventDefault();
@@ -139,6 +138,18 @@ async function handleSubmit(event) {
   const botResponse = generateResponse(userInput);
   chatbotWindow.innerHTML += `<div class="message bot-message">Bot   : </div>`;
   await typeMessage(botResponse);
+
+  //-------------- banner ---------------
+  if ((chatbotWindow.value = "")) {
+    document.getElementById("banner1").style.display = "flex";
+    document.getElementById("banner2").style.display = "flex";
+    document.getElementById("banner3").style.display = "flex";
+  } else {
+    //document.getElementById("banner").style.display = 'none';
+    document.getElementById("banner1").style.display = "none";
+    document.getElementById("banner2").style.display = "none";
+    document.getElementById("banner3").style.display = "none";
+  }
 }
 
 chatForm.addEventListener("submit", handleSubmit);
