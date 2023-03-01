@@ -10,16 +10,16 @@
 ::-webkit-scrollbar {
     width: 5px;
     z-index: 8;
-    background: rgba(0,0,0,0.6);
+    opacity: 0.3;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #21262b;
     width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0057ff;
+    background: rgba(0,0,0,0.6);
     height: 50px;
     width: 5px;
     border-radius: 5px;
@@ -74,9 +74,9 @@ button {
 
 .material-symbols-rounded {
   overflow-y: hidden;
-  color: #006cff;
+  color: #8098ff; 
   font-size: 30px;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
 }
 
 .banner {
