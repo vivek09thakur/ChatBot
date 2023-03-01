@@ -7,14 +7,14 @@
   border: none;
   font-family: "Poppins", sans-serif;
 }
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
           width: 6px;
 }
-*::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
           background: linear-gradient(transparent,  rgb(136,  0,  255));
           border-radius: 6px;
 }
-*::webkit-scrollbar-thumb:hover {
+::webkit-scrollbar-thumb:hover {
           background: linear-gradient(transparent,  rgb(0,  255,  102));
 }
 body {
