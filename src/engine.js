@@ -145,6 +145,11 @@ const regexes = [
       pattern:/i am tired|i am pretty tired|i am pretty tired right now/i,
       response:"ohh it seems you might have a rough day...rest now we will talk later",
   },
+  {
+     pattern:/mad at you|angry on you|angry with you/i,
+     response:
+     "ohh... sorry i have done something wrong ಥ⁠‿⁠ಥ ",
+  },
 
   // negative words
   {
