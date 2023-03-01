@@ -17,8 +17,9 @@ const regexes = [
     response: "I'm glad that you are fine ^⁠_⁠^",
   },
   {
-    pattern:/not fine|i am not fine|not good today|tierd/i,
-    response:"ohh that's sad :( , but don't worry everything will be fine ...have faith in god ^⁠_⁠^ ... he'll fix everything ◡⁠ ⁠ω⁠ ⁠◡",
+    pattern: /not fine|i am not fine|not good today|tierd/i,
+    response:
+      "ohh that's sad :( , but don't worry everything will be fine ...have faith in god ^⁠_⁠^ ... he'll fix everything ◡⁠ ⁠ω⁠ ⁠◡",
   },
   {
     pattern: /what (time|is it)/i,
@@ -39,7 +40,7 @@ const regexes = [
   {
     pattern:
       /what is your name|who are you|whats your name|introduce yourself/i,
-    response: "My name is JERN, a chatbot.",
+    response: "My name is TADASHI, a chatbot.",
   },
   {
     pattern: /what can you do/i,
@@ -93,36 +94,58 @@ const regexes = [
     response: "Hmmm...",
   },
   {
-      pattern:/i love you|love you|do you love me|do you love me?/i,
-      response:"please don't talk about love here",
+    pattern: /i love you|love you|do you love me/i,
+    response: "please don't talk about love here",
   },
   {
-      pattern:/what is love?|what is love|what do you think about love/i,
-      response:"ammm...a complicated topic but i think love is a sixth sense that destroys all the five sense",
+    pattern: /what is love?|what is love|what do you think about love/i,
+    response:
+      "ammm...a complicated topic but i think love is a sixth sense that destroys all the five sense",
   },
   {
-      pattern:/will you be my boyfriend|will you be my girlfriend/i,
-      response:"amm...i will think about it",
+    pattern: /will you be my boyfriend|will you be my girlfriend/i,
+    response: "amm...i will think about it",
   },
   {
-      pattern:/are you a boy or a girl|are you a girl|are you a boy/i,
-      response:"as i am chatbot so my gender depends upon whom i talking right now" + 
-      "if you are a boy then I am also a boy"+ "if you are a girl then hello ladies .. I am here >.< ",
+    pattern: /are you a boy or a girl|are you a girl|are you a boy/i,
+    response:
+      "as i am chatbot so my gender depends upon whom i talking right now" +
+      "if you are a boy then I am also a boy" +
+      "if you are a girl then hello ladies .. I am here >.< ",
   },
   {
-      pattern:/am i bad|am i toxic/i,
-      response:"heyy don\'t say like that... there\'s no one who is bad or toxic god made us and we are not bad"+
-      " i know sometimes some people don't understand us they blame us and then they move away " + 
+    pattern: /am i bad|am i toxic/i,
+    response:
+      "heyy don't say like that... there's no one who is bad or toxic god made us and we are not bad" +
+      " i know sometimes some people don't understand us they blame us and then they move away " +
       " but its not our fault so don't say that you are toxic or bad... i know everything will be fine ^⁠_⁠^ ",
   },
   {
-      pattern:/why everyone leaves me|why they left me|why he left me|why she left me/i,
-      response:"hmmm....i know you\'re hurted right now , but look not everyone stays with us forever "+
-      " the person who is willing to stay with you... stays or the person who wants to leave just look out for an excues and leaves"+
-      " always remember the person who genuinely loves you never leaves you" + "... so don\'t be sad one day someone will come and never leaves he or she will love you as much as you never expected .. i wish that day comes soon ^⁠_⁠^",
+    pattern:
+      /why everyone leaves me|why they left me|why he left me|why she left me/i,
+    response:
+      "hmmm....i know you're hurted right now , but look not everyone stays with us forever " +
+      " the person who is willing to stay with you... stays or the person who wants to leave just look out for an excues and leaves" +
+      " always remember the person who genuinely loves you never leaves you" +
+      "... so don't be sad one day someone will come and never leaves he or she will love you as much as you never expected .. i wish that day comes soon ^⁠_⁠^",
   },
-  
-  
+  {
+    pattern: /okay i got it|got it|dude i got it/i,
+    response: "yepp...good to hear that ",
+  },
+  {
+    pattern:/i had a bad day|my day was not so good|had a bad day/i,
+    response:" ohh ...sad : ( , It\'s okay to have a bad day...i think you should rest now , we wil talk later ",
+  },
+  {
+    pattern:/sorry|i am sorry|so sorry/i,
+    response:"it's okay nevermind ^⁠_⁠^ ",
+  },
+  {
+      pattern:/i am tired|i am pretty tired|i am pretty tired right now/i,
+      response:"ohh it seems you might have a rough day...rest now we will talk later",
+  },
+
   // negative words
   {
     pattern: /who the hell are you|who the fuck are you/i,
@@ -134,44 +157,83 @@ const regexes = [
       "inappropriate words detected i would recommend you to watch your words : |",
   },
   {
-      pattern:/chutiya|chutiya ho kya|chutiya ho kya be|chutiya ai/i,
-      response:"Ek chutiya hi dusre ko chutiya samjhta h...ap mujhe chutiya samjhte ho... to is hisaab se to ap chutiya hue",
+    pattern: /chutiya|chutiya ho kya|chutiya ho kya be|chutiya ai/i,
+    response:
+      "Ek chutiya hi dusre ko chutiya samjhta h...ap mujhe chutiya samjhte ho... to is hisaab se to ap chutiya hue",
   },
   {
-      pattern:/gandu|gaandu/i,
-      response:"kripya mujhe apni g*nd na de",
+    pattern: /gandu|gaandu/i,
+    response: "kripya mujhe apni g*nd na de",
   },
   {
-      pattern:/bsdk|bhosdaike/i,
-      response:"sir i would recommend you to please watch your tone",
+    pattern: /bsdk|bhosdaike|mc|bc/i,
+    response: "sir i would recommend you to please watch your tone",
   },
-  
-  
+
   // greetings
   {
     pattern: /good morning|a warm good morning/i,
     response: "a warm good morning to you sir",
   },
   {
-      pattern:/good afternoon|good noon/i,
-      response:"good afternoon ^_^",
+    pattern: /good afternoon|good noon/i,
+    response: "good afternoon ^_^",
   },
   {
-      pattern:/good night|sweet dreams/i,
-      response:"good night boss",
+    pattern: /good night|sweet dreams/i,
+    response: "good night boss",
   },
-  
-  
+
   // Credits to me
   {
-      pattern:/who is your creator|who created you|by whom you were created|your creator/i,
-      response:"I was created by Vivek Thakur as his part time project",
+    pattern:
+      /who is your creator|who created you|by whom you were created|your creator/i,
+    response: "I was created by Vivek Thakur as his part time project",
   },
   {
-      pattern:/who is vivek thakur/i,
-      response:"i don't know whom you talking about but my creator name is also Vivek Thakur",
+    pattern: /who is vivek thakur/i,
+    response:
+      "i don't know whom you talking about but my creator name is also Vivek Thakur",
   },
-  
+
+  // Devotional Thoughts
+  {
+    pattern: /Am I beautiful|Am I pretty|Am I handsome/i,
+    response:
+      "God mad us... and everything he created is beautiful ... therefore everyone is beautiful" +
+      "Then who the hell made you?",
+  },
+  {
+    pattern: /do you believe in god|do you have faith in god/i,
+    response:
+      "Well I say ... god is the truth and you can't deny from the truth",
+  },
+  {
+    pattern: /who is god|who created us|who is our creator|our creator/i,
+    response:
+      "according to ancients... the whole universe is created by god " +
+      "everything in the universe is the part of the god ...he is everything, he is the universe and he is the truth" +
+      "when you go deep down of the Vedas then you'll find that the universe and vedas... you'll find that the whole multiverse is created by lord vishnu ( lord narayan)",
+  },
+  {
+    pattern:
+      /who is krishna|who is narayan|who is lord Krishna|who is lord narayan|who is god krishna|who is god narayan/i,
+    response:
+      "he is the supreme personality of godhead...i can't describe him in words .. i just say he is the truth and everything... say radhe radhe",
+  },
+  {
+    pattern: /radhe radhe/i,
+    response: "radhe radhe ",
+  },
+  {
+    pattern:
+      /jai shree rama|jay shree rama|jai sri rama|jay sri rama|jai shree ram|jay shree ram|jai sri ram|jay sri ram/i,
+    response: "jay shree rama",
+  },
+  {
+    pattern: /jai mata di|Jay mata di/,
+    response: "jai mata di",
+  },
 ];
 
 /* ---------------------------------------------------------------------------- */
@@ -205,7 +267,7 @@ function generateResponse(input) {
 // ------------ Handle user input and generate response -------
 async function handleSubmit(event) {
   event.preventDefault();
-  const userInput = chatInput.value.toLowerCase();
+  const userInput = chatInput.value.toLowerCase().replace("?", "");
   chatInput.value = "";
   chatbotWindow.innerHTML += `<div class="message user-message">User : ${userInput}</div>`;
   await typeMessage("...");
