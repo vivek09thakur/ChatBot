@@ -8,15 +8,23 @@
   font-family: "Poppins", sans-serif;
 }
 ::-webkit-scrollbar {
-          width: 6px;
+    width: 5px;
+    z-index: 8;
+    background: rgba(0,0,0,0.6);
 }
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    width: 5px;
+}
+
 ::-webkit-scrollbar-thumb {
-          background: linear-gradient(transparent,  rgb(136,  0,  255));
-          border-radius: 6px;
+    background: #0057ff;
+    height: 50px;
+    width: 5px;
+    border-radius: 5px;
 }
-::webkit-scrollbar-thumb:hover {
-          background: linear-gradient(transparent,  rgb(0,  255,  102));
-}
+
 body {
   background: #21262b;
   overflow-y: hidden;
