@@ -265,7 +265,8 @@ async function typeMessage(message) {
 
 // --------------- Generate response to user input ----------
 function generateResponse(input) {
-  let response = "Sorry, I did not understand. Here are some results from web .";
+  //let response = "Sorry, I did not understand. Here m web .";
+  let response = "m..."
   for (const regex of regexes) {
     if (regex.pattern.test(input)) {
       response = regex.response.replace(/\$1/g, input.match(regex.pattern)[1]);
@@ -288,8 +289,9 @@ async function searchWeb(query) {
     const link = firstResult.link;
     const  description = firstResult.snippet;
     
-    return `${title} - ${description} - ${link}`;
+   // return `${title} - ${description} - ${link}`;
     //return `${description}`;
+    return `${description} - ${link}`;
   } else {
     return "Sorry, I could not find any results.";
   }
@@ -308,7 +310,7 @@ async function handleSubmit(event) {
   chatbotWindow.innerHTML += `<div class="message bot-message">Bot   : </div>`;
   await typeMessage(botResponse);
   
-  if (botResponse=='Sorry, I did not understand. Here are some results from web .') {
+  if (botResponse=='m...') {
       chatbotWindow.innerHTML += `<div class"message bot-message">Bot : </div>`
       // Here we will have a function that takes the query search it on the web and using google custom search api
       // displays it on the screen 
