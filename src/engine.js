@@ -288,8 +288,8 @@ async function searchWeb(query) {
     const link = firstResult.link;
     const  description = firstResult.snippet;
     
-    //return `${title} - ${description} - ${link}`;
-    return `${description}`;
+    return `${title} - ${description} - ${link}`;
+    //return `${description}`;
   } else {
     return "Sorry, I could not find any results.";
   }
