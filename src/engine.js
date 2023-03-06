@@ -14,7 +14,7 @@ const regexes = [
   },
   {
     pattern: /i am fine|yeah...fine|i am good|i'm good/i,
-    response: "I'm glad that you are fine ^⁠_⁠^",
+    response: "I\'m glad that you are fine ^⁠_⁠^",
   },
   {
     pattern: /not fine|i am not fine|not good today|tierd/i,
@@ -247,6 +247,9 @@ const chatbotWindow = document.getElementById("chatbot-window");
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 
+
+
+
 // ---------------- Simulate typing effect ------------------
 
 async function typeMessage(message) {
@@ -257,9 +260,12 @@ async function typeMessage(message) {
   }
 }
 
+
+
+
 // --------------- Generate response to user input ----------
 function generateResponse(input) {
-  let response = "Sorry, I did not understand. Please try again.";
+  let response = "Sorry, I did not understand. Here are some results from web .";
   for (const regex of regexes) {
     if (regex.pattern.test(input)) {
       response = regex.response.replace(/\$1/g, input.match(regex.pattern)[1]);
@@ -268,7 +274,28 @@ function generateResponse(input) {
   }
   return response;
 }
-
+ // Search the web using Google Custom Search API
+ 
+async function searchWeb(query) {
+  const apiKey = "AIzaSyA1_J_bvjs0WYJAfROQtgELfdfA9GcEXeM"; //
+  const cx = "646d2aa7f1919bea0"; 
+  const searchUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${query}`;
+  const response = await fetch(searchUrl);
+  const data = await response.json();
+  if (data && data.items && data.items.length > 0) {
+    const firstResult = data.items[0];
+    const title = firstResult.title;
+    const link = firstResult.link;
+    const  description = firstResult.snippet;
+    
+    return `${title} - ${description} - ${link}`;
+  } else {
+    return "Sorry, I could not find any results.";
+  }
+}
+ 
+ 
+ 
 // ------------ Handle user input and generate response -------
 async function handleSubmit(event) {
   event.preventDefault();
@@ -279,6 +306,16 @@ async function handleSubmit(event) {
   const botResponse = generateResponse(userInput);
   chatbotWindow.innerHTML += `<div class="message bot-message">Bot   : </div>`;
   await typeMessage(botResponse);
+  
+  if (botResponse=='Sorry, I did not understand. Here are some results from web .') {
+      chatbotWindow.innerHTML += `<div class"message bot-message">Bot : </div>`
+      // Here we will have a function that takes the query search it on the web and using google custom search api
+      // displays it on the screen 
+      const searchResult = await searchWeb(userInput);
+      await typeMessage(searchResult);
+  }
+  
+ 
 
   //-------------- banner ---------------
   if ((chatbotWindow.value = "")) {
