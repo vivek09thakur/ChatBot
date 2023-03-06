@@ -91,6 +91,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in-out;
 }
 
 .banner h3,p{
