@@ -74,9 +74,9 @@ button {
 
 .material-symbols-rounded {
   overflow-y: hidden;
-  color: #8098ff;
+  color: whitesmoke;
   font-size: 30px;
-  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
 }
 
 .banner {
@@ -113,7 +113,7 @@ p {
     height: 500px;
   }
   #chat-input {
-    width: 611x;
+    width: 611px;
   }
   #chat-form {
     margin-top: -20px;
