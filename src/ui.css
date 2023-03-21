@@ -8,21 +8,21 @@
   font-family: "Poppins", sans-serif;
 }
 ::-webkit-scrollbar {
-    width: 5px;
-    z-index: 8;
-    opacity: 0.3;
+  width: 5px;
+  z-index: 8;
+  opacity: 0.3;
 }
 
 ::-webkit-scrollbar-track {
-    background: #21262b;
-    width: 5px;
+  background: #21262b;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.6);
-    height: 50px;
-    width: 5px;
-    border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  height: 50px;
+  width: 5px;
+  border-radius: 5px;
 }
 
 body {
@@ -74,7 +74,7 @@ button {
 
 .material-symbols-rounded {
   overflow-y: hidden;
-  color: #8098ff; 
+  color: #8098ff;
   font-size: 30px;
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
 }
@@ -82,7 +82,7 @@ button {
 .banner {
   width: 100%;
   height: 145px;
-  background:#3e4452;
+  background: #3e4452;
   margin-top: 35px;
   border-radius: 0.5em;
   flex-direction: column;
@@ -94,25 +94,26 @@ button {
   transition: 1s ease-in-out;
 }
 
-.banner h3,p{
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 4px;
-    width: 80%;
+.banner h3,
+p {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 4px;
+  width: 80%;
 }
-.banner p{
-font-size: 10px;
-text-transform: capitalize;
+.banner p {
+  font-size: 10px;
+  text-transform: capitalize;
 }
 
 @media (min-width: 700px) {
   #chatbot-window {
-    width: 580px;
-    height: 350px;
+    width: 668px;
+    height: 500px;
   }
   #chat-input {
-    width: 510px;
+    width: 611x;
   }
   #chat-form {
     margin-top: -20px;
