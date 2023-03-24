@@ -1,4 +1,4 @@
-<h2>ChatVss</h2>
+<h2>ChatVSS</h2>
 Creating a chatbot that responds to user input by looking for specific keywords and phrases in the user's message. When a message is received, the chatbot responds with a predetermined response based on the content of the message.
 
 <br/> The chatbot will recognize different keywords and phrases, such as "hello" or "what are you doing?", and respond with a specific response.
