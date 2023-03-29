@@ -82,7 +82,7 @@ button {
 .banner {
   width: 100%;
   height: 140px;
-  background:#40414f;
+  background: #40414f;
   margin-top: 20px;
   border-radius: 0.5em;
   flex-direction: column;
