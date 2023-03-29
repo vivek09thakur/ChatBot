@@ -51,7 +51,7 @@ body {
   height: 35px;
   width: 270px;
   padding-left: 20px;
-  background: #3e4452;
+  background: #40414f;
   color: black;
   border-radius: 0.3em;
 }
@@ -82,7 +82,7 @@ button {
 .banner {
   width: 100%;
   height: 140px;
-  background: #3e4452;
+  background:#40414f;
   margin-top: 20px;
   border-radius: 0.5em;
   flex-direction: column;
