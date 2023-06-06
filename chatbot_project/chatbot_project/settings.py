@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chatbot_app',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatbot_project.wsgi.application'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 
 # Database
