@@ -1,0 +1,6 @@
+<form method="post" action="">
+    {% csrf_token %}
+    <input type="text" name="message" placeholder="Enter your message">
+    <input type="submit" value="Send">
+</form>
+<p>{{ response }}</p>
