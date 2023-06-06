@@ -12,7 +12,7 @@ def chatbot_view(request):
         chatbot = ChatbotModel()
         
         # Load the trained model (you can implement this method)
-        chatbot.load_model('path/to/trained_model.pkl')
+        chatbot.load_model('./model.pkl')
         
         # Get the prediction from the chatbot model
         response = chatbot.predict([message])
