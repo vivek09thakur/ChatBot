@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#chatbot{
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+}
