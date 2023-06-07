@@ -1,13 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+body {
+  background: whitesmoke;
 }
 
-#chatbot{
-    width: 70%;
-    height: 100vh;
-    margin: auto;
+#chatbot {
+  width: 52vw;
+  height: 100vh;
+  margin: auto;
+}
+#text-area {
+  width: 84%;
+  height: 35px;
+  border: none;
+  outline: 1px solid #32323229;
+  border-radius: 0.3em;
+  margin: 7px;
+  padding: 0px 10px;
+}
+#text-area::placeholder {
+  opacity: 0.7;
+  text-align: center;
+}
+#submit {
+  width: 70px;
+  height: 35px;
+  border: 0;
+  outline: 0;
+  background: #2962ff;
+  color: white;
+  border-radius: 0.3em;
+}
+#main-form {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* position: relative;
+  left: 26px; */
+}
+.user,
+.ai {
+  margin-bottom: 12px;
 }
