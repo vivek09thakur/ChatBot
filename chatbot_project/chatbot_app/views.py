@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .chatbot_model import ChatbotModel
 
 def chatbot_view(request):
@@ -14,10 +14,13 @@ def chatbot_view(request):
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
             request.session['history'] = history
-        else:
-            # If no message is provided, return the current history
-            history = request.session.get('history', [])
 
-        return render(request, 'chatbot_app/chatbot.html', {'history': history, 'response': response})
+            # Redirect to a new URL after processing the form
+            return redirect('index')
 
-    return render(request, 'chatbot_app/chatbot.html')
+    else:
+        # If the request method is not POST, return the current history without generating a response
+        history = request.session.get('history', [])
+        response = None
+
+    return render(request, 'chatbot_app/chatbot.html', {'history': history, 'response': response})
