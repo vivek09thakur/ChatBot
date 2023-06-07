@@ -17,7 +17,7 @@
         padding: 0;
         font-family: "Source Sans Pro", sans-serif;
       }
-      body{
+      body {
         background: whitesmoke;
       }
 
@@ -26,7 +26,7 @@
         height: 100vh;
         margin: auto;
       }
-      #text-area{
+      #text-area {
         width: 70%;
         height: 35px;
         border: none;
@@ -35,21 +35,20 @@
         margin: 7px;
         padding: 0px 10px;
       }
-      #text-area::placeholder{
+      #text-area::placeholder {
         opacity: 0.7;
         text-align: center;
-       
       }
-      #submit{
+      #submit {
         width: 70px;
         height: 35px;
         border: 0;
         outline: 0;
         background: #2962ff;
-        color:white;
+        color: white;
         border-radius: 0.3em;
       }
-      #main-form{
+      #main-form {
         display: flex;
         margin: auto;
         width: 100%;
@@ -62,17 +61,25 @@
   </head>
   <body>
     <div id="chatbot">
-    <form id="main-form" method="post" action="">
-      {% csrf_token %}
-      <input
-        type="text"
-        name="message"
-        id="text-area"
-        placeholder="Enter your message"
-      />
-      <input type="submit" value="Send" id="submit" />
-    </form>
-    <p>{{ response }}</p>
+      {% if history %}
+      <div class="conversation">
+        {% for entry in history %}
+        <p><strong>You     : </strong> {{ entry.message }}</p>
+        <p><strong>Chatbot : </strong> {{ entry.response }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <form id="main-form" method="post" action="">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="message"
+          id="text-area"
+          placeholder="Enter your message"
+        />
+        <input type="submit" value="Send" id="submit" />
+      </form>
+      <p>{{ response }}</p>
     </div>
   </body>
 </html>
