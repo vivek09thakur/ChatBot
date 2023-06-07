@@ -57,6 +57,9 @@
         /* position: relative;
         left: 26px; */
       }
+      .user,.ai{
+        margin-bottom: 4px;
+      }
     </style>
   </head>
   <body>
@@ -64,8 +67,8 @@
       {% if history %}
       <div class="conversation">
         {% for entry in history %}
-        <p><strong>You     : </strong> {{ entry.message }}</p>
-        <p><strong>Chatbot : </strong> {{ entry.response }}</p>
+        <p class="user"><strong>You     : </strong> {{ entry.message }}</p>
+        <p class="ai"><strong>Chatbot : </strong> {{ entry.response }}</p>
         {% endfor %}
       </div>
       {% endif %}
