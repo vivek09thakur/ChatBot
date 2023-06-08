@@ -18,9 +18,9 @@ def chatbot_view(request):
             # Redirect to a new URL after processing the form
             return redirect('index')
 
-    else:
+    # else:
         # If the request method is not POST, return the current history without generating a response
-        history = request.session.get('history', [])
-        response = None
+    history = request.session.get('history', [])
+    response = None
 
     return render(request, 'chatbot_app/chatbot.html', {'history': history, 'response': response})
