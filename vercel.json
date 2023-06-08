@@ -1,0 +1,15 @@
+{
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "chatbot_project.settings"
+    },
+    "builds": [
+      {
+        "src": "vercel_build.sh",
+        "use": "@vercel/python"
+      }
+    ]
+  }
+  
