@@ -11,7 +11,7 @@
     },
     {
       "src": "vercel_build.sh",
-      "use": "@vercel/static-build",
+      "use": "@vercel/vercel_build",
       "config": {
         "distDir": "vercel_build"
       }
