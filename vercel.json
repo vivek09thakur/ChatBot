@@ -13,7 +13,7 @@
       "src": "vercel_build.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "vercel_build"
+        "distDir": "staticfile_build"
       }
     }
   ],
