@@ -21,7 +21,7 @@
         width: 6px;
         opacity: 0.7;
       }
-      
+
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(transparent, rgb(136, 0, 255));
         border-radius: 6px;
@@ -101,13 +101,27 @@
         display: inline-block;
         width: 98%;
       }
-      strong{
+      strong {
         margin-right: 10px;
+      }
+      @media screen and (max-width: 450px) {
+        #chatbot {
+          width: 95vw;
+        }
+        .head {
+          width: 87vw;
+        }
+        .head p {
+          display: none;
+        }
+        .conversation {
+          font-size: 12px;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
+    <header class="head">
       <h3 class="title">
         Meet JERN ,
         <span id="subtitle">Just an Experimental Response Network</span>
@@ -121,7 +135,7 @@
       {% if history %}
       <div class="conversation">
         {% for entry in history %}
-        <p class="user"><strong>You :  </strong> {{ entry.message }}</p>
+        <p class="user"><strong>You : </strong> {{ entry.message }}</p>
         <p class="ai"><strong>👾 ~ </strong> {{ entry.response.0 }}</p>
         {% endfor %}
       </div>
