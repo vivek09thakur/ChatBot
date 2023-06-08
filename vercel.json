@@ -1,15 +1,30 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "chatbot_project.settings"
-    },
-    "builds": [
-      {
-        "src": "vercel_build.sh",
-        "use": "@vercel/python"
+  "version": 2,
+  "builds": [
+    {
+      "src": "./chatbot_project/chatbot_project/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdasize": "25mb",
+        "runtime": "python3.10"
       }
-    ]
-  }
-  
+    },
+    {
+      "src": "vercel_build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes":[
+    {
+      "src":"/static/(.*)",
+      "dest":"/static/$1"
+    },
+    {
+      "src":"/(.*)",
+      "dest":"./chatbot_project/chatbot_project/wsgi.py"
+    }
+  ]
+}
