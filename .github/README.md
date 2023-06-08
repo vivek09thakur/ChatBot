@@ -31,3 +31,7 @@ The chatbot allows users to have interactive conversations with an AI-powered bo
 - [JERN model](https://github.com/vivek09thakur/JERN)
 - [Django](https://www.djangoproject.com/start/)
 - [Scikit-Learn](https://scikit-learn.org/stable/)
+
+### Developed by 
+
+[Vivek Thakur](https://www.github.com/vivek09thakur/)
