@@ -23,4 +23,4 @@ def chatbot_view(request):
     history = request.session.get('history', [])
     response = None
 
-    return render(request, 'chatbot_app/chatbot.html', {'history': history, 'response': response})
+    return render(request, 'chatbot_app/index.html', {'history': history, 'response': response})
