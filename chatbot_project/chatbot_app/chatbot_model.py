@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 import json
 
+training_data = 'data/training_data.json'
 
 class ChatbotModel:
     def __init__(self):
@@ -34,7 +35,6 @@ class ChatbotModel:
 
 chatbot = ChatbotModel()
 
-training_data = 'chatbot_project/data/training_data.json'
 with open(training_data,'r') as f:
     data = json.load(f)
 X_train = data['input']
