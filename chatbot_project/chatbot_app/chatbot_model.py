@@ -34,7 +34,7 @@ class ChatbotModel:
 
 chatbot = ChatbotModel()
 
-training_data = 'data/training_data.json'
+training_data = 'chatbot_project/data/training_data.json'
 with open(training_data,'r') as f:
     data = json.load(f)
 X_train = data['input']
