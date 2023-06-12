@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from .chatbot_model import ChatbotModel
 
+chatbot = ChatbotModel()
 def chatbot_view(request):
     if request.method == 'POST':
         message = request.POST.get('message', '').strip()
 
         if message:
-            chatbot = ChatbotModel()
             response = chatbot.generate_response(message)
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
