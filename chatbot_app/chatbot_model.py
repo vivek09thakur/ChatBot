@@ -27,7 +27,7 @@ class ChatbotModel:
         scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
         predicted_indices = np.argmax(scores, axis=1)
         predicted_responses = [self.y_train[idx] for idx in predicted_indices]
-        self.prediction_scores = np.max(scores, axis=1)
+        self.prediction_scores = scores
 
         for words in self.offensive_response:
             if words in X[0].lower():
