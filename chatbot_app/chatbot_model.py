@@ -28,7 +28,7 @@ class ChatbotModel:
 
         for words in self.offensive_response:
             if words in X[0].lower():
-                return (self.offensive_response)
+                return self.offensive_response
             
         return predicted_responses
     
