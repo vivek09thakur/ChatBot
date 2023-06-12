@@ -16,6 +16,8 @@ class ChatbotModel:
             'fuck','sex','dick','suck my dick','asshole','motherfucker','coward','pivort','porn','pussy','prostitue','chutiya','gandu',
             'madarchod','behenchod','betichod','dhotarchod','bhosadike','gaand','gand','chut','lund','bc','mc','bsdk','gaand marao','chuso'
         ]
+        self.prediction_scores = None
+
     def train(self, X, y):
         self.y_train = y
         self.X_train_tfidf = self.vectorizer.fit_transform(X)
@@ -25,6 +27,7 @@ class ChatbotModel:
         scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
         predicted_indices = np.argmax(scores, axis=1)
         predicted_responses = [self.y_train[idx] for idx in predicted_indices]
+        self.prediction_scores = np.max(scores, axis=1)
 
         for words in self.offensive_response:
             if words in X[0].lower():
