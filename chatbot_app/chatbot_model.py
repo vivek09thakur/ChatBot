@@ -1,62 +1,21 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-import joblib
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 import json
 
-training_data = 'data/training_data.json'
 
 class ChatbotModel:
     def __init__(self):
-        self.vectorizer = TfidfVectorizer()
-        self.X_train_tfidf = None
-        self.y_train = None
-        self.offensive_response = ['I am sorry but I am not designed to any kind of offensive prompt , that may contain any inappropriate contexr.']
-        # self.offensive_words = [
-        #     'fuck','sex','dick','suck my dick','asshole','motherfucker','coward','pivort','porn','pussy','prostitue','chutiya','gandu',
-        #     'madarchod','behenchod','betichod','dhotarchod','bhosadike','gaand','gand','chut','lund','bc','mc','bsdk','gaand marao','chuso'
-        # ]
-        self.prediction_scores = None
+        with open('data/training_data.json') as f:
+            data = json.load(f)
+        training_data = data['input']
+        self.responses = data['responses']  # Update the attribute name to 'responses'
+        self.vectorizer = CountVectorizer()
+        self.X = self.vectorizer.fit_transform(training_data)
+        self.y = list(range(len(training_data)))
 
-    def train(self, X, y):
-        self.y_train = y
-        self.X_train_tfidf = self.vectorizer.fit_transform(X)
-    
-    def predict(self, X):
-        X_tfidf = self.vectorizer.transform(X)
-        scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
-        predicted_indices = np.argmax(scores, axis=1)
-        predicted_responses = [self.y_train[idx] for idx in predicted_indices]
-        # self.prediction_scores = scores
-
-        # for words in self.offensive_response:
-        #     if words in X[0].lower():
-        #         return self.offensive_response
-            
-        return predicted_responses
-    
-    def get_similarity_score(self, X):
-        X_tfidf = self.vectorizer.transform(X)
-        scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
-        return scores
-    
-    def save_model(self, model_path):
-        joblib.dump(self, model_path)
-    
-    def load_model(self,model_path):
-        loaded_model = joblib.load(model_path)
-        self.vectorizer = loaded_model.vectorizer
-        self.X_train_tfidf = loaded_model.X_train_tfidf
-        self.y_train = loaded_model.y_train
-
-
-chatbot = ChatbotModel()
-
-with open(training_data,'r') as f:
-    data = json.load(f)
-X_train = data['input']
-y_train = data['responses']
-
-chatbot.train(X_train, y_train)
-model_path = './model.pkl'
-chatbot.save_model(model_path)
+    def generate_response(self, prompt):
+        message_bow = self.vectorizer.transform([prompt])
+        response_idx = cosine_similarity(message_bow, self.X).argmax()
+        similarity_score = cosine_similarity(message_bow, self.X).max()
+        return self.responses
