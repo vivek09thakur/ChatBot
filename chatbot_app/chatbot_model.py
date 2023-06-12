@@ -13,9 +13,14 @@ class ChatbotModel:
         self.vectorizer = CountVectorizer()
         self.X = self.vectorizer.fit_transform(training_data)
         self.y = list(range(len(training_data)))
+        self.default_response = data['default']
 
     def generate_response(self, prompt):
         message_bow = self.vectorizer.transform([prompt])
         response_idx = cosine_similarity(message_bow, self.X).argmax()
         similarity_score = cosine_similarity(message_bow, self.X).max()
-        return self.responses
+
+        if similarity_score > 0.75 :
+            return self.responses
+        else :
+            return self.default_response
