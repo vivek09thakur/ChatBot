@@ -12,10 +12,10 @@ class ChatbotModel:
         self.X_train_tfidf = None
         self.y_train = None
         self.offensive_response = ['I am sorry but I am not designed to any kind of offensive prompt , that may contain any inappropriate contexr.']
-        self.offensive_words = [
-            'fuck','sex','dick','suck my dick','asshole','motherfucker','coward','pivort','porn','pussy','prostitue','chutiya','gandu',
-            'madarchod','behenchod','betichod','dhotarchod','bhosadike','gaand','gand','chut','lund','bc','mc','bsdk','gaand marao','chuso'
-        ]
+        # self.offensive_words = [
+        #     'fuck','sex','dick','suck my dick','asshole','motherfucker','coward','pivort','porn','pussy','prostitue','chutiya','gandu',
+        #     'madarchod','behenchod','betichod','dhotarchod','bhosadike','gaand','gand','chut','lund','bc','mc','bsdk','gaand marao','chuso'
+        # ]
         self.prediction_scores = None
 
     def train(self, X, y):
@@ -27,13 +27,18 @@ class ChatbotModel:
         scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
         predicted_indices = np.argmax(scores, axis=1)
         predicted_responses = [self.y_train[idx] for idx in predicted_indices]
-        self.prediction_scores = scores
+        # self.prediction_scores = scores
 
-        for words in self.offensive_response:
-            if words in X[0].lower():
-                return self.offensive_response
+        # for words in self.offensive_response:
+        #     if words in X[0].lower():
+        #         return self.offensive_response
             
         return predicted_responses
+    
+    def get_similarity_score(self, X):
+        X_tfidf = self.vectorizer.transform(X)
+        scores = cosine_similarity(X_tfidf, self.X_train_tfidf)
+        return scores
     
     def save_model(self, model_path):
         joblib.dump(self, model_path)
