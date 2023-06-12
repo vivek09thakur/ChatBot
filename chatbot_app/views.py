@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import json
 
 def chatbot_view(request):
+
     # Load the training data from the JSON file
     with open('data/training_data.json') as f:
         data = json.load(f)
