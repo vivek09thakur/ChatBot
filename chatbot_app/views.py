@@ -9,7 +9,7 @@ with open('data/training_data.json') as f:
     data = json.load(f)
 
 training_data = data['input']
-responses = data['responses'] 
+responses = data['responses']
 default_response = data['default']
 
 def chatbot_view(request):
@@ -26,13 +26,17 @@ def chatbot_view(request):
 
             if similarity_score < 0.75:
                 response = default_response
-                prompt = message
+                prompt = training_data[-1]  # Get the last input as the prompt
 
-                # Save the previous message as input
-                data['input'].append(data['responses'][-1])
+                # Append the prompt to the input list
+                training_data.append(prompt)
 
-                # Save the current message as a response
-                data['responses'].append(message)
+                # Append the message as the response
+                responses.append(message)
+
+                # Update the data dictionary
+                data['input'] = training_data
+                data['responses'] = responses
 
                 # Update the JSON file with the new data
                 with open('data/training_data.json', 'w') as f:
@@ -40,6 +44,16 @@ def chatbot_view(request):
 
             else:
                 response = responses[response_idx]
+
+                # Append the message as the prompt for the next input
+                training_data.append(message)
+
+                # Update the data dictionary
+                data['input'] = training_data
+
+                # Update the JSON file with the new data
+                with open('data/training_data.json', 'w') as f:
+                    json.dump(data, f)
 
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
