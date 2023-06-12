@@ -4,15 +4,16 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
-# Load the training data from the JSON file
-with open('data/training_data.json') as f:
-    data = json.load(f)
-
-training_data = data['input']
-responses = data['responses']
-default_response = data['default']
 
 def chatbot_view(request):
+    # Load the training data from the JSON file
+    with open('data/training_data.json') as f:
+        data = json.load(f)
+
+    training_data = data['input']
+    responses = data['responses']
+    default_response = data['default']
+
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(training_data)
 
@@ -21,43 +22,48 @@ def chatbot_view(request):
 
         if message:
             message_bow = vectorizer.transform([message])
-            response_idx = cosine_similarity(message_bow, X).argmax()
-            similarity_score = cosine_similarity(message_bow, X).max()
 
-            if response_idx < len(responses):
+            # Update the X matrix with the new message
+            X = np.vstack([X.A, message_bow.A])
 
-                if similarity_score < 0.75:
-                    response = default_response
-                    prompt = training_data[-1]  # Get the last input as the prompt
+            similarity_scores = cosine_similarity(message_bow, X)
+            response_idx = similarity_scores.argmax()
+            similarity_score = similarity_scores.max()
 
-                    # Append the prompt to the input list
-                    training_data.append(prompt)
-
-                    # Append the message as the response
-                    responses.append(message)
-
-                    # Update the data dictionary
-                    data['input'] = training_data
-                    data['responses'] = responses
-
-                    # Update the JSON file with the new data
-                    with open('data/training_data.json', 'w') as f:
-                        json.dump(data, f)
-
-                else:
-                    response = responses[response_idx]
-
-                    # Append the message as the prompt for the next input
-                    training_data.append(message)
-
-                    # Update the data dictionary
-                    data['input'] = training_data
-
-                    # Update the JSON file with the new data
-                    with open('data/training_data.json', 'w') as f:
-                        json.dump(data, f)
-            else:
+            if similarity_score < 0.75 or response_idx > len(responses):
                 response = default_response
+
+                if len(training_data) > 0:  # Check if training_data has at least one element
+                    prompt = training_data[-1]  # Get the last input as the prompt
+                else:
+                    prompt = ""
+
+                # Append the prompt to the input list
+                training_data.append(prompt)
+
+                # Append the message as the response
+                responses.append(message)
+
+                # Update the data dictionary
+                data['input'] = training_data
+                data['responses'] = responses
+
+                # Update the JSON file with the new data
+                with open('data/training_data.json', 'w') as f:
+                    json.dump(data, f)
+
+            else:
+                response = responses[response_idx]
+
+                # Append the message as the prompt for the next input
+                training_data.append(message)
+
+                # Update the data dictionary
+                data['input'] = training_data
+
+                # Update the JSON file with the new data
+                with open('data/training_data.json', 'w') as f:
+                    json.dump(data, f)
 
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
