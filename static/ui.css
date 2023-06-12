@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -25,7 +26,7 @@
 }
 
 body {
-  background: #f1f1f1;
+  background: hwb(0 95% 5%);
   /* overflow-y: hidden; */
 }
 
@@ -53,7 +54,7 @@ header {
   width: 88%;
   height: 35px;
   border: none;
-  outline: 1px solid #34354163;
+  outline: none;
   border-radius: 0.3em;
   margin: 7px;
   padding: 0px 10px;
@@ -67,12 +68,12 @@ header {
 
 #submit {
   width: 70px;
-  height: 35px;
+  height: 36px;
   border: 0;
-  outline: 0;
-  background: #4183cc;
-  color: white;
+  background:  #dddde8;
+  color: #4183cc;
   border-radius: 0.3em;
+  margin-left: -10px;
 }
 
 #submit:focus {
@@ -143,6 +144,16 @@ strong {
   flex-direction: column;
   justify-content: center;
 }
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 
 @media screen and (max-width: 450px) {
 
