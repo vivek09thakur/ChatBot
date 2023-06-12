@@ -4,8 +4,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
-def chatbot_view(request):
 
+def chatbot_view(request):
     # Load the training data from the JSON file
     with open('data/training_data.json') as f:
         data = json.load(f)
@@ -13,7 +13,7 @@ def chatbot_view(request):
     training_data = data['input']
     responses = data['responses']
     default_response = data['default']
-    
+
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(training_data)
 
@@ -32,7 +32,9 @@ def chatbot_view(request):
 
             if similarity_score < 0.75:
                 response = default_response
-                prompt = training_data[-1] if training_data else ""  # Get the last input as the prompt or use a default value
+
+                # Check if training_data is not empty
+                prompt = training_data[-1] if training_data else "" # Get the last input as the prompt
 
                 # Append the prompt to the input list
                 training_data.append(prompt)
@@ -63,7 +65,7 @@ def chatbot_view(request):
 
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
-            request.session['history'] = history 
+            request.session['history'] = history
 
             return redirect('index')
 
