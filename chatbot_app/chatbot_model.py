@@ -9,7 +9,7 @@ class ChatbotModel:
         with open('data/training_data.json') as f:
             data = json.load(f)
         training_data = data['input']
-        self.responses = data['responses']  # Update the attribute name to 'responses'
+        self.responses = data['responses'] 
         self.vectorizer = CountVectorizer()
         self.X = self.vectorizer.fit_transform(training_data)
         self.y = list(range(len(training_data)))
