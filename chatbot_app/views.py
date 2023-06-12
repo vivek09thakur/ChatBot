@@ -30,13 +30,12 @@ def chatbot_view(request):
             response_idx = similarity_scores.argmax()
             similarity_score = similarity_scores.max()
 
-            if similarity_score < 0.75 or response_idx > len(responses):
-                response = default_response
+            if similarity_score < 0.75 :
+                response = default_response[0]
 
-                if len(training_data) > 0:  # Check if training_data has at least one element
-                    prompt = training_data[-1]  # Get the last input as the prompt
-                else:
-                    prompt = ""
+                #  Check if training_data has at least one element
+                prompt = training_data[-1]  if training_data else '' # Get the last input as the prompt
+                
 
                 # Append the prompt to the input list
                 training_data.append(prompt)
@@ -52,10 +51,11 @@ def chatbot_view(request):
                 with open('data/training_data.json', 'w') as f:
                     json.dump(data, f)
 
-            else:
+            if response_idx < len(responses):
                 response = responses[response_idx]
+            else:
+                response = default_response[0]
 
-                # Append the message as the prompt for the next input
                 training_data.append(message)
 
                 # Update the data dictionary

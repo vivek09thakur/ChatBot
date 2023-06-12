@@ -43,9 +43,9 @@ header {
 }
 
 #chatbot {
-  width: 70vw;
+  width: 59vw;
   height: 91vh;
-  margin: auto 0  auto auto;
+  margin: auto;
   overflow-y: scroll;
 }
 
@@ -135,7 +135,7 @@ strong {
 
 
 .section{
-  width: 85vw;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
