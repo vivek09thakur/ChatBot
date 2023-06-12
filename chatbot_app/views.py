@@ -6,6 +6,7 @@ import json
 
 
 def chatbot_view(request):
+
     # Load the training data from the JSON file
     with open('data/training_data.json') as f:
         data = json.load(f)
@@ -31,24 +32,28 @@ def chatbot_view(request):
             similarity_score = similarity_scores.max()
 
             if similarity_score < 0.75:
+
                 response = default_response
 
-                # Check if training_data is not empty
-                prompt = training_data[-1] if training_data else "" # Get the last input as the prompt
+                if response == default_response:
+                    # Check if training_data is not empty
+                    prompt = training_data[-1] if training_data else "" # Get the last input as the prompt
 
-                # Append the prompt to the input list
-                training_data.append(prompt)
+                    # Append the prompt to the input list
+                    training_data.append(prompt)
 
-                # Append the message as the response
-                responses.append(message)
+                    # Append the message as the response
+                    responses.append(message)
 
-                # Update the data dictionary
-                data['input'] = training_data
-                data['responses'] = responses
+                    # Update the data dictionary
+                    data['input'] = training_data
+                    data['responses'] = responses
 
-                # Update the JSON file with the new data
-                with open('data/training_data.json', 'w') as f:
-                    json.dump(data, f)
+                    # Update the JSON file with the new data
+                    with open('data/training_data.json', 'w') as f:
+                        json.dump(data, f)
+
+                    X = vectorizer.fit_transform(training_data)
 
             else:
                 response = responses[response_idx]
