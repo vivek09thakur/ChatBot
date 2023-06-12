@@ -1,10 +1,10 @@
 import numpy as np
 from django.shortcuts import render, redirect
-from .chatbot_model import ChatbotModel
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
+# Load the training data from the JSON file
 with open('data/training_data.json') as f:
     data = json.load(f)
 
@@ -24,30 +24,21 @@ def chatbot_view(request):
             response_idx = cosine_similarity(message_bow, X).argmax()
             similarity_score = cosine_similarity(message_bow, X).max()
 
-            if similarity_score < 0.75 :
-
+            if similarity_score < 0.75:
                 response = default_response
                 prompt = message
-                # Adding the training data file
-                with open('data/training_data.json') as f:
-                    data = json.load(f)
-                data['input'].append(prompt)
-                # learns the data
-                with open('data/training_data.json' , 'w') as f:
-                    json.dump(data,f)
 
-                new_prompt = request.POST.get('message','').strip()
+                # Save the previous message as input
+                data['input'].append(data['responses'][-1])
 
-                # Adding the training data file
-                with open('data/training_data.json') as f:
-                    data = json.load(f)
-                # Appending new_prompt as responses
-                data['responses'].append(new_prompt)
-                # learns the data
-                with open('data/training_data.json' , 'w') as f:
-                    json.dump(data,f)
-                    
-            else :
+                # Save the current message as a response
+                data['responses'].append(message)
+
+                # Update the JSON file with the new data
+                with open('data/training_data.json', 'w') as f:
+                    json.dump(data, f)
+
+            else:
                 response = responses[response_idx]
 
             history = request.session.get('history', [])
