@@ -16,7 +16,10 @@
         "Tell me about the latest technology trends.",
         "yes i am also good",
         "that's good to hear",
-        "no i mean your your relationship status?"
+        "no i mean your your relationship status?",
+        "good morning",
+        "good morning",
+        "very good afternoon"
     ],
     "responses": [
         "Hey",
@@ -35,7 +38,10 @@
         "The latest technology trends include artificial intelligence, blockchain, virtual reality, and Internet of Things (IoT). These fields are rapidly evolving and shaping various industries.",
         "that's good to hear",
         "yeah , I am glad that you liked it",
-        "for being single or committed , I must be human , but I am an AI so I can't be single or committed"
+        "for being single or committed , I must be human , but I am an AI so I can't be single or committed",
+        "good morning",
+        "very good afternoon",
+        "a lazy good afternoon to you , how can i help?"
     ],
     "default": [
         "sorry i didn't understand :( , but if like then you can teach me a response for this types of prompt."
