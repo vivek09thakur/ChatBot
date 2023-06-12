@@ -5,15 +5,16 @@ import json
 
 
 class ChatbotModel:
+
     def __init__(self):
         with open('data/training_data.json') as f:
             data = json.load(f)
         training_data = data['input']
         self.responses = data['responses'] 
+        self.default_response = data['default']
         self.vectorizer = CountVectorizer()
         self.X = self.vectorizer.fit_transform(training_data)
         self.y = list(range(len(training_data)))
-        self.default_response = data['default']
 
     def generate_response(self, prompt):
         message_bow = self.vectorizer.transform([prompt])
@@ -21,6 +22,6 @@ class ChatbotModel:
         similarity_score = cosine_similarity(message_bow, self.X).max()
 
         if similarity_score > 0.75 :
-            return self.responses
+            return self.responses[self.y[response_idx]]
         else :
             return self.default_response
