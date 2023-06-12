@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .chatbot_model import ChatbotModel
 
 chatbot = ChatbotModel()
+
 def chatbot_view(request):
     if request.method == 'POST':
         message = request.POST.get('message', '').strip()
@@ -15,7 +16,7 @@ def chatbot_view(request):
             # Redirect to a new URL after processing the form
             return redirect('index')
 
-    # If the request method is not POST, return the current history without generating a response
+    # If the request method is not POST or after successful form submission, return the current history without generating a response
     history = request.session.get('history', [])
     response = None
 

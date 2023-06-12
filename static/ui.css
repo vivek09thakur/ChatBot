@@ -14,16 +14,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(transparent, rgb(136, 0, 255));
+  /* background: linear-gradient(transparent, rgb(136, 0, 255)); */
+  background: transparent;
   border-radius: 6px;
 }
 
 ::webkit-scrollbar-thumb:hover {
-  background: linear-gradient(transparent, rgb(0, 255, 102));
+  /* background: linear-gradient(transparent, rgb(0, 255, 102)); */
+  background: transparent;
 }
 
 body {
-  background: #303443;
+  background: #f1f1f1;
   /* overflow-y: hidden; */
 }
 
@@ -51,11 +53,11 @@ header {
   width: 88%;
   height: 35px;
   border: none;
-  outline: 1px solid #32323229;
+  outline: 1px solid #34354163;
   border-radius: 0.3em;
   margin: 7px;
   padding: 0px 10px;
-  background: #4c5163db;
+  background: #dddde8;
 }
 
 #text-area::placeholder {
@@ -68,7 +70,7 @@ header {
   height: 35px;
   border: 0;
   outline: 0;
-  background: rgb(136, 0, 255);
+  background: #4183cc;
   color: white;
   border-radius: 0.3em;
 }
@@ -81,7 +83,7 @@ header {
   align-items: center;
   z-index: 100000;
   height: 7vh;
-  background: #303443;
+  background: #f1f1f1;
   position: sticky;
   bottom: 0;
 }
@@ -92,7 +94,7 @@ header {
 }
 
 .user {
-  background: #2c303b;
+  background: #dddde8;
 }
 
 .user img {
@@ -102,8 +104,8 @@ header {
   margin-right: 14px;
 }
 .ai img {
-  width: 32px;
-  height: 32px;
+  width: 17px;
+  height: 17px;
   margin-right: 14px;
 }
 
@@ -111,7 +113,7 @@ header {
 .ai {
   width: 100%;
   height: 79px;
-  color: whitesmoke;
+  color:  #343541;
   font-weight: 200;
   display: flex;
   align-items: center;

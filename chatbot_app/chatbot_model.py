@@ -25,7 +25,7 @@ class ChatbotModel:
         if similarity_score > 0.75 :
             return responses[response_idx]
         else :
-            return default_response
+            return default_response[0]
         
 
 # chatbot = ChatbotModel()
