@@ -15,7 +15,8 @@
         "How do I bake a chocolate cake?",
         "Tell me about the latest technology trends.",
         "yes i am also good",
-        "that's good to hear"
+        "that's good to hear",
+        "no i mean your your relationship status?"
     ],
     "responses": [
         "Hey",
@@ -32,8 +33,9 @@
         "The capital of France is Paris.",
         "To bake a chocolate cake, you'll need ingredients like flour, sugar, cocoa powder, eggs, and butter. There are many recipes available online that you can follow.",
         "The latest technology trends include artificial intelligence, blockchain, virtual reality, and Internet of Things (IoT). These fields are rapidly evolving and shaping various industries.",
-        "yes i am also good",
-        "that's good to hear"
+        "that's good to hear",
+        "yeah , I am glad that you liked it",
+        "for being single or committed , I must be human , but I am an AI so I can't be single or committed"
     ],
     "default": [
         "sorry i didn't understand :( , but if like then you can teach me a response for this types of prompt."
