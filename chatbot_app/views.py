@@ -25,7 +25,7 @@ def chatbot_view(request):
             similarity_score = cosine_similarity(message_bow, X).max()
 
             if similarity_score < 0.75:
-                response = default_response
+                response = default_response[0]
                 prompt = training_data[-1]  # Get the last input as the prompt
 
                 # Append the prompt to the input list
