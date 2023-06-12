@@ -20,6 +20,11 @@ def chatbot_view(request):
     if request.method == 'POST':
         message = request.POST.get('message', '').strip()
 
+        if  message == 'clear' or  message == 'clear chat' or  message == 'clear history':
+            
+            # Clear the history by setting an empty list
+            request.session['history'] = []
+
         if message:
             message_bow = vectorizer.transform([message])
 
@@ -53,6 +58,7 @@ def chatbot_view(request):
 
             if response_idx < len(responses):
                 response = responses[response_idx]
+            
             else:
                 response = default_response[0]
 
@@ -64,7 +70,7 @@ def chatbot_view(request):
                 # Update the JSON file with the new data
                 with open('data/training_data.json', 'w') as f:
                     json.dump(data, f)
-
+            request.session['history'] = []
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
             request.session['history'] = history
