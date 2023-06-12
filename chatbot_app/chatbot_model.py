@@ -22,7 +22,7 @@ class ChatbotModel:
         response_idx = cosine_similarity(message_bow, self.X).argmax()
         similarity_score = cosine_similarity(message_bow, self.X).max()
 
-        if similarity_score < 0.5 or response_idx <= len(responses) :
+        if similarity_score < 0.5 :
             return default_response[0] 
         else :
             return responses[response_idx]

@@ -26,7 +26,7 @@
 }
 
 body {
-  background: hwb(0 95% 5%);
+  background: #202124;
   /* overflow-y: hidden; */
 }
 
@@ -45,7 +45,7 @@ header {
 
 #chatbot {
   width: 59vw;
-  height: 91vh;
+  height: 97vh;
   margin: auto;
   overflow-y: scroll;
 }
@@ -58,7 +58,7 @@ header {
   border-radius: 0.3em;
   margin: 7px;
   padding: 0px 10px;
-  background: #dddde8;
+  background:#303134;
 }
 
 #text-area::placeholder {
@@ -70,8 +70,8 @@ header {
   width: 70px;
   height: 36px;
   border: 0;
-  background:  #dddde8;
-  color: #4183cc;
+  background: #303134;
+  color: #8ab4f8;
   border-radius: 0.3em;
   margin-left: -10px;
 }
@@ -92,7 +92,7 @@ header {
   align-items: center;
   z-index: 100000;
   height: 7vh;
-  background: #f1f1f1;
+  background: #202124;
   position: sticky;
   bottom: 0;
 }
@@ -103,7 +103,7 @@ header {
 }
 
 .user {
-  background: #dddde8;
+  background: #303134;
 }
 
 .user img {
@@ -123,7 +123,7 @@ header {
 .ai {
   width: 100%;
   height: 79px;
-  color: #343541;
+  color:  #c8c8c8;
   font-weight: 200;
   display: flex;
   align-items: center;
