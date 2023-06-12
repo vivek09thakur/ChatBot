@@ -1,25 +1,22 @@
-function simulateTyping(element) {
-    const text = element.innerText;
-    element.innerText = "";
-  
-    const words = text.split(" ");
-    let wordIndex = 0;
+window.addEventListener('DOMContentLoaded', () => {
+  const aiResponses = document.querySelectorAll('.ai');
+
+  if (aiResponses.length > 0) {
+    const latestResponse = aiResponses[aiResponses.length - 1];
+    const messageText = latestResponse.textContent.trim();
+    const typingSpeed = 500; // Adjust typing speed (in milliseconds) here
+
     let charIndex = 0;
-  
-    const typingInterval = setInterval(() => {
-      if (wordIndex < words.length) {
-        const word = words[wordIndex];
-        if (charIndex < word.length) {
-          element.innerText += word[charIndex];
-          charIndex++;
-        } else {
-          element.innerText += " ";
-          wordIndex++;
-          charIndex = 0;
-        }
-      } else {
-        clearInterval(typingInterval);
+    latestResponse.textContent = '';
+
+    const typeMessage = () => {
+      if (charIndex < messageText.length) {
+        latestResponse.textContent += messageText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeMessage, typingSpeed);
       }
-    }, 100);
+    };
+
+    setTimeout(typeMessage, 1000); // Delay initial typing effect by 1 second
   }
-  
+});
