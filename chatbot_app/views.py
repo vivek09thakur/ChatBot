@@ -25,7 +25,28 @@ def chatbot_view(request):
             similarity_score = cosine_similarity(message_bow, X).max()
 
             if similarity_score < 0.75 :
+
                 response = default_response
+                prompt = message
+                # Adding the training data file
+                with open('data/training_data.json') as f:
+                    data = json.load(f)
+                data['input'].append(prompt)
+                # learns the data
+                with open('data/training_data.json' , 'w') as f:
+                    json.dump(data,f)
+
+                new_prompt = request.POST.get('message','').strip()
+
+                # Adding the training data file
+                with open('data/training_data.json') as f:
+                    data = json.load(f)
+                # Appending new_prompt as responses
+                data['responses'].append(new_prompt)
+                # learns the data
+                with open('data/training_data.json' , 'w') as f:
+                    json.dump(data,f)
+                    
             else :
                 response = responses[response_idx]
 

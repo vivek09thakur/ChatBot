@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JERN</title>
-    <link rel="stylesheet" href="./static/ui.css">
+    <link rel="stylesheet" href="./static/ui.css" />
   </head>
   <body>
-    <div id="chatbot">
-      {% if history %}
-      <div class="conversation">
-        {% for entry in history %}
-        <div class="user"><img src="./static/user.jpg"/> {{ entry.message }}</div>
-        <div class="ai"><img src="./static/AI.svg"/> {{ entry.response }}</div>
-        {% endfor %}
+    <aside class="sidebar">hello</aside>
+
+    <div class="section">
+      <div id="chatbot">
+        {% if history %}
+        <div class="conversation">
+          {% for entry in history %}
+          <div class="user">
+            <img src="./static/user.jpg" /> {{ entry.message }}
+          </div>
+          <div class="ai">
+            <img src="./static/AI.svg" /> {{ entry.response }}
+          </div>
+          {% endfor %}
+        </div>
+        <!-- <p>{{ response }}</p> -->
       </div>
-      <!-- <p>{{ response }}</p> -->
+      {% endif %}
+      <form id="main-form" method="post" action="">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="message"
+          id="text-area"
+          placeholder="Enter your message"
+        />
+        <input type="submit" value="Send" id="submit" />
+      </form>
     </div>
-    {% endif %}
-    <form id="main-form" method="post" action="">
-      {% csrf_token %}
-      <input
-        type="text"
-        name="message"
-        id="text-area"
-        placeholder="Enter your message"
-      />
-      <input type="submit" value="Send" id="submit" />
-    </form>
     <script src="./static/animation.js"></script>
   </body>
 </html>

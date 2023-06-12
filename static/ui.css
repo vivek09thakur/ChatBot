@@ -43,9 +43,9 @@ header {
 }
 
 #chatbot {
-  width: 59vw;
+  width: 70vw;
   height: 91vh;
-  margin: auto;
+  margin: auto 0  auto auto;
   overflow-y: scroll;
 }
 
@@ -73,6 +73,14 @@ header {
   background: #4183cc;
   color: white;
   border-radius: 0.3em;
+}
+
+#submit:focus {
+  transform: translateY(4px);
+}
+
+#submit:hover {
+  transform: translateY(4px);
 }
 
 #main-form {
@@ -103,6 +111,7 @@ header {
   border-radius: 50%;
   margin-right: 14px;
 }
+
 .ai img {
   width: 17px;
   height: 17px;
@@ -113,7 +122,7 @@ header {
 .ai {
   width: 100%;
   height: 79px;
-  color:  #343541;
+  color: #343541;
   font-weight: 200;
   display: flex;
   align-items: center;
@@ -124,9 +133,29 @@ strong {
   margin-right: 10px;
 }
 
+aside {
+  width: 15vw;
+  height: 100vh;
+  display: flex;
+  border-radius: 0 .5em .5em 0;
+  background: #313338ff;
+}
+
+.section{
+  width: 85vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media screen and (max-width: 450px) {
+
+  #main-form{
+    width: 99vw;
+  }
   #chatbot {
-    width: 95vw;
+    width: 100vw;
   }
 
   .head {
@@ -144,4 +173,11 @@ strong {
   #text-area {
     width: 72%;
   }
+  aside{
+    display: none;
+  }
+  .section{
+    width: 100vw;
+  }
 }
+

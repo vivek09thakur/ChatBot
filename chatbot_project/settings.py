@@ -82,7 +82,7 @@ STATICFILES_DIRS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'JERN_CHATDATA.db',
+        'NAME': BASE_DIR / './Database/JERN_CHATDATA.db',
     }
 }
 
