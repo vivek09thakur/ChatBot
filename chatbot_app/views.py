@@ -4,15 +4,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
-# Load the training data from the JSON file
-with open('data/training_data.json') as f:
-    data = json.load(f)
-
-training_data = data['input']
-responses = data['responses']
-default_response = data['default']
-
 def chatbot_view(request):
+    # Load the training data from the JSON file
+    with open('data/training_data.json') as f:
+        data = json.load(f)
+
+    training_data = data['input']
+    responses = data['responses']
+    default_response = data['default']
+    
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(training_data)
 
@@ -21,12 +21,17 @@ def chatbot_view(request):
 
         if message:
             message_bow = vectorizer.transform([message])
-            response_idx = cosine_similarity(message_bow, X).argmax()
-            similarity_score = cosine_similarity(message_bow, X).max()
+
+            # Update the X matrix with the new message
+            X = np.vstack([X.A, message_bow.A])
+
+            similarity_scores = cosine_similarity(message_bow, X)
+            response_idx = similarity_scores.argmax()
+            similarity_score = similarity_scores.max()
 
             if similarity_score < 0.75:
-                response = default_response[0]
-                prompt = training_data[-1]  # Get the last input as the prompt
+                response = default_response
+                prompt = training_data[-1] if training_data else ""  # Get the last input as the prompt or use a default value
 
                 # Append the prompt to the input list
                 training_data.append(prompt)
@@ -57,7 +62,7 @@ def chatbot_view(request):
 
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
-            request.session['history'] = history
+            request.session['history'] = history 
 
             return redirect('index')
 
