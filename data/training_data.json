@@ -18,9 +18,7 @@
         "that's good to hear",
         "no i mean your your relationship status?",
         "good morning",
-        "are you working",
-        "so you are a Self learning AI Chatbot",
-        "are you dumb or stupid?"
+        "are you working"
     ],
     "responses": [
         "Hey",
@@ -41,7 +39,9 @@
         "yeah , I am glad that you liked it",
         "for being single or committed , I must be human , but I am an AI so I can't be single or committed",
         "very good morning , what's the plan for today",
-        "please work this time"
+        "please work this time",
+        "I am  going to sleep by",
+        "good night sweet dreams"
     ],
     "default": [
         "sorry i didn't understand :( , but if like then you can teach me a response for this types of prompt."
