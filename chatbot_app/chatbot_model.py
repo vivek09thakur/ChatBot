@@ -22,15 +22,9 @@ class ChatbotModel:
         response_idx = cosine_similarity(message_bow, self.X).argmax()
         similarity_score = cosine_similarity(message_bow, self.X).max()
 
-        if similarity_score > 0.75 :
-            return responses[response_idx]
+        if similarity_score < 0.75 :
+            return default_response[0] 
         else :
-            return default_response[0]
+            return responses[response_idx]
         
-
-# chatbot = ChatbotModel()
-# while True:
-#     user = input('> ')
-#     response = chatbot.generate_response(user)
-#     print(type(response))
-#     print(response)
+        
