@@ -30,7 +30,9 @@
       </div>
       {% endif %}
       <form id="main-form" method="post" action="">
+
         {% csrf_token %}
+        <button type="submit" name="delete_history" id="del">Delete History</button>
         <input
           type="text"
           name="message"
