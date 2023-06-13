@@ -1,30 +1,82 @@
+import tensorflow as tf
 import numpy as np
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from keras.utils.data_utils import pad_sequences
 import json
 
-with open('data/training_data.json') as f:
-    data = json.load(f)
-
-training_data = data['input']
-responses = data['responses'] 
-default_response = data['default']
 
 class ChatbotModel:
+    
+    def __init__(self, training_data_file):
+        self.training_data_file = training_data_file
+        self.word_to_int = {}
+        self.padded_data = None
+        self.label_to_int = {}
+        self.responses = []
+        self.model = None
+        self.load_or_train_model()
 
-    def __init__(self):
-        self.vectorizer = CountVectorizer()
-        self.X = self.vectorizer.fit_transform(training_data)
-        self.y = list(range(len(training_data)))
+    def load_or_train_model(self):
+        try:
+            self.model = tf.keras.models.load_model('./saved_model/vs2306.h5')
+            with open('./database/chat_log.json', 'r') as f:
+                data = json.load(f)
+                self.word_to_int = data['word_to_int']
+                self.padded_data = np.array(data['padded_data'])
+                self.label_to_int = data['label_to_int']
+                self.responses = data['responses']
+        except (OSError, IOError):
+            self.train_model()
+            self.model.save('./saved_model/vs23-08.h5')
+            data = {
+                'word_to_int': self.word_to_int,
+                'padded_data': self.padded_data.tolist(),
+                'label_to_int': self.label_to_int,
+                'responses': self.responses
+            }
+            with open('./database/chat_log.json', 'w') as f:
+                json.dump(data, f)
 
-    def generate_response(self, prompt):
-        message_bow = self.vectorizer.transform([prompt])
-        response_idx = cosine_similarity(message_bow, self.X).argmax()
-        similarity_score = cosine_similarity(message_bow, self.X).max()
+    def train_model(self):
+        with open(self.training_data_file, 'r') as f:
+            training_data = json.load(f)
 
-        if similarity_score < 0.5 :
-            return default_response[0] 
-        else :
-            return responses[response_idx]
+        patterns = []
+        labels = []
+        responses = []
+
+        for intent in training_data['intents']:
+            patterns.extend(intent['text'])
+            labels.extend([intent['tag']] * len(intent['text']))
+            responses.extend(intent['responses'])
+
+        unique_words = list(set(" ".join(patterns).split()))
+        self.word_to_int = {word: i for i, word in enumerate(unique_words)}
+        int_encoded_data = [[self.word_to_int[word] for word in sentence.split()] for sentence in patterns]
         
-        
+        max_length = max([len(sentence) for sentence in int_encoded_data])
+        self.padded_data = pad_sequences(int_encoded_data, maxlen=max_length, padding='post')
+
+        self.label_to_int = {label: i for i, label in enumerate(set(labels))}
+        int_encoded_labels = [self.label_to_int[label] for label in labels]
+        self.responses = responses
+
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Embedding(len(unique_words), 512, input_length=max_length),
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(32, activation="relu"),
+            tf.keras.layers.Dense(len(set(labels)), activation="softmax")
+        ])
+
+        self.model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+        self.model.fit(np.array(self.padded_data), np.array(int_encoded_labels),epochs=200)
+
+    def generate_response(self, text):
+        int_encoded_text = [self.word_to_int[word] for word in text.split() if word in self.word_to_int]
+        padded_text = pad_sequences([int_encoded_text], maxlen=len(self.padded_data[0]), padding='post')
+        predicted_label = self.model.predict(np.array(padded_text))[0]
+        max_prob_index = np.argmax(predicted_label)
+        for label, int_label in self.label_to_int.items():
+            if int_label == max_prob_index:
+                return self.responses[int_label]
+            
+# bot = ChatbotModel('./database/intents.json')

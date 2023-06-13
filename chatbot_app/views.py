@@ -6,7 +6,7 @@ def chatbot_view(request):
         message = request.POST.get('message', '').strip()
 
         if message:
-            chatbot = ChatbotModel()
+            chatbot = ChatbotModel('./database/intents.json')
             response = chatbot.generate_response(message)
             history = request.session.get('history', [])
             history.append({'message': message, 'response': response})
