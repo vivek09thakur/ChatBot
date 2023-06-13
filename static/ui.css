@@ -76,16 +76,6 @@ header {
   margin-left: -10px;
 }
 
-#del{
-  width: 70px;
-  height: 36px;
-  border: 0;
-  background: #303134;
-  color: #8ab4f8;
-  border-radius: 0.3em;
-  margin-right: -10px;
-}
-
 #submit:focus {
   transform: translateY(4px);
 }
@@ -163,6 +153,17 @@ strong {
   'GRAD' 0,
   'opsz' 48
 }
+
+#del{
+  width: 70px;
+  height: 36px;
+  border: 0;
+  background: #303134;
+  color: #8ab4f8;
+  border-radius: 0.3em;
+  margin-right: -10px;
+}
+
 
 
 @media screen and (max-width: 450px) {
