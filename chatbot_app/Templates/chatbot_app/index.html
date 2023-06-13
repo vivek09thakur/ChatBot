@@ -12,6 +12,7 @@
     />
     <link rel="icon" href="./static/AI.svg" type="image/x-icon" />
   </head>
+
   <body>
     <div class="section">
       <div id="chatbot">
@@ -28,10 +29,9 @@
         </div>
         <!-- <p>{{ response }}</p> -->
       </div>
-      
+
       {% endif %}
       <form id="main-form" method="post" action="">
-
         {% csrf_token %}
         <button type="submit" name="delete_history" id="del">
           <span class="material-symbols-outlined"> delete </span>
