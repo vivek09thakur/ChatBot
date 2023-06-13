@@ -76,6 +76,16 @@ header {
   margin-left: -10px;
 }
 
+#del{
+  width: 70px;
+  height: 36px;
+  border: 0;
+  background: #303134;
+  color: #8ab4f8;
+  border-radius: 0.3em;
+  margin-right: -10px;
+}
+
 #submit:focus {
   transform: translateY(4px);
 }

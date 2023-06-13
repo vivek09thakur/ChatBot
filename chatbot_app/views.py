@@ -14,6 +14,11 @@ def chatbot_view(request):
 
             # Redirect to a new URL after processing the form
             return redirect('index')
+        
+        if 'delete_history' in request.POST:
+        # Delete the history if the delete button is clicked
+            del request.session['history']
+            return redirect('index')
 
     # If the request method is not POST, return the current history without generating a response
     history = request.session.get('history', [])
