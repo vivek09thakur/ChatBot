@@ -51,7 +51,7 @@ header {
 }
 
 #text-area {
-  width: 88%;
+  width: 81%;
   height: 35px;
   border: none;
   outline: none;
@@ -68,7 +68,7 @@ header {
 
 #submit {
   width: 70px;
-  height: 36px;
+  height: 35px;
   border: 0;
   background: #303134;
   color: #8ab4f8;
@@ -156,7 +156,7 @@ strong {
 
 #del{
   width: 70px;
-  height: 36px;
+  height: 35px;
   border: 0;
   background: #303134;
   color: #8ab4f8;
