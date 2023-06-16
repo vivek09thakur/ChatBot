@@ -76,14 +76,6 @@ header {
   margin-left: -10px;
 }
 
-#submit:focus {
-  transform: translateY(4px);
-}
-
-#submit:hover {
-  transform: translateY(4px);
-}
-
 #main-form {
   display: flex;
   margin: auto;
