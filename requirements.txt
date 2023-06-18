@@ -1,3 +1,4 @@
 Django
 tensorflow
 scikit-learn
+gunicorn==20.1.0
