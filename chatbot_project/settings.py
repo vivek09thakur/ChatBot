@@ -81,11 +81,15 @@ STATICFILES_DIRS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / './database/database.db',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:qr7rqVpq3S8KAHrYKeE4@containers-us-west-102.railway.app:5965/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'qr7rqVpq3S8KAHrYKeE4',
+        'HOST': 'containers-us-west-102.railway.app',
+        'PORT': 5965,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
