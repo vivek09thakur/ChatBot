@@ -23,3 +23,4 @@ def chatbot_view(request):
     # If the request method is not POST, return the current history without generating a response
     history = request.session.get('history', [])
     response = None
+    return render(request, 'chatbot_app/index.html', {'history': history, 'response': response})
