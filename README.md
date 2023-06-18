@@ -4,8 +4,7 @@
 
 
 ## Description
-
-The chatbot allows users to have interactive conversations with an AI-powered bot. Users can enter messages, and the chatbot will generate responses based on the input using the JERN model.
+Just an Experimental Responses Network ( JERN ) , An AI chatbot built with Django and TensorFlow which is capable of recognizing intents and generates a suitable response for the given prompt.
 
 |    JERN On Start                                  |                        JERN in action             |
 |---------------------------------------------------|---------------------------------------------------|
