@@ -6,7 +6,6 @@
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -45,7 +44,7 @@ header {
 
 #chatbot {
   width: 59vw;
-  height: 97vh;
+  height: inherit;
   margin: auto;
   overflow-y: scroll;
 }
