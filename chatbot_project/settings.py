@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-# import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-r)z4v232bp+lmes6q2m5agj-0j_ac%6ja52ti=u^kg)ok&faph
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','.vercel.app', '.now.sh','onrender.com']
+ALLOWED_HOSTS = ['*','.vercel.app','.now.sh']
 
 
 # Application definition
@@ -70,11 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatbot_project.wsgi.application'
-
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
