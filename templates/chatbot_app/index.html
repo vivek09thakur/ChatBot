@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="./static/ui.css" /> -->
-    <link rel="icon" href="./AI.svg" type="image/x-icon" />
+    <link rel="icon" href="./static/AI.svg" type="image/x-icon" />
     <title>JERN</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap");
@@ -196,10 +196,10 @@
         <div class="conversation">
           {% for entry in history %}
           <div class="user">
-            <img src="./user.jpg" /> {{ entry.message }}
+            <img src="./static/user.jpg" /> {{ entry.message }}
           </div>
           <div class="ai">
-            <img src="./AI.svg" /> {{ entry.response }}
+            <img src="./static/AI.svg" /> {{ entry.response }}
           </div>
           {% endfor %}
         </div>
@@ -221,6 +221,7 @@
           <span class="material-symbols-outlined"> send </span>
         </button>
       </form>
+    
     </div>
     <script src="./static/animation.js"></script>
   </body>
