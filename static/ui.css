@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   overflow-x: hidden;
 }
 
@@ -35,7 +35,7 @@ header {
   width: 80vw;
   height: 10vh;
   padding: 10px 0px 0px 10px;
-  border-radius: .3em 3em;
+  border-radius: 0.3em 3em;
 }
 
 #subtitle {
@@ -57,7 +57,7 @@ header {
   border-radius: 0.3em;
   margin: 7px;
   padding: 0px 10px;
-  background:#303134;
+  background: #303134;
 }
 
 #text-area::placeholder {
@@ -114,7 +114,7 @@ header {
 .ai {
   width: 100%;
   height: 79px;
-  color:  #c8c8c8;
+  color: #c8c8c8;
   font-weight: 200;
   display: flex;
   align-items: center;
@@ -125,8 +125,7 @@ strong {
   margin-right: 10px;
 }
 
-
-.section{
+.section {
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -136,16 +135,11 @@ strong {
   justify-content: center;
 }
 
-
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-#del{
+#del {
   width: 70px;
   height: 35px;
   border: 0;
@@ -155,12 +149,9 @@ strong {
   margin-right: -10px;
 }
 
-
-
 @media screen and (max-width: 450px) {
-
-  #main-form{
-    width: 99vw;
+  #main-form {
+    width: 95vw;
   }
   #chatbot {
     width: 100vw;
@@ -176,13 +167,13 @@ strong {
 
   .conversation {
     font-size: 12px;
+    max-height: 85vh;
   }
 
   #text-area {
     width: 72%;
   }
-  .section{
+  .section {
     width: 100vw;
   }
 }
-
