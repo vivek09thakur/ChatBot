@@ -87,6 +87,7 @@
 
       #main-form {
         display: flex;
+        margin: auto;
         width: 59vw;
         /* margin-left: 22vw; */
         justify-content: center;
@@ -94,7 +95,7 @@
         z-index: 100000;
         height: 7vh;
         background: #202124;
-        position: absolute;
+        position: sticky;
         bottom: 0;
       }
 
@@ -162,6 +163,8 @@
       @media screen and (max-width: 450px) {
         #main-form {
           width: 95vw;
+          position: absolute;
+          bottom: 0;
           margin-left: 3.5vw;
         }
         #chatbot {
