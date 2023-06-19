@@ -87,14 +87,14 @@
 
       #main-form {
         display: flex;
-        margin: auto;
         width: 59vw;
+        margin-left: 22vw;
         justify-content: center;
         align-items: center;
         z-index: 100000;
         height: 7vh;
         background: #202124;
-        position: sticky;
+        position: absolute;
         bottom: 0;
       }
 
@@ -162,9 +162,10 @@
       @media screen and (max-width: 450px) {
         #main-form {
           width: 95vw;
+          margin-left: 3.5vw;
         }
         #chatbot {
-          width: 100vw;
+          width: 104vw;
         }
 
         .head {
@@ -192,8 +193,10 @@
 
   <body>
     <div class="section">
+
       <div id="chatbot">
         {% if history %}
+
         <div class="conversation">
           {% for entry in history %}
           <div class="user">
@@ -202,32 +205,34 @@
           <div class="ai">
             <img src="./AI.svg" /> {{ entry.response }}
           </div>
+
           {% endfor %}
         </div>
+
       </div>
 
       {% endif %}
       <form id="main-form" method="post" action="">
+
         {% csrf_token %}
         <button type="submit" name="delete_history" id="del">
           <span class="material-symbols-outlined"> delete </span>
         </button>
+
         <input
           type="text"
           name="message"
           id="text-area"
           placeholder="Enter your message"
         />
+
         <button type="submit" value="Send" id="submit">
           <span class="material-symbols-outlined"> send </span>
         </button>
+        
       </form>
     
     </div>
     <script src="./static/animation.js"></script>
-    <script>
-      const conversationDiv = document.getElementById("conversation");
-      conversationDiv.scrollTop = conversationDiv.scrollHeight;
-    </script>
   </body>
 </html>
