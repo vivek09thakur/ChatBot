@@ -1,4 +1,4 @@
-# Just an Experimental Response Network or JERN
+# JERN or Just an Experimental Response Network
 
 > | <p align='left'>Just an Experimental Responses Network ( JERN ) , An AI chatbot built with Django and Scikit-Learn which is capable of recognizing intents and generates a suitable response for the given prompt. |
 > |---------------------------------------- |
@@ -7,13 +7,13 @@
 
 
 
-### CLICK BELOW TO TALK JERN : 
+## TALK To JERN : 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://jern.onrender.com)
 
 
 ##
 
-## PROS :zap: & CONS :warning:
+## PROS ⚡ & CONS ⚠️
 > | PROS/CONS |  FEATURES/ISSUE    | DESCRIPTION  | FEATURES/ISSUE | DESCRIPTION  |
 > |------------------------------|--------------------|--------------|----------------|--------------|
 > | Pros  :zap: |  UI/UX INCLUDES | Easy to use chat interface , Conversation history  |  AI FEATURES |  Recognize user intents and responds |
@@ -23,10 +23,10 @@
 
 ## Acknowledgements
 
-- ######  [JERN model](https://github.com/vivek09thakur/JERN)
-- ###### [Django](https://www.djangoproject.com/start/)
-- ###### [Scikit-Learn](https://scikit-learn.org/stable/)
+- [JERN model](https://github.com/vivek09thakur/JERN)
+- [Django](https://www.djangoproject.com/start/)
+- [Scikit-Learn](https://scikit-learn.org/stable/)
 
-### Developed by 
+## Developed by 
 
 ##### [Vivek Thakur](https://www.github.com/vivek09thakur/)
