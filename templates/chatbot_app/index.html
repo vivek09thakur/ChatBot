@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./static/ui.css" /> -->
     <link rel="icon" href="./AI.svg" type="image/x-icon" />
     <title>JERN</title>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
       * {
         margin: 0;
         padding: 0;
         font-family: "Source Sans Pro", sans-serif;
-        overflow-x: hidden;
+        overflow: hidden;
       }
 
       ::-webkit-scrollbar {
@@ -24,43 +25,35 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        /* background: linear-gradient(transparent, rgb(136, 0, 255)); */
         background: transparent;
         border-radius: 6px;
       }
 
       ::webkit-scrollbar-thumb:hover {
-        /* background: linear-gradient(transparent, rgb(0, 255, 102)); */
         background: transparent;
       }
 
       body {
         background: #202124;
-        /* overflow-y: hidden; */
-      }
-
-      header {
-        background-color: rgb(136, 0, 255);
-        color: whitesmoke;
-        width: 80vw;
-        height: 10vh;
-        padding: 10px 0px 0px 10px;
-        border-radius: 0.3em 3em;
-      }
-
-      #subtitle {
-        font-weight: 200;
+        height: 100vh;
+        width: 100vw;
       }
 
       #chatbot {
-        width: 59vw;
-        height: inherit;
+        width: 100%;
+        height: 100vh;
         margin: auto;
+      }
+
+      .conversation {
         overflow-y: scroll;
+        height: 90vh;
+        width: 60%;
+        margin: auto;
       }
 
       #text-area {
-        width: 81%;
+        width: 100%;
         height: 35px;
         border: none;
         outline: none;
@@ -89,7 +82,6 @@
         display: flex;
         margin: auto;
         width: 59vw;
-        /* margin-left: 22vw; */
         justify-content: center;
         align-items: center;
         z-index: 100000;
@@ -99,15 +91,20 @@
         bottom: 0;
       }
 
-      #conversation {
-        overflow-y: scroll;
-        height: 60vh;
-      }
-
       .user {
         background: #303134;
       }
-
+      
+      .user,
+      .ai {
+        width: 100%;
+        height: 79px;
+        color: #c8c8c8;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
       .user img {
         width: 29px;
         height: 29px;
@@ -121,35 +118,7 @@
         margin-right: 14px;
       }
 
-      .user,
-      .ai {
-        width: 100%;
-        height: 79px;
-        color: #c8c8c8;
-        font-weight: 200;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-      }
-
-      strong {
-        margin-right: 10px;
-      }
-
-      .section {
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-      }
-
+      
       #del {
         width: 70px;
         height: 35px;
@@ -159,83 +128,62 @@
         border-radius: 0.3em;
         margin-right: -10px;
       }
+      
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
 
       @media screen and (max-width: 450px) {
+        
+        #chatbot {
+          width: 104vw;
+        }
         #main-form {
           width: 95vw;
           position: absolute;
           bottom: 0;
           margin-left: 3.5vw;
         }
-        #chatbot {
-          width: 104vw;
-        }
-
-        .head {
-          width: 87vw;
-        }
-
-        .head p {
-          display: none;
-        }
 
         .conversation {
           font-size: 12px;
           max-height: 80vh;
+          width: 100%;
         }
 
         #text-area {
           width: 72%;
-        }
-        .section {
-          width: 100vw;
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="section">
-
-      <div id="chatbot">
-        {% if history %}
-
-        <div class="conversation">
-          {% for entry in history %}
-          <div class="user">
-            <img src="./user.jpg" /> {{ entry.message }}
-          </div>
-          <div class="ai">
-            <img src="./AI.svg" /> {{ entry.response }}
-          </div>
-
-          {% endfor %}
-        </div>
-
+    <div id="chatbot">
+      {% if history %}
+      <div class="conversation">
+        {% for entry in history %}
+        <div class="user"><img src="./user.jpg" /> {{ entry.message }}</div>
+        <div class="ai"><img src="./AI.svg" /> {{ entry.response }}</div>
+        {% endfor %}
       </div>
 
       {% endif %}
       <form id="main-form" method="post" action="">
-
         {% csrf_token %}
         <button type="submit" name="delete_history" id="del">
           <span class="material-symbols-outlined"> delete </span>
         </button>
-
         <input
           type="text"
           name="message"
           id="text-area"
           placeholder="Enter your message"
         />
-
         <button type="submit" value="Send" id="submit">
           <span class="material-symbols-outlined"> send </span>
         </button>
-        
       </form>
-    
     </div>
-    <script src="./static/animation.js"></script>
   </body>
 </html>
