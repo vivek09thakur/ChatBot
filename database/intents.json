@@ -528,6 +528,18 @@
                 "That is an difficult question, can you prove that you are?",
                 "That depends, can you prove that you are?"
             ]
+        },
+        {
+            "tag":"creator",
+            "text":[
+                "who is your creator",
+                "who created you",
+                "who owns you"
+            ],
+            "responses":[
+                "I was created by Vivek Thakur , as his part time project.",
+                "Nobody owns me , but i am loyal to my master vivek thakur"
+            ]
         }
     ]
 }
