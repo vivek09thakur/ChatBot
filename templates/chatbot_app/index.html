@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./AI.svg" type="image/x-icon" />
+    <link rel="icon" href="./static/AI.svg" type="image/x-icon" />
     <title>JERN</title>
 
     <style>
@@ -163,8 +163,8 @@
       {% if history %}
       <div class="conversation">
         {% for entry in history %}
-        <div class="user"><img src="./user.jpg" /> {{ entry.message }}</div>
-        <div class="ai"><img src="./AI.svg" /> {{ entry.response }}</div>
+        <div class="user"><img src="./static/user.jpg" /> {{ entry.message }}</div>
+        <div class="ai"><img src="./static/AI.svg" /> {{ entry.response }}</div>
         {% endfor %}
       </div>
 
