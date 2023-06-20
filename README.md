@@ -4,33 +4,22 @@
 
 
 ## Description
-Just an Experimental Responses Network ( JERN ) , An AI chatbot built with Django and TensorFlow which is capable of recognizing intents and generates a suitable response for the given prompt.
-
-|    JERN On Start                                  |                        JERN in action             |
-|---------------------------------------------------|---------------------------------------------------|
-|![](./img/05d85c84-ccfb-432b-b2ca-f9e675285df0.jpg)|![](./img/a79d4b83-fee7-4977-ad50-9f6d05f4d9aa.jpg)|
-
-## Features
-
-- Real-time chat interface
-- AI-powered responses
-- Typing animation for AI responses
-- Chat history display
+Just an Experimental Responses Network ( JERN ) , An AI chatbot built with Django and Scikit-Learn which is capable of recognizing intents and generates a suitable response for the given prompt.
 
 
-## Usage
-- The chatbot will generate a response based on your input.
-- Enter your message in the text area and click the "Send" button.
-- The conversation history will be displayed on the screen.
-- You can continue the conversation by entering more messages.
 
+
+| :zap: Pros  / :warning: Cons |  FEATURES/ISSUE    | DESCRIPTION  | FEATURES/ISSUE | DESCRIPTION  |
+|------------------------------|--------------------|--------------|----------------|--------------|
+| :zap: Pros  |  UI/UX INCLUDES | Easy to use chat interface , Conversation history  |  AI FEATURES |  Recognize user intents and responds ,  |
+|  :warning: Cons |  LOGIN NOT AVALIABLE :exclamation: |  So history of all users is stored at one place which means your chat history with chatbot is visible for everyone, therefore i am requesting you to delete the chat history. This drawback will be resolved in future. |  The bot may take a while to respond :exclamation: |  As it uses a free web server of render , so sometimes bot may takes some time to respond. |
 
 ## Acknowledgements
 
-- [JERN model](https://github.com/vivek09thakur/JERN)
-- [Django](https://www.djangoproject.com/start/)
-- [Scikit-Learn](https://scikit-learn.org/stable/)
+- ######  [JERN model](https://github.com/vivek09thakur/JERN)
+- ###### [Django](https://www.djangoproject.com/start/)
+- ###### [Scikit-Learn](https://scikit-learn.org/stable/)
 
 ### Developed by 
 
-[Vivek Thakur](https://www.github.com/vivek09thakur/)
+##### [Vivek Thakur](https://www.github.com/vivek09thakur/)
