@@ -27,6 +27,4 @@
 - [Django](https://www.djangoproject.com/start/)
 - [Scikit-Learn](https://scikit-learn.org/stable/)
 
-## Developed by 
-
-##### [Vivek Thakur](https://www.github.com/vivek09thakur/)
+### Developed by : [Vivek Thakur](https://www.github.com/vivek09thakur/)
