@@ -17,6 +17,8 @@
         padding: 0;
         font-family: "Source Sans Pro", sans-serif;
         overflow: hidden;
+        border: none;
+        outline: none;
       }
 
       ::-webkit-scrollbar {
@@ -33,127 +35,152 @@
         background: transparent;
       }
 
+      ::placeholder {
+        text-align: center;
+        font-size: 15px;
+        color: #cecece;
+      }
+
       body {
-        background: #202124;
-        height: 100vh;
         width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #171717;
       }
 
       #chatbot {
         width: 100%;
         height: 100vh;
-        margin: auto;
       }
 
       .conversation {
+        height: 70vh;
+        width: 62%;
         overflow-y: scroll;
-        height: 90vh;
-        width: 60%;
-        margin: auto;
-      }
-
-      #text-area {
-        width: 100%;
-        height: 35px;
-        border: none;
-        outline: none;
-        border-radius: 0.3em;
-        margin: 7px;
-        padding: 0px 10px;
-        background: #303134;
-      }
-
-      #text-area::placeholder {
-        opacity: 0.7;
-        text-align: center;
-      }
-
-      #submit {
-        width: 70px;
-        height: 35px;
-        border: 0;
-        background: #303134;
-        color: #8ab4f8;
-        border-radius: 0.3em;
-        margin-left: -10px;
-      }
-      
-
-      #main-form {
-        display: flex;
-        margin: auto;
-        width: 59vw;
-        justify-content: center;
-        align-items: center;
-        z-index: 100000;
-        height: 7vh;
-        background: #202124;
-        position: sticky;
-        bottom: 0;
+        margin: 8vh auto;
+        background: #000;
+        border: 1px solid #333;
+        border-radius: 0.5em;
+        color: white;
       }
 
       .user {
-        background: #303134;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
       }
-      
-      .user,
+
+      .user img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-left: 15px;
+        margin-right: 25px;
+      }
       .ai {
         width: 100%;
-        height: 79px;
-        color: #c8c8c8;
-        font-weight: 200;
+        height: 60px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        padding-left: 10px;
       }
-      .user img {
-        width: 29px;
-        height: 29px;
-        border-radius: 50%;
-        margin-right: 14px;
-      }
-
       .ai img {
-        width: 17px;
-        height: 17px;
-        margin-right: 14px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-left: 15px;
+        margin-right: 25px;
       }
 
-      
+      #main-form {
+        width: 100vw;
+        height: 17vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 3px;
+        z-index: 1000000;
+      }
+
+      #new_response {
+        width: 61.5%;
+        height: 40px;
+        margin: 7px 0 0 0;
+        background: #3a3a3a;
+        border-radius: 5px;
+      }
+
+      .input_box {
+        width: 100%;
+        height: 7.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #text-area {
+        height: 40px;
+        width: 58%;
+        margin: 7px 0;
+        background: #3a3a3a;
+      }
+
       #del {
-        width: 70px;
-        height: 35px;
-        border: 0;
-        background: #303134;
-        color: #8ab4f8;
-        border-radius: 0.3em;
-        margin-right: -10px;
-      }
-      
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+        background: #3a3a3a;
+        height: 40px;
+        width: 30px;
+        border-radius: 5px;
+        margin-right: -5px;
+        color: #0b9ee1;
       }
 
-      @media screen and (max-width: 450px) {
-        
-        #chatbot {
-          width: 104vw;
+      #submit {
+        background: #3a3a3a;
+        height: 40px;
+        width: 30px;
+        border-radius: 5px;
+        margin-left: -5px;
+        color: #0b9ee1;
+      }
+      @media screen and (max-width:575px) {
+        .conversation {
+          height: 70vh;
+          width: 95%;
+          overflow-y: scroll;
+          margin: 6vh auto;
+          background: #000;
+          border: 1px solid #333;
+          border-radius: 0.5em;
+          color: white;
         }
         #main-form {
-          width: 95vw;
-          position: absolute;
-          bottom: 0;
-          margin-left: 3.5vw;
+          width: 100vw;
+          height: 24vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          bottom: 3px;
+          z-index: 1000000;
         }
-
-        .conversation {
-          font-size: 12px;
-          max-height: 80vh;
-          width: 100%;
+        #new_response {
+          width: 91.5%;
+          height: 40px;
+          margin: 7px 0 3px 0;
+          background: #3a3a3a;
+          border-radius: 5px;
         }
 
         #text-area {
-          width: 72%;
+          height: 40px;
+          width: 75%;
+          margin: 7px 0;
+          background: #3a3a3a;
         }
       }
     </style>
@@ -172,18 +199,28 @@
       {% endif %}
       <form id="main-form" method="post" action="">
         {% csrf_token %}
-        <button type="submit" name="delete_history" id="del">
-          <span class="material-symbols-outlined"> delete </span>
-        </button>
+
         <input
           type="text"
-          name="message"
-          id="text-area"
-          placeholder="Enter your message"
+          name="new_response"
+          id="new_response"
+          placeholder="Teach a response"
         />
-        <button type="submit" value="Send" id="submit">
-          <span class="material-symbols-outlined"> send </span>
-        </button>
+
+        <div class="input_box">
+          <button type="submit" name="delete_history" id="del">
+            <span class="material-symbols-outlined"> delete </span>
+          </button>
+          <input
+            type="text"
+            name="message"
+            id="text-area"
+            placeholder="Enter your message"
+          />
+          <button type="submit" value="Send" id="submit">
+            <span class="material-symbols-outlined"> send </span>
+          </button>
+        </div>
       </form>
     </div>
   </body>
