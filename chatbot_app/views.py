@@ -37,20 +37,19 @@ def chatbot_view(request):
     try:
         if request.method == 'POST':
             message = request.POST.get('message', '').strip()
-            new_response = request.POST.get('new_response', '').strip()
 
             if message:
                 response = get_best_response(message)
 
                 if response is None:
                     response = 'Sorry, but I am not able to respond to this kind of prompt. If you would like, you can teach me how to respond to it.'
-
+                    new_response = request.POST.get('new_response', '').strip()
                     if new_response:
-                        add_new_response(message, new_response)
-                        response = 'Thanks for teaching me something new!'
+                        add_new_response(message=message,new_response=new_response)
+                        thnx_msg = 'Thanks for teaching me something new!'
 
                 history = request.session.get('history', [])
-                history.append({'message': message, 'response': response})
+                history.append({'message': message, 'response': response,'thnx_msg':thnx_msg})
                 request.session['history'] = history
 
                 return redirect('home')
@@ -61,7 +60,7 @@ def chatbot_view(request):
 
         history = request.session.get('history', [])
         response = None
-        return render(request, 'chatbot_app/index.html', {'history': history, 'response': response})
+        return render(request, 'chatbot_app/index.html', {'history': history, 'response': response,'thnx_msg':thnx_msg})
 
     except Exception:
         return redirect('home')
