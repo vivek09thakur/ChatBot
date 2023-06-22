@@ -11,8 +11,6 @@
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://jern.onrender.com)
 
 
-##
-
 ## PROS ⚡ & CONS ⚠️
 > | PROS/CONS |  FEATURES/ISSUE    | DESCRIPTION  | FEATURES/ISSUE | DESCRIPTION  |
 > |------------------------------|--------------------|--------------|----------------|--------------|
