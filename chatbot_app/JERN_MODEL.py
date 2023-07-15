@@ -1,45 +1,20 @@
-import numpy as np
-from sklearn import linear_model
-import sklearn.feature_extraction.text as text
 import json
+import random
 
-def load_intents(file_name):
-    with open(file_name, "r") as f:
-        intents = json.load(f)
-    return intents['intents']
+with open('database/intents.json') as file:
+    data = json.load(file)
 
-def train_model(intents):
-    # train the Model
-    feature_vectors = []
-    responses = []
-    confidences = []
+intents = data['intents']
+pairs = []
 
-    for intent in intents:
-        for pattern in intent["patterns"]:
-            feature_vectors.append(pattern)
-            response = intent["responses"][0]
-            confidence = 0.9
-            responses.append(response)
-            confidences.append(confidence)
+for intent in data['intents']:
+    for pattern in intent['patterns']:
+        pairs.append((pattern, intent['responses']))
 
-    vectorizer = text.TfidfVectorizer()
-    features = vectorizer.fit_transform(feature_vectors)
+def generate_response(user_input):
 
-    model = linear_model.LogisticRegression()
-    model.fit(features, responses, confidences)
-    model.vectorizer = vectorizer
-
-    return model
-
-def generate_response(model, input_text):
-    # generates the response
-    feature = model.vectorizer.transform([input_text])
-    predicted_response = model.predict(feature)[0]
-    # get the confidence
-    confidence = np.max(model.predict_proba(feature))
-    if confidence < 0.5:
-        default_response = '''Sorry, but I don't know how to respond yet.
-        Can you try another prompt or provide more context or information?'''
-        return default_response
-
-    return predicted_response
+    for pattern, responses in pairs:
+        if pattern in user_input:
+            return random.choice(responses)
+        else:
+            return "sorry but i didn\'t understand , can you repeat or try a different prompt?"

@@ -1,8 +1,5 @@
 from django.shortcuts import render, redirect
-from .JERN_MODEL import load_intents,train_model,generate_response
-
-intents = load_intents('database/intents.json')
-model = train_model(intents)
+from .JERN_MODEL import generate_response
 
 
 def chatbot_view(request):
@@ -13,7 +10,7 @@ def chatbot_view(request):
 
             if message:
 
-                response = generate_response(model,message)
+                response = generate_response(message)
                 history = request.session.get('history', [])
                 history.append({'message': message, 'response': response})
                 request.session['history'] = history
