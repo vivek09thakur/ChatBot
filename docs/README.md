@@ -4,7 +4,8 @@
 > |---------------------------------------- |
 
 ### A live demo :
-![](https://media.licdn.com/dms/image/D4D22AQG9BmNRbaeHOA/feedshare-shrink_800/0/1687463831974?e=1690416000&v=beta&t=Z1nGMDjSaHYCOQCLOw9F7iVb-QxPIpKnwSYwKT_Abr0)
+
+<img src="https://i.ibb.co/qpwdTrg/brave-screenshot.png" alt="brave-screenshot" border="0">
 
 
 
