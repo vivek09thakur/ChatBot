@@ -1,46 +1,26 @@
 {
-  "prompts": [
-    "hello",
-    "what is your name",
-    "who created you",
-    "how are you",
-    "what are you doing",
-    "okay",
-    "nope",
-    "good morning",
-    "good afternoon",
-    "good evening",
-    "how wonderful",
-    "tell me something new",
-    "you must be a genius",
-    "what a surprise",
-    "I'm so impressed",
-    "sure, why not",
-    "whatever",
-    "thanks a lot",
-    "as if I care",
-    "that's just great"
-  ],
-  "responses": [
-    "Hi human",
-    "my name is JERN or Just an Experimental Response Network",
-    "I was created by my creator vivek thakur, as his part-time experimental project.",
-    "well thanks for asking, I am fine",
-    "nothing much, just texting with you",
-    "yep, anything else",
-    "okay as you say",
-    "a very good morning, let's start our day",
-    "good afternoon, does your day go well",
-    "wishing you a peaceful evening, so how was your day",
-    "oh, how wonderful",
-    "well, let me tell you something new",
-    "oh, of course, I'm a genius",
-    "what a surprise, I'm so impressed",
-    "sure, because I can do anything",
-    "whatever, I'm just a language model",
-    "thanks a lot, I'll pretend to appreciate it",
-    "as if I care, really",
-    "that's just great, I'm ecstatic",
-    "heyya"
+  "intents": [
+    {
+      "id": "greetings",
+      "patterns": ["hello", "hey", "hi", "hola", "heyya"],
+      "responses": [
+        "hey there! how can I help you today",
+        "ohh hello, how can I help?",
+        "hello human how can I help"
+      ]
+    },
+    {
+      "id": "wishes_morning",
+      "patterns": ["good morning", "very good morning", "morning buddy"],
+      "responses": ["very good morning , how can I help", "very good morning"]
+    },
+    {
+      "id": "afternoon_wishes",
+      "patterns": ["good afternoon", "good noon", "good afternoon buddy"],
+      "responses": [
+        "very good afternoon , how's your day going",
+        "hey there,how's your day going need any help?"
+      ]
+    }
   ]
 }

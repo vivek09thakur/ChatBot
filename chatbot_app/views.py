@@ -1,23 +1,9 @@
 from django.shortcuts import render, redirect
-import json
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
+from .JERN_MODEL import load_intents,train_model,generate_response
 
-with open('./database/intents.json') as f:
-    data = json.load(f)
-training_data = data['prompts']
-responses = data['responses']
+intents = load_intents('database/intents.json')
+model = train_model(intents)
 
-vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(training_data)
-y = list(range(len(training_data)))
-clf = MultinomialNB()
-clf.fit(X, y)
-
-def generate_response(message): 
-    message_bow = vectorizer.transform([message])
-    response_idx = clf.predict(message_bow)[0]
-    return responses[response_idx]
 
 def chatbot_view(request):
 
@@ -26,7 +12,8 @@ def chatbot_view(request):
             message = request.POST.get('message', '').strip()
 
             if message:
-                response = generate_response(message)
+
+                response = generate_response(model,message)
                 history = request.session.get('history', [])
                 history.append({'message': message, 'response': response})
                 request.session['history'] = history
@@ -42,6 +29,7 @@ def chatbot_view(request):
         # If the request method is not POST, return the current history without generating a response
         history = request.session.get('history', [])
         response = None
-        return render(request, 'chatbot_app/index.html', {'history': history, 'response': response})
+        return render(request, 'chatbot_app/index.html', 
+                      {'history': history, 'response': response})
     except Exception:
         return redirect('home')
