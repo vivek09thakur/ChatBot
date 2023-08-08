@@ -74,15 +74,21 @@ WSGI_APPLICATION = 'chatbot_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'URL': 'postgresql://postgres:qr7rqVpq3S8KAHrYKeE4@containers-us-west-102.railway.app:5965/railway',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'qr7rqVpq3S8KAHrYKeE4',
+#         'HOST': 'containers-us-west-102.railway.app',
+#         'PORT': 5965,
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:qr7rqVpq3S8KAHrYKeE4@containers-us-west-102.railway.app:5965/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'qr7rqVpq3S8KAHrYKeE4',
-        'HOST': 'containers-us-west-102.railway.app',
-        'PORT': 5965,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.db',
     }
 }
 
@@ -129,6 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIR =[
-os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')

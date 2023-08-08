@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .JERN_MODEL import generate_response
+from .response_network import generate_response
 
 
 def chatbot_view(request):

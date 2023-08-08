@@ -1,7 +1,7 @@
 import json
 import random
 
-with open('database/intents.json') as file:
+with open('training_data/intents.json') as file:
     data = json.load(file)
 
 intents = data['intents']
