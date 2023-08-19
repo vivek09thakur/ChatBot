@@ -24,11 +24,4 @@ class Jern:
         except Exception as e:
             return "I don't understand"
         
-# if __name__=='__main__':
-#     bot = Jern('./jern/dataset/intents.json')
-#     while True:
-#         user = input("You: ")
-#         response = bot.generate_response(user)
-#         print("Bot: ",response)
-        
         
