@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from .response_network import generate_response
+from jern.model import Jern
+
+bot = Jern('./jern/dataset/intents.json')
 
 
 def chatbot_view(request):
@@ -9,8 +11,7 @@ def chatbot_view(request):
             message = request.POST.get('message', '').strip()
 
             if message:
-
-                response = generate_response(message)
+                response = bot.generate_response(message)
                 history = request.session.get('history', [])
                 history.append({'message': message, 'response': response})
                 request.session['history'] = history
