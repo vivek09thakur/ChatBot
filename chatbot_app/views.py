@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from jern.model import Jern
+from .chatbot import Jern
 
-bot = Jern('./jern/dataset/intents.json')
+bot = Jern('./chatbot_app/dataset/intents.json')
 
 
 def chatbot_view(request):

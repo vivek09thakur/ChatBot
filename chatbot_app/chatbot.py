@@ -23,5 +23,3 @@ class Jern:
             return "I don't understand"
         except Exception as e:
             return "I don't understand"
-        
-        
