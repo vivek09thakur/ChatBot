@@ -9,7 +9,7 @@ An AI chatbot built with Django and Scikit-Learn which is capable of recognizing
 <img src="https://i.ibb.co/qpwdTrg/brave-screenshot.png" alt="brave-screenshot" border="0">
 
 |Check Deployment|<a href='https://jern.onrender.com'><img width='150px' src='https://render.com/images/deploy-to-render-button.svg'/></a>|
-|---|---|
+|----------------|----------------------------------------------------------------------------|
 
 **PROS ⚡**
 - [x] Easy to use chat interface
