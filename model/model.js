@@ -1,5 +1,3 @@
-import responses from "./intents";
-
 class ChatBot{
     constructor(){
         this.chatLog = document.getElementById("chat-log");
@@ -7,7 +5,7 @@ class ChatBot{
         this.sendButton = document.getElementById("send");
 
         this.sendButton.addEventListener("click", this.sendMessage.bind(this));
-        this.responses = responses;
+        this.responses = window.Response;
         
     };
     handleUserInput(){
@@ -40,7 +38,6 @@ class ChatBot{
 
     generateResponse(userMessage) {
         const lowerCaseMessage = userMessage.toLowerCase();
-
         for (const pattern in this.responses) {
             const regex = new RegExp(pattern, 'i');
             if (regex.test(lowerCaseMessage)) {
@@ -48,7 +45,6 @@ class ChatBot{
                 return responseArray[Math.floor(Math.random() * responseArray.length)];
             }
         }
-
         return this.responses["default"][Math.floor(Math.random() * this.responses["default"].length)];
     }
     scrollToBottom() {
