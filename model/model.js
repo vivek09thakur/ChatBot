@@ -1,57 +1,60 @@
-class ChatBot{
-    constructor(){
-        this.chatLog = document.getElementById("chat-log");
-        this.chatInput = document.getElementById("chat-input");
-        this.sendButton = document.getElementById("send");
+import Response from "/model/intents.js";
 
-        this.sendButton.addEventListener("click", this.sendMessage.bind(this));
-        this.responses = window.Response;
-        
-    };
-    handleUserInput(){
-        const userMessage = this.chatInput.value;
-        if (userMessage === "") return;
-        this.appendUserMessage(userMessage);
-        const response = this.generateResponse(userMessage);
-        this.appendBotMessage(response);
-        this.chatInput.value = "";
-    }
+class ChatBot {
+  constructor() {
+    this.chatLog = document.getElementById("chat-log");
+    this.chatInput = document.getElementById("chat-input");
+    this.sendButton = document.getElementById("send");
 
-    appendBotMessage(message){
-        const botMessage = this.createMessage(message, "bot");
-        this.chatLog.appendChild(botMessage);
-        this.scrollToBottom();
-    }
+    this.sendButton.addEventListener("click", this.handleUserInput);
+    this.responses = Response;
+  }
 
-    appendUserMessage(message){
-        const userMessage = this.createMessage(message, "user");
-        this.chatLog.appendChild(userMessage);
-        this.scrollToBottom();
-    }
+  handleUserInput = () => {
+    const userMessage = this.chatInput.value;
+    if (userMessage === "") return;
+    this.appendUserMessage(userMessage);
+    const response = this.generateResponse(userMessage);
+    this.appendBotMessage(response);
+    this.chatInput.value = "";
+  };
 
-    createMessageElement(message, messageClass) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('chat-message', messageClass);
-        messageElement.textContent = message;
-        return messageElement;
-    }
+  appendBotMessage(message) {
+    const botMessage = this.createMessage(message, "bot");
+    this.chatLog.appendChild(botMessage);
+    this.scrollToBottom();
+  }
 
-    generateResponse(userMessage) {
-        const lowerCaseMessage = userMessage.toLowerCase();
-        for (const pattern in this.responses) {
-            const regex = new RegExp(pattern, 'i');
-            if (regex.test(lowerCaseMessage)) {
-                const responseArray = this.responses[pattern];
-                return responseArray[Math.floor(Math.random() * responseArray.length)];
-            }
-        }
-        return this.responses["default"][Math.floor(Math.random() * this.responses["default"].length)];
+  appendUserMessage(message) {
+    const userMessage = this.createMessage(message, "user");
+    this.chatLog.appendChild(userMessage);
+    this.scrollToBottom();
+  }
+
+  createMessage(message, messageClass) {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("chat-message", messageClass);
+    messageElement.textContent = message;
+    return messageElement;
+  }
+
+  generateResponse(userMessage) {
+    const lowerCaseMessage = userMessage.toLowerCase();
+    for (const pattern in this.responses) {
+      const regex = new RegExp(pattern, "i");
+      if (regex.test(lowerCaseMessage)) {
+        const responseArray = this.responses[pattern];
+        return responseArray[Math.floor(Math.random() * responseArray.length)];
+      }
     }
-    scrollToBottom() {
-        this.chatLog.scrollTop = this.chatLog.scrollHeight;
-    }
+    return this.responses["default"][Math.floor(Math.random() * this.responses["default"].length)];
+  }
+
+  scrollToBottom() {
+    this.chatLog.scrollTop = this.chatLog.scrollHeight;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const chatbot = new ChatBot();
+document.addEventListener("DOMContentLoaded", function () {
+  const chatbot = new ChatBot();
 });

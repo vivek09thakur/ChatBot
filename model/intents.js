@@ -1,4 +1,4 @@
-window.Response = {
+const Response = {
     "hello": ["Hi , How are you?","Hello, How are you doing?","Hey how can I help you?"],
     "how are you?": ["I am fine, How are you?","I am good, How are you doing?"],
     "i am fine": ["Good to hear that","Nice to hear that"],
@@ -52,4 +52,4 @@ window.Response = {
     "bye":["Bye","Bye, see you later"]
 };
 
-// window.Responses = Responses;
+export default Response;
