@@ -58,6 +58,7 @@ body::-webkit-scrollbar {
 
 #chat-input {
     background: #131215 !important;
+    color: #cccccc !important;
 }
 .user,.bot{
     height: 50px;
@@ -66,6 +67,10 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 600px) {
     .chat-container {
         width: 100vw;
+        height: 80vh;
+    }
+    .chat-log {
+        height: 70vh;
     }
 
     .chat-input {
