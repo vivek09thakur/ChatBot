@@ -60,15 +60,28 @@ body::-webkit-scrollbar {
     background: #131215 !important;
     color: #cccccc !important;
 }
-.user,.bot{
+
+#chat-input:focus {
+    background: #131215 !important;
+    color: #cccccc !important;
+}
+
+#chat-input::placeholder {
+    color: #cccccc !important;
+}
+
+.user,
+.bot {
     height: 50px;
     overflow: scroll;
 }
+
 @media screen and (max-width: 600px) {
     .chat-container {
         width: 100vw;
         height: 80vh;
     }
+
     .chat-log {
         height: 70vh;
     }
