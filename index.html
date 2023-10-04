@@ -4,28 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="/styles/styles.css" />
   <title>Chatbot</title>
 </head>
 
 <body>
-  <div class="chat-container">
-    <div class="chat-header">
-      <h1>Chatbot</h1>
-    </div>
-
+  <div class="chat-header navbar navbar-expand-lg bg-body-tertiary">
+    <h1 class="navbar-brand">Chatbot</h1>
+  </div>
+  <div class="chat-container mb-3">
     <div class="chat-log" id="chat-log">
       <div class="chat-message bot-message"></div>
     </div>
 
-    <div class="chat-input">
-      <input type="text" id="chat-input" placeholder="Type your message..." />
-      <button id="send">Send</button>
+    <div class="chat-input input-group mb-3">
+      <input type="text" id="chat-input" class="form-control" placeholder="Type your message..." />
+      <button id="send" class="btn btn-primary">Send</button>
     </div>
   </div>
 
   <script type="module" src="./model/intents.js"></script>
   <script type="module" src="./model/model.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
