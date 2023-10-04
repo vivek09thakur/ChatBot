@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 * {
     margin: 0;
@@ -29,8 +30,15 @@ body::-webkit-scrollbar {
 
 .chat-header h1 {
     color: #cccccc !important;
-    font-weight: 500 !important;
-    padding-left: 30px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    font-family: 'Dela Gothic One', cursive !important;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
 }
 
 .chat-container {
@@ -53,27 +61,48 @@ body::-webkit-scrollbar {
 
 .chat-input {
     width: 600px;
+    height: 45px;
     margin: auto;
 }
 
 #chat-input {
-    background: #131215 !important;
+    background: #08090a !important;
     color: #cccccc !important;
+    border-radius: .2em !important;
+    outline: none !important;
+    border: 1px solid #3033363c!important;
+    padding: 3px 10px !important;
 }
 
-#chat-input:focus {
-    background: #131215 !important;
+#chat-input:focus{
+    background: #343440 !important;
     color: #cccccc !important;
 }
 
 #chat-input::placeholder {
     color: #cccccc !important;
+    opacity: .7 !important;
 }
 
 .user,
 .bot {
     height: 50px;
     overflow: scroll;
+    font-weight: 300 !important;
+}
+.btn-primary{
+    font-weight: 200 !important;
+    border: 1px solid #3033363c!important;
+    opacity: .7 !important;
+    border-radius: .2em !important;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 @media screen and (max-width: 600px) {
