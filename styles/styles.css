@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 * {
     margin: 0;
@@ -32,7 +31,8 @@ body::-webkit-scrollbar {
     color: #cccccc !important;
     padding-left: 10px;
     letter-spacing: 1px;
-    font-family: 'Dela Gothic One', cursive !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
 }
 
 .chat-header img {
@@ -103,6 +103,23 @@ body::-webkit-scrollbar {
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+
+.banner{
+    margin:25px  auto !important;
+    background: #08090a !important;
+    border: #3033363c solid 1px !important;
+}
+.banner h5{
+    color: #cccccc !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 1px !important;
+}
+.banner p{
+    color: #ccccccb5 !important;
+    font-weight: 300 !important;
+    font-size: 1rem !important;
 }
 
 @media screen and (max-width: 600px) {

@@ -11,6 +11,7 @@ class ChatBot {
       if (event.key === "Enter") {
         this.handleUserInput();
       }
+    
     });
 
     this.responses = Response;
@@ -33,8 +34,8 @@ class ChatBot {
     const userMessage = this.chatInput.value;
     if (userMessage === '') return;
     this.appendUserMessage(userMessage);
+    this.hideBanners();
     const response = this.generateResponse(userMessage);
-
     await this.simulateTyping(response);
     this.chatInput.value = '';
   }
@@ -77,6 +78,14 @@ class ChatBot {
   scrollToBottom() {
     this.chatLog.scrollTop = this.chatLog.scrollHeight;
   }
+
+  hideBanners() {
+    const banners = document.querySelectorAll(".banner");
+    banners.forEach((banner) => {
+      banner.style.display = "none";
+    });
+  }
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
