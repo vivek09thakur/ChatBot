@@ -22,8 +22,8 @@ Meet **Chatbot :D**, It is a simple chatbot  implemented using Javascript , HTML
 - [ ] Then deploy the chatbot using [Vercel](https://vercel.com/). You can also deploy the chatbot using [Github Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
 
-## Talk to chatbot at : https://chatbot-v.vercel.app
+## Talk to chatbot at : https://chatbot-d.vercel.app
 
 or click the button below to talk to Chatbot :D 
 
-[![Deploy with Vercel](https://vercel.com/button)](https://chatbot-v.vercel.app/)
+[![Deploy with Vercel](https://vercel.com/button)](https://chatbot-d.vercel.app/)
