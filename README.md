@@ -15,7 +15,7 @@ Meet **Chatbot :D**, It is a simple chatbot  implemented using Javascript , HTML
 - [ ] Clone the forked repository in your local machine. Use the following command to clone the repository.
 
 ```bash
-    git clone url_of_the_forked_repository
+    git clone <url_of_the_forked_repository>
 ```
 - [ ] Open the cloned repository in your favourite code editor. Then navigate to `model/intents.js` file and replace the question and response pairs with your organization's FAQ.
 - [ ] Then feel free to customize the UI of the chatbot by changing the `styles/css/style.css` file.
