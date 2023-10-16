@@ -1,20 +1,24 @@
 ## CHATBOT :D
+It is a simple general purpose chatbot which is desgined to repond user prompt on the basis of predefined question-answers pairs. The bot can also be used to handle various general purpose tasks including providing answers to frequently asked questions for website visitors, addressing inquiries related to an organization, or furnishing information about a college to site visitors.
 
-Meet **Chatbot :D**, Its a simple general purpose chatbot which is desgined to answer user's prompt on the basis of question-answer pairs given to it.
+## Getting Started
 
-### Features  ⚡
-- Can respond to user prompts on the basis of its given question and reponse pairs.
-- Can be used to answer simple questions.
+- **Features**
+    1. Can respond to user prompts on the basis of its given question and reponse pairs.
+    2. Can be used to answer simple questions.
 
-### Limitations 🚧
-- Can only respond to user prompts on the basis of its given question and reponse pairs. 
-- Can only answer simple questions.
+- **Limitations**
+    1. Can only respond to user prompts on the basis of its given question and reponse pairs.
+    2. The bot cannot answer those prompts which were not present in given pairs.
 
-### Future Scope 🔮
-- If the question and response pair is replaced with an organization's FAQ, it can be used to answer the queries of the customers.
-- Can be used to answer questions related to a particular topic.
+- **Future Scopes**
+    1. **Customer Support :**
+        >   By replacing the question and response pair with an organization's FAQ, **Chatbot :D** can be effectively utilized to address customer queries and provide assistance in customer support scenarios.
+    2. **Specialized Topic Queries :**
+        >    The bot can also be harnessed to answer questions pertaining to specific topics. This extends its utility beyond general FAQs, making it a valuable tool for information dissemination and assistance in various domains.
 
-## How to use this chatbot as your website's FAQ chatbot?
+
+### How to use this chatbot as your website's FAQ chatbot?
 
 - [ ] Fork this repository.
 - [ ] Clone the forked repository in your local machine. Use the following command to clone the repository.
@@ -27,8 +31,4 @@ Meet **Chatbot :D**, Its a simple general purpose chatbot which is desgined to a
 - [ ] Then deploy the chatbot using [Vercel](https://vercel.com/). You can also deploy the chatbot using [Github Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
 
-## Talk to chatbot at : https://chatbot-d.vercel.app
-
-or click the button below to talk to Chatbot :D 
-
-[![Deploy with Vercel](https://vercel.com/button)](https://chatbot-d.vercel.app/)
+## Visit Site at : https://chatbot-d.vercel.app
