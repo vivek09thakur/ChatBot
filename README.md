@@ -1,15 +1,20 @@
-![header_image](./styles/imgs/chatbot_screenshot.png)
-
 ## CHATBOT :D
 
-Meet **Chatbot :D**, It is a simple chatbot  implemented using Javascript , HTML5 and CSS3 designed to respond to user prompts on the basis of its given question and reponse pairs. It is general purpose chatbot which can be used to answer simple questions. It can be used as a website's FAQ chatbot. It can be used to answer the queries of the customers. It can be use for school and college FAQ bot.
+Meet **Chatbot :D**, Its a simple general purpose chatbot which is desgined to answer user's prompt on the basis of question-answer pairs given to it.
 
-| Features  ⚡ | Limitations 🚧 | Future Scope 🔮 |
-| :---: | :---: | :---: |
-| Can respond to user prompts on the basis of its given question and reponse pairs. | Can only respond to user prompts on the basis of its given question and reponse pairs. | If the question and response pair is replaced with an organization's FAQ, it can be used to answer the queries of the customers. |
-| Can be used to answer simple questions. | Can only answer simple questions. | Can be used to answer questions related to a particular topic. |
+### Features  ⚡
+- Can respond to user prompts on the basis of its given question and reponse pairs.
+- Can be used to answer simple questions.
 
-## How to use Chatbot :D as your website's FAQ chatbot?
+### Limitations 🚧
+- Can only respond to user prompts on the basis of its given question and reponse pairs. 
+- Can only answer simple questions.
+
+### Future Scope 🔮
+- If the question and response pair is replaced with an organization's FAQ, it can be used to answer the queries of the customers.
+- Can be used to answer questions related to a particular topic.
+
+## How to use this chatbot as your website's FAQ chatbot?
 
 - [ ] Fork this repository.
 - [ ] Clone the forked repository in your local machine. Use the following command to clone the repository.
