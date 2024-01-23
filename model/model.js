@@ -1,4 +1,4 @@
-import Response from "/model/intents.js";
+import Response from "/model/intents.json" assert { type: "json" };
 
 class ChatBot {
   constructor() {
