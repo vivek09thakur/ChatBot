@@ -1,7 +1,7 @@
 ### CHATBOT :D
 A simple chatbot designed to respond to user prompts by using pre-established question-answer combinations. It is a basic general-purpose chatbot. Other general purpose jobs that the bot can perform are answering frequently asked questions for website users, responding to questions about organizations, and giving website users information about colleges.
 
-To try this chatbot visit **[Live Site](https://chatbot-d.vercel.app)**
+To try this chatbot visit **Live Site : [chatbotme.vercel.app](https://chatbotme.vercel.app)**
 
 | Features | Limitations | Future Scopes |
 |----------|-------------|---------------|
