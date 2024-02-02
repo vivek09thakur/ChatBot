@@ -12,6 +12,8 @@ class ChatBot {
       "I didn't get that, could you please try again with different prompt or rephrase it for me?",
       "I think I'm not understanding you, could you please try again? Maybe its not in my training data yet.",
       "Sorry I didn't get that, could you please try again with different prompt or rephrase it for me?",
+      "Oops! I didn't understand that, could you please try again? Maybe its not in my vocabulary yet.",
+      "I am sorry, I didn't understand that, could you please try again with different prompt or rephrase it for me?"
     ]
 
     this.sendButton.addEventListener("click", () => this.handleUserInput());
