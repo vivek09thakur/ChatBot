@@ -5,13 +5,21 @@ class ChatBot {
     this.chatLog = document.getElementById("chat-log");
     this.chatInput = document.getElementById("chat-input");
     this.sendButton = document.getElementById("send");
+    this.failure_messages = [
+      "I'm sorry, I couldn't understand what you said could you please rephrase that?",
+      "I didn't get that, could you please try again with different prompt or rephrase it for me?",
+      "I didn't understand that, could you please try again? Maybe its not in my vocabulary yet.",
+      "I didn't get that, could you please try again with different prompt or rephrase it for me?",
+      "I think I'm not understanding you, could you please try again? Maybe its not in my training data yet.",
+      "Sorry I didn't get that, could you please try again with different prompt or rephrase it for me?",
+    ]
 
     this.sendButton.addEventListener("click", () => this.handleUserInput());
     this.chatInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.handleUserInput();
       }
-    
+
     });
 
     this.responses = Response;
@@ -70,6 +78,9 @@ class ChatBot {
       if (regex.test(lowerCaseMessage)) {
         const responseArray = this.responses[pattern];
         return responseArray[Math.floor(Math.random() * responseArray.length)];
+      }
+      else {
+        return this.failure_messages[Math.floor(Math.random() * this.failure_messages.length)];
       }
     }
     return this.responses["default"][Math.floor(Math.random() * this.responses["default"].length)];
