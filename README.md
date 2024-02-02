@@ -14,6 +14,8 @@ A simple chatbot designed to respond to user prompts by using pre-established qu
 - Then deploy the chatbot using [Vercel](https://vercel.com/). You can also deploy the chatbot using [Github Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
 
+**Features, Limitations and Future Scopes of the Chatbot**
+
 | Features | Limitations | Future Scopes |
 |----------|-------------|---------------|
 | 1. Can respond to user prompts on the basis of its given question and reponse pairs | 1. Can only respond to user prompts on the basis of its given question and reponse pairs| 1. **Customer Support :** By replacing the question and response pair with an organization's FAQ, **Chatbot :D** can be effectively utilized to address customer queries and provide assistance in customer support scenarios |
