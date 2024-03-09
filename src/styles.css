@@ -6,9 +6,15 @@
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
 }
+:root{
+    --bg: #212329;
+    --input:#101113;
+    --card:#40477d;
+    --card-btn:#40477d;
+}
 
 body {
-    background-color: #312f38;
+    background-color:var(--bg);
 
 }
 
@@ -24,7 +30,7 @@ body::-webkit-scrollbar {
 }
 
 .chat-header {
-    background: #202124 !important;
+    background: var(--bg) !important;
 }
 
 .chat-header h1 {
@@ -44,8 +50,7 @@ body::-webkit-scrollbar {
 .chat-container {
     width: 80%;
     height: 97vh;
-    padding: 1vh;
-    margin: 1vh auto;
+    margin: 0vh auto;
 }
 
 .chat-log {
@@ -67,7 +72,7 @@ body::-webkit-scrollbar {
 }
 
 #chat-input {
-    background: #161617 !important;
+    background: var(--input) !important;
     opacity: .7 !important;
     outline: none !important;
     color: #cccccc !important;
@@ -78,7 +83,7 @@ body::-webkit-scrollbar {
 }
 
 #chat-input:focus{
-    background: #161617 !important;
+    background: var(--input) !important;
     color: #cccccc !important;
 }
 
@@ -98,7 +103,7 @@ body::-webkit-scrollbar {
     border: none !important;
     opacity: .7 !important;
     outline: none !important;
-    background: #161617 !important;
+    background: var(--input) !important;
 }
 
 .material-symbols-outlined {
@@ -111,9 +116,9 @@ body::-webkit-scrollbar {
 
 .banner{
     margin:25px  auto !important;
-    background: #444076 !important;
+    background: var(--card) !important;
     border: #3033363c solid 1px !important;
-    border-radius: .3rem 1.5rem !important;
+    border-radius: .4rem !important;
 }
 .banner h5{
     color: #cccccc !important;
