@@ -1,20 +1,9 @@
-import Response from "./Intents.json" assert { type: "json" };
-
 class ChatBot {
   constructor() {
     this.chatLog = document.getElementById("chat-log");
     this.chatInput = document.getElementById("chat-input");
     this.sendButton = document.getElementById("send");
-    this.failure_messages = [
-      "I'm sorry, I couldn't understand what you said could you please rephrase that?",
-      "I didn't get that, could you please try again with different prompt or rephrase it for me?",
-      "I didn't understand that, could you please try again? Maybe its not in my vocabulary yet.",
-      "I didn't get that, could you please try again with different prompt or rephrase it for me?",
-      "I think I'm not understanding you, could you please try again? Maybe its not in my training data yet.",
-      "Sorry I didn't get that, could you please try again with different prompt or rephrase it for me?",
-      "Oops! I didn't understand that, could you please try again? Maybe its not in my vocabulary yet.",
-      "I am sorry, I didn't understand that, could you please try again with different prompt or rephrase it for me?"
-    ]
+    this.apiUrl = "https://api-ml-bot.vercel.app/predict"
 
     this.sendButton.addEventListener("click", () => this.handleUserInput());
     this.chatInput.addEventListener("keydown", (event) => {
@@ -24,7 +13,6 @@ class ChatBot {
 
     });
 
-    this.responses = Response;
     this.typingDelay = 5;
   }
 
@@ -73,19 +61,22 @@ class ChatBot {
     return messageElement;
   }
 
-  generateResponse(userMessage) {
-    const lowerCaseMessage = userMessage.toLowerCase();
-    for (const pattern in this.responses) {
-      const regex = new RegExp(pattern, "i");
-      if (regex.test(lowerCaseMessage)) {
-        const responseArray = this.responses[pattern];
-        return responseArray[Math.floor(Math.random() * responseArray.length)];
-      }
-      else {
-        return this.failure_messages[Math.floor(Math.random() * this.failure_messages.length)];
-      }
-    }
-    return this.responses["default"][Math.floor(Math.random() * this.responses["default"].length)];
+
+  async fetch_response(userMessage) {
+    const response = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({message: userMessage }),
+    });
+    const data = await response.json();
+    return data;
+  }
+
+  async generateResponse(userMessage) {
+    const data = await this.fetch_response(userMessage);
+    return data.response;
   }
 
   scrollToBottom() {
