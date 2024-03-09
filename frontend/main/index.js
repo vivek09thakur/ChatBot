@@ -1,7 +1,8 @@
+import img from "./imgs/logo.png";
 document.querySelector("#app").innerHTML = `
 <div class="chat-header navbar navbar-expand-lg bg-body-tertiary">
       <img
-        src="/imgs/logo.png"
+        src="${img}"
         class="d-inline-block align-text-top"
       />
       <h1 class="navbar-brand">Chatbot</h1>
