@@ -1,7 +1,7 @@
 document.querySelector("#app").innerHTML = `
 <div class="chat-header navbar navbar-expand-lg bg-body-tertiary">
       <img
-        src="./public/imgs/logo.png"
+        src="public/imgs/logo.png"
         class="d-inline-block align-text-top"
       />
       <h1 class="navbar-brand">Chatbot</h1>
