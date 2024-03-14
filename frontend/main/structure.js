@@ -1,7 +1,6 @@
-
 document.querySelector("#app").innerHTML = `
 <div class="chat-header navbar navbar-expand-lg bg-body-tertiary">
-      <h1 class="navbar-brand">ML Chatbot</h1>
+      <h1 class="navbar-brand">ChatBot</h1>
     </div>
 
     <div class="chat-container mb-3">
@@ -14,7 +13,7 @@ document.querySelector("#app").innerHTML = `
           <div class="card-body">
             <h5 class="card-title">Capabilities ⚡</h5>
             <p class="card-text">
-              As I was just designed to respond to my feeded questions and answers pairs but I am able to do more than that. I can also respond to your greetings and can also tell you about my developer. Hope you will enjoy talking to me.
+              This bot uses cosine similarity to find out best possible response from its training dataset for user's prompt. It can answer questions related to its training dataset.
             </p>
           </div>
         </div>
@@ -23,20 +22,17 @@ document.querySelector("#app").innerHTML = `
           <div class="card-body">
             <h5 class="card-title">Limitations ⚠️</h5>
             <p class="card-text">
-              As I am a web-based chatbot I have some limitations.I cannot respond to your questions which are not feeded to me and I can only respond to your questions which are feeded to me by my developer.
+              This bot can only answer questions related to its training dataset. It can't answer questions which are out of its training dataset. 
             </p>
-            <a href="https://vercel.com/vivek09thakur/chatbot" class="btn btn-primary">View Deployment</a>
           </div>
         </div>
 
         <div id="banner3" class="banner card">
           <div class="card-body">
-            <h5 class="card-title">Future Scopes 🔮</h5>
+            <h5 class="card-title">Use Cases</h5>
             <p class="card-text">
-              If my questions and answers pairs will be replaced with a university's questions and answers pairs then I can be used as a chatbot for that university's website. Or similarly I can be used as a chatbot for any website.
+              This bot can be used as a chatbot for your website of your company or for your personal website. It can be used as a chatbot for customer support. To know more .. <b><a href="https://github.com/vivek09thakur/ChatBot">View Github Repository</a></b>
             </p>
-            <p class="card-text">To use me as a chatbot for your website you can contact my developer or fork my repository and can use me as a chatbot for your website.</p>
-            <a href="https://github.com/vivek09thakur/ChatBot" class="btn btn-primary">View Github Repository</a>
           </div>
         </div>
 
@@ -55,4 +51,4 @@ document.querySelector("#app").innerHTML = `
         </button>
       </div>
     </div>
-`
+`;
