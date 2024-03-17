@@ -8,11 +8,11 @@
 }
 
 :root {
-  --bg: #010001;
-  --input: #202025;
-  --card-1: #1b2f3c;
-  --card-2:#24284b;
-  --card-3:#291920;
+  --bg: #1e1e22;
+  --input: #353a46;
+  --card: #174d70;
+  --card-2: #24284b;
+  --card-3: #291920;
   --card-btn: #41467d;
 }
 
@@ -51,7 +51,7 @@ body::-webkit-scrollbar {
 }
 
 .chat-container {
-  width: 600px;
+  width: 60%;
   height: 97vh;
   margin: 0vh auto;
 }
@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
 }
 
 .chat-input {
-  width: 600px;
+  width: 60;
   height: 55px;
   margin: auto;
   border-radius: .7rem !important;
@@ -116,11 +116,22 @@ body::-webkit-scrollbar {
     'opsz' 24
 }
 
+.banner-holder {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  position: absolute;
+  bottom: 100px;
+}
+
 .banner {
-  margin: 2% auto !important;
+  margin: 2% 1% 0 1% !important;
   background: var(--card) !important;
-  border: #3033363c solid 1px !important;
   border-radius: .7rem !important;
+  width: 48% !important;
+  box-shadow: rgba(0, 0, 0, 0.207) 5px 0 5px 0 !important;
 }
 
 .banner h5 {
@@ -128,41 +139,29 @@ body::-webkit-scrollbar {
   font-weight: 700 !important;
   font-size: 1rem !important;
   letter-spacing: 1px !important;
-  text-transform: capitalize !important;
+  text-transform: uppercase !important;
 }
 
 .banner p {
   color: #cccccc !important;
   font-weight: 500 !important;
   font-size: .8rem !important;
-  opacity: .7 !important;
 }
-.banner a {text-decoration: none; color: #ff9af7 !important;}
 
-.banner:nth-child(1) {
-  margin-top: 25% !important;
-  background: var(--card-1) !important;
+.banner a {
+  text-decoration: none;
+  color: #ffffff !important;
 }
-.banner:nth-child(1) h5{
-  color : #9ed7ff !important
-}
-.banner:nth-child(2) {
-  background: var(--card-2) !important;
-}
-.banner:nth-child(2) h5{
-  color : #9fa8ff !important
-}
-.banner:nth-child(3) {
-  background: var(--card-3) !important;
-}
-.banner:nth-child(3) h5{
-  color : #ff9af7 !important
+
+.banner:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 600px) {
   .chat-container {
     width: 95dvw;
-    height: 90dvh ;
+    height: 90dvh;
   }
 
   .chat-log {
@@ -171,5 +170,18 @@ body::-webkit-scrollbar {
 
   .chat-input {
     width: 100%;
+  }
+
+  .banner-holder {
+    width: 95vw;
+    bottom: 80px;
+  }
+
+  .banner h5 {
+    font-size: .9rem !important;
+  }
+
+  .banner p {
+    font-size: .7rem !important;
   }
 }
