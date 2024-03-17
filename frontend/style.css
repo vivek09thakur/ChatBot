@@ -127,7 +127,7 @@ body::-webkit-scrollbar {
 }
 
 .banner {
-  margin: 2% 1% 0 1% !important;
+  margin: 1% 1% 0 1% !important;
   background: var(--card) !important;
   border-radius: .7rem !important;
   width: 48% !important;
@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
 
   .banner-holder {
     width: 95vw;
-    bottom: 80px;
+    bottom: 110px;
   }
 
   .banner h5 {
